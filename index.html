@@ -14,17 +14,20 @@
         <a class="brand" href="#start">
             <img src="img/logo.svg" alt="Blockschmiede Logo">
             <div class="brand-copy">
-                <span class="brand-name">Blockschmiede GbR</span>
+                <span class="brand-name">Blockschmiede</span>
                 <span class="brand-subline">Krypto. Beratung. Produkte.</span>
             </div>
         </a>
-        <nav class="main-nav" aria-label="Hauptnavigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+            <span class="sr-only">Menü öffnen</span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <nav class="main-nav" id="primary-navigation" aria-label="Hauptnavigation">
             <a href="#start">Start</a>
             <a href="#beratung">Krypto-Beratung</a>
             <a href="#produkte">Produkte</a>
             <a href="#unternehmen">Unternehmen</a>
         </nav>
-        <a class="top-cta" href="#kontakt">Testen Sie uns.</a>
     </header>
 
     <main>
@@ -288,5 +291,59 @@
         </div>
         <p class="footer-note">Blockschmiede · Horizont erweitern</p>
     </footer>
+    <script>
+        (function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navigation = document.getElementById('primary-navigation');
+            if (!navToggle || !navigation) {
+                return;
+            }
+
+            const body = document.body;
+            const toggleLabel = navToggle.querySelector('.sr-only');
+
+            const closeMenu = () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navigation.classList.remove('is-open');
+                body.classList.remove('nav-open');
+                if (toggleLabel) {
+                    toggleLabel.textContent = 'Menü öffnen';
+                }
+            };
+
+            navToggle.addEventListener('click', () => {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                const nextExpanded = !isExpanded;
+                navToggle.setAttribute('aria-expanded', String(nextExpanded));
+                navigation.classList.toggle('is-open', nextExpanded);
+                body.classList.toggle('nav-open', nextExpanded);
+                if (toggleLabel) {
+                    toggleLabel.textContent = nextExpanded ? 'Menü schließen' : 'Menü öffnen';
+                }
+            });
+
+            navigation.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof Element) {
+                    const link = target.closest('a');
+                    if (link && navigation.contains(link)) {
+                        closeMenu();
+                    }
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener('keyup', (event) => {
+                if (event.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
