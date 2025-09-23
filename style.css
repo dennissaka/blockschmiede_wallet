@@ -1144,7 +1144,7 @@ main {
     }
 
     .hero {
-        padding: 5rem 6% 3.5rem;
+        padding: 2rem 6% 3.5rem;
         padding-inline-start: calc(6% + var(--safe-left));
         padding-inline-end: calc(6% + var(--safe-right));
     }
