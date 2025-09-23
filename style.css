@@ -86,7 +86,7 @@ main {
     padding-inline: 8%;
     padding-inline-start: calc(8% + var(--safe-left));
     padding-inline-end: calc(8% + var(--safe-right));
-    background: rgba(8, 11, 18, 0.88);
+    background: #05070c;
     backdrop-filter: blur(22px);
     border-bottom: 1px solid var(--border);
 }
