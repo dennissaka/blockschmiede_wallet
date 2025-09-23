@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Blockschmiede Logo</title>
+  <desc id="desc">Ein abstrahiertes Wappen mit einem stilisierten B und einem Amboss in Bitcoin-Orange.</desc>
+  <defs>
+    <linearGradient id="forgeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7931a"/>
+      <stop offset="100%" stop-color="#ffb347"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="18" fill="#0f141f" stroke="#f7931a" stroke-width="4"/>
+  <path d="M30 70L90 70L80 86H40L30 70Z" fill="url(#forgeGlow)" opacity="0.85"/>
+  <path d="M48 34H74C82 34 88 40 88 48C88 55 83 61 76 62V63C83 64 88 70 88 77C88 86 81 92 72 92H48V34ZM66 54C70 54 73 51 73 47C73 43 70 40 66 40H58V54H66ZM58 86H70C74 86 77 83 77 79C77 75 74 72 70 72H58V86Z" fill="#f5f6fa"/>
+  <circle cx="60" cy="28" r="6" fill="#f7931a"/>
+</svg>
