@@ -1644,7 +1644,6 @@ main {
     .hero-inner {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media (max-width: 768px) {
@@ -1810,7 +1809,7 @@ main {
     }
 
     .legacy-card {
-        padding: 1.8rem;
+        padding: 1.5rem;
     }
 
     .legacy-card-back {
