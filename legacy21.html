@@ -6,9 +6,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.0.1">
+    <link rel="stylesheet" href="style.css?v=2.1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#050505">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GTCTTYEX8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6GTCTTYEX8');
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -39,8 +48,8 @@
                 </ul>
             </nav>
         </div>
-        <div class="header-visual">
-            <div class="header-image-frame">
+        <div class="header-visual" data-animate>
+            <div class="header-image-frame" data-animate>
                 <img src="img/index.svg" alt="Abstraktes Headerbild der Legacy 21 Karte" class="header-image">
             </div>
         </div>
@@ -49,15 +58,17 @@
     <main>
         <section class="section legacy-hero" aria-labelledby="legacy-hero-heading">
             <div class="legacy-hero-grid">
-                <div class="legacy-hero-media" aria-hidden="true">
+                <div class="legacy-hero-media" aria-hidden="true" data-animate style="--animate-delay: 0.1s;">
                     <div class="legacy-card-mockup">
                         <div class="legacy-card legacy-card-back">
                             <span class="legacy-card-motto">Not your Card, not your Coins.</span>
                         </div>
                         <div class="legacy-card legacy-card-front">
+                            <span class="legacy-card-badge">Made in Germany</span>
                             <span class="legacy-card-label">Legacy 21 Karte</span>
                             <p class="legacy-card-tagline">Verschenke Bitcoin mit Stil und ermögliche einen sicheren Start.</p>
                             <ul class="legacy-card-points">
+                                <li>Hardware &amp; Software Made in Germany</li>
                                 <li>NFC-Chip mit eigener Wallet</li>
                                 <li>Lightning &amp; Onchain bereit</li>
                                 <li>Kompatibel mit der Blockschmiede-App</li>
@@ -65,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="legacy-hero-content">
+                <div class="legacy-hero-content" data-animate style="--animate-delay: 0.18s;">
                     <span class="section-kicker">Legacy 21</span>
                     <h1 id="legacy-hero-heading">Die Legacy21 Karte für Geschenke mit Wirkung</h1>
                     <p class="lead">Mit der Legacy21 Karte verschenkst du Bitcoin mit Stil. Egal ob für Plebs, für die Oma zum 80. Geburtstag oder zur Geburt deines Neffen – ein Smartphone reicht, um sofort loszulegen. Die Karte motiviert deine Liebsten, sich spielerisch mit Bitcoin auseinanderzusetzen.</p>
@@ -78,38 +89,42 @@
                         <a class="button" href="#use-cases">Use Cases entdecken</a>
                         <a class="button button-ghost" href="#videos">Erklärvideos ansehen</a>
                     </div>
+                    <div class="legacy-made-note" data-animate style="--animate-delay: 0.34s;">
+                        <strong>Hardware &amp; Software – Made in Germany</strong>
+                        <p>Unsere Legacy21 Karte und die dazugehörige Blockschmiede-App werden vollständig in Deutschland entwickelt, assembliert und geprüft. Kurze Wege und transparente Lieferketten sorgen für Vertrauen und höchste Qualität.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="section" aria-labelledby="legacy-features-heading">
-            <div class="section-header">
+            <div class="section-header" data-animate>
                 <span class="section-kicker">Features</span>
                 <h2 id="legacy-features-heading">Warum die Legacy21 Karte überzeugt</h2>
                 <p>Die Karte verbindet ein hochwertiges Erlebnis mit maximaler Selbstbestimmung. Von stilvollen Geschenkmomenten über die einfache Wallet-Erstellung bis hin zu Lightning-Payments – alles ist darauf ausgelegt, Bitcoin greifbar zu machen.</p>
             </div>
             <div class="legacy-feature-grid">
-                <article class="legacy-feature-card icon-gift">
+                <article class="legacy-feature-card icon-gift" data-animate style="--animate-delay: 0.12s;">
                     <h3>Stilvolles Bitcoin-Geschenk</h3>
                     <p>Überreiche Bitcoin als besonderes Highlight – ob für echte Plebs, zum runden Geburtstag oder zur Geburt. Statt Fiat-Gutscheinen gibt es ein Erlebnis, das Neugier weckt und sofort zum Erkunden einlädt.</p>
                 </article>
-                <article class="legacy-feature-card icon-nfc">
+                <article class="legacy-feature-card icon-nfc" data-animate style="--animate-delay: 0.18s;">
                     <h3>Wallet-Erstellung per NFC</h3>
                     <p>Die Blockschmiede-App und der integrierte NFC-Chip erzeugen in Sekunden eine neue Bitcoin-Wallet. Karte gleich Besitz – und damit echtes Eigentum. Seed aufschreiben, sicher verwahren und loslegen.</p>
                 </article>
-                <article class="legacy-feature-card icon-shield">
+                <article class="legacy-feature-card icon-shield" data-animate style="--animate-delay: 0.24s;">
                     <h3>Keine Datenspeicherung durch Dritte</h3>
                     <p>Die App ist eine schlanke Hülle ohne versteckte Datenbanken. Alle sensiblen Informationen liegen ausschließlich auf der Legacy21 Karte und bleiben damit komplett unter deiner Kontrolle.</p>
                 </article>
-                <article class="legacy-feature-card icon-device">
+                <article class="legacy-feature-card icon-device" data-animate style="--animate-delay: 0.3s;">
                     <h3>Geräteunabhängig nutzbar</h3>
                     <p>Wechsle jederzeit das Smartphone oder leihe dir eines. Da nichts in der App gespeichert wird, kannst du jeden Prozess auf einem beliebigen Gerät erneut starten.</p>
                 </article>
-                <article class="legacy-feature-card icon-lightning">
+                <article class="legacy-feature-card icon-lightning" data-animate style="--animate-delay: 0.36s;">
                     <h3>Lightning ready</h3>
                     <p>Nutze das Lightning-Netzwerk für schnelle, kostengünstige Zahlungen. Sende Sats an Freunde, Kolleginnen und Familie und zeige, wie flüssig Bitcoin-Transaktionen sein können.</p>
                 </article>
-                <article class="legacy-feature-card icon-savings">
+                <article class="legacy-feature-card icon-savings" data-animate style="--animate-delay: 0.42s;">
                     <h3>Savings für Layer-1</h3>
                     <p>Verwalte dein langfristiges Bitcoin-Vermögen über die integrierte Onchain-Wallet „Savings“. Layer-1-Transaktionen bleiben transparent und jederzeit abrufbar.</p>
                 </article>
@@ -117,13 +132,13 @@
         </section>
 
         <section class="section" id="use-cases" aria-labelledby="legacy-usecases-heading">
-            <div class="section-header">
+            <div class="section-header" data-animate>
                 <span class="section-kicker">Use Cases</span>
                 <h2 id="legacy-usecases-heading">Für jeden Anlass das passende Erlebnis</h2>
                 <p>Die Legacy21 Karte schafft Erinnerungen – vom besonderen Geschenk bis zur täglichen Nutzung. Jeder Use Case bringt seine eigene Geschichte mit.</p>
             </div>
             <div class="legacy-usecase-grid">
-                <article class="usecase-card">
+                <article class="usecase-card" data-animate style="--animate-delay: 0.12s;">
                     <figure>
                         <div class="usecase-visual is-birthday" role="img" aria-label="Geburtstag – Das etwas andere Geschenk">
                             <span>Geburtstag</span>
@@ -134,7 +149,7 @@
                         </figcaption>
                     </figure>
                 </article>
-                <article class="usecase-card">
+                <article class="usecase-card" data-animate style="--animate-delay: 0.18s;">
                     <figure>
                         <div class="usecase-visual is-birth" role="img" aria-label="Geburt – Einzigartigkeit verschenken">
                             <span>Geburt</span>
@@ -145,7 +160,7 @@
                         </figcaption>
                     </figure>
                 </article>
-                <article class="usecase-card">
+                <article class="usecase-card" data-animate style="--animate-delay: 0.24s;">
                     <figure>
                         <div class="usecase-visual is-coffee" role="img" aria-label="Kaffee – Lightning im Café erleben">
                             <span>Kaffee</span>
@@ -156,7 +171,7 @@
                         </figcaption>
                     </figure>
                 </article>
-                <article class="usecase-card">
+                <article class="usecase-card" data-animate style="--animate-delay: 0.3s;">
                     <figure>
                         <div class="usecase-visual is-wedding" role="img" aria-label="Hochzeit – Ewigkeit verschenken">
                             <span>Hochzeit</span>
@@ -171,13 +186,13 @@
         </section>
 
         <section class="section" id="videos" aria-labelledby="legacy-videos-heading">
-            <div class="section-header">
+            <div class="section-header" data-animate>
                 <span class="section-kicker">Erklärvideos</span>
                 <h2 id="legacy-videos-heading">Schritt für Schritt durch die Blockschmiede-App</h2>
                 <p>Unsere Erklärvideos führen dich durch jede Aktion – von der ersten Einrichtung bis zum sicheren Umgang mit der Karte. Praktische Tipps begleiten dich dabei.</p>
             </div>
             <div class="legacy-video-grid">
-                <article class="video-card">
+                <article class="video-card" data-animate style="--animate-delay: 0.12s;">
                     <div class="video-frame" aria-hidden="true">
                         <span class="video-play-icon">▶</span>
                     </div>
@@ -188,7 +203,7 @@
                         <li>Gebühren optimieren, indem du passende Auflade-Services vergleichst.</li>
                     </ul>
                 </article>
-                <article class="video-card">
+                <article class="video-card" data-animate style="--animate-delay: 0.2s;">
                     <div class="video-frame" aria-hidden="true">
                         <span class="video-play-icon">▶</span>
                     </div>
@@ -213,7 +228,7 @@
                     <h3>Not your Card, not your Coins.</h3>
                     <p>Die Karte vermittelt das Grundprinzip von Bitcoin: Wer die Karte besitzt, hält die Schlüssel. Motivation, Verantwortung und Begeisterung vereinen sich in einem physischen Erlebnis.</p>
                 </article>
-                <blockquote class="legacy-quote">
+                <blockquote class="legacy-quote" data-animate style="--animate-delay: 0.12s;">
                     <p>„If you don’t believe it or don’t get it, I don’t have the time to try to convince you, sorry.“</p>
                     <cite>Satoshi Nakamoto</cite>
                 </blockquote>
@@ -221,13 +236,13 @@
         </section>
 
         <section class="section" aria-labelledby="legacy-benefits-heading">
-            <div class="section-header">
+            <div class="section-header" data-animate>
                 <span class="section-kicker">Mehrwerte</span>
                 <h2 id="legacy-benefits-heading">Transparenz, Inspiration und praktische Tipps</h2>
                 <p>Die Legacy21 Karte begleitet dich weit über den Schenk-Moment hinaus und bietet Funktionen, die den Alltag leichter machen.</p>
             </div>
             <div class="legacy-benefits-grid">
-                <article class="legacy-benefit-card">
+                <article class="legacy-benefit-card" data-animate style="--animate-delay: 0.12s;">
                     <h3>Weitere Vorteile</h3>
                     <ul class="legacy-list">
                         <li>Einsicht in die Transaktionshistorie inklusive Gebührenjournal.</li>
@@ -236,7 +251,7 @@
                         <li>Verwendung als Sparkarte – Onchain-Guthaben aufbauen und Teil der 21 Millionen werden.</li>
                     </ul>
                 </article>
-                <article class="legacy-benefit-card">
+                <article class="legacy-benefit-card" data-animate style="--animate-delay: 0.2s;">
                     <h3>Geschenkideen</h3>
                     <ul class="legacy-list">
                         <li>Zur Geburt: digitales Gold statt klassischem Gold und die Entwicklung bis zum 18. Geburtstag verfolgen.</li>
@@ -244,7 +259,7 @@
                         <li>Zum Geburtstag: Finanzielle Bildung statt nutzloser Gutscheine oder „Betrugsgeld“.</li>
                     </ul>
                 </article>
-                <article class="legacy-benefit-card">
+                <article class="legacy-benefit-card" data-animate style="--animate-delay: 0.28s;">
                     <h3>Tipps aus der App</h3>
                     <p>Die Blockschmiede-App unterstützt dich mit Info-Buttons, Erklärvideos und Hinweisen für zukünftige Features.</p>
                     <ul class="legacy-list">
@@ -257,27 +272,42 @@
         </section>
     </main>
 
-    <div class="anchor-targets" aria-hidden="true">
-        <span id="impressum"></span>
-        <span id="rechtliches"></span>
-        <span id="datenschutz"></span>
-        <span id="kontakt"></span>
-    </div>
-
     <footer class="site-footer">
         <nav class="footer-links" aria-label="Fußnavigation">
-            <a href="#impressum">Impressum</a>
-            <a href="#rechtliches">Rechtliche Hinweise</a>
-            <a href="#datenschutz">Datenschutz</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
         </nav>
         <div class="footer-socials">
-            <a class="social-icon" href="#" aria-label="Facebook">f</a>
-            <a class="social-icon" href="#" aria-label="LinkedIn">in</a>
-            <a class="social-icon" href="#" aria-label="GitHub">g</a>
-            <a class="social-icon" href="#" aria-label="X">x</a>
+            <a class="social-icon social-icon--instagram" href="https://www.instagram.com/blockschmiede21?igsh=M214aTJlaXBraXY0" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a class="social-icon social-icon--x" href="https://x.com/blockschmiede21?s=21&amp;t=8HZP7r2FwAe1airi1KuADA" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">X (ehemals Twitter)</span>
+            </a>
         </div>
     </footer>
+
+    <div class="floating-contact" data-contact-widget>
+        <div class="floating-contact__panel" id="floating-contact-panel" data-contact-panel role="group" aria-label="Kontaktwege">
+            <a class="floating-contact__action floating-contact__action--phone" href="tel:+491623720051">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>Anrufen</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--whatsapp" href="https://wa.me/491623720051" target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>WhatsApp</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--mail" href="mailto:info@blockschmiede.com">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>E-Mail</span>
+            </a>
+        </div>
+        <button class="floating-contact__toggle" type="button" aria-label="Kontaktoptionen öffnen – wir unterstützen Sie bei jeder Anfrage" aria-expanded="false" aria-controls="floating-contact-panel" aria-haspopup="true" data-contact-toggle>
+            <span class="floating-contact__glyph" aria-hidden="true"></span>
+            <span class="floating-contact__label">Kontaktoptionen öffnen – wir unterstützen Sie bei jeder Anfrage</span>
+        </button>
+    </div>
+
     <script>
         (function () {
             const navToggle = document.querySelector('.nav-toggle');
@@ -328,6 +358,85 @@
             window.addEventListener('keyup', (event) => {
                 if (event.key === 'Escape') {
                     closeMenu();
+                }
+            });
+        })();
+
+        (function () {
+            const animatedElements = document.querySelectorAll('[data-animate]');
+            if (!animatedElements.length) {
+                return;
+            }
+
+            if (!('IntersectionObserver' in window)) {
+                animatedElements.forEach((element) => {
+                    element.classList.add('is-visible');
+                });
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            animatedElements.forEach((element) => observer.observe(element));
+        })();
+
+        (function () {
+            const widget = document.querySelector('[data-contact-widget]');
+            if (!widget) {
+                return;
+            }
+
+            const toggle = widget.querySelector('[data-contact-toggle]');
+            const panel = widget.querySelector('[data-contact-panel]');
+            if (!toggle || !panel) {
+                return;
+            }
+
+            const closePanel = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                widget.classList.remove('is-open');
+            };
+
+            const openPanel = () => {
+                toggle.setAttribute('aria-expanded', 'true');
+                widget.classList.add('is-open');
+            };
+
+            toggle.addEventListener('click', () => {
+                const isOpen = widget.classList.contains('is-open');
+                if (isOpen) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!widget.contains(event.target)) {
+                    closePanel();
+                }
+            });
+
+            document.addEventListener('keyup', (event) => {
+                if (event.key === 'Escape') {
+                    closePanel();
+                }
+            });
+
+            panel.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.closest('a')) {
+                    closePanel();
                 }
             });
         })();
