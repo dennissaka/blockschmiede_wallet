@@ -227,39 +227,49 @@ main {
     object-fit: cover;
 }
 
-.header-visual--fullimage .header-disclaimer {
-    padding: clamp(0.75rem, 2vw, 1.1rem) clamp(1.6rem, 5vw, 3.2rem);
-    background: linear-gradient(90deg, rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.58));
-}
-
 .header-visual--fullimage .header-card-text {
     bottom: clamp(1.4rem, 4vw, 3rem);
     background: rgba(5, 5, 5, 0.74);
     border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-.header-disclaimer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+.sale-banner {
+    position: relative;
+    z-index: 25;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.7rem 1.2rem;
-    background: linear-gradient(90deg, rgba(255, 118, 118, 0.5), rgba(255, 168, 168, 0.36));
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    padding: 0.6rem 8%;
+    padding-block-start: calc(0.6rem + var(--safe-top));
+    padding-inline-start: calc(8% + var(--safe-left));
+    padding-inline-end: calc(8% + var(--safe-right));
+    background: linear-gradient(90deg, #ff4242, #b40000);
     color: #fff5f5;
-    font-weight: 600;
-    letter-spacing: 0.18em;
     text-transform: uppercase;
-    font-size: 0.78rem;
-    border-bottom: 1px solid rgba(255, 190, 190, 0.45);
-    backdrop-filter: blur(8px);
-    z-index: 2;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
 
-.site-header--home .header-disclaimer {
-    top: calc(var(--safe-top) + 1.1rem);
+.sale-banner__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3.6rem;
+    padding: 0.2rem 0.85rem;
+    border-radius: 999px;
+    background: #fff;
+    color: #b40000;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+}
+
+.sale-banner__text {
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
 }
 
 .header-card-text {
@@ -840,6 +850,57 @@ main {
     padding: 5rem 8%;
     padding-inline-start: calc(8% + var(--safe-left));
     padding-inline-end: calc(8% + var(--safe-right));
+}
+
+.legacy-teaser {
+    padding-bottom: 4.2rem;
+}
+
+.legacy-teaser__card {
+    margin: 0 auto;
+    max-width: 780px;
+    padding: clamp(2.4rem, 4vw, 3rem);
+    border-radius: 2.4rem;
+    background: linear-gradient(140deg, rgba(var(--accent-rgb), 0.16), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(var(--accent-rgb), 0.28);
+    text-align: center;
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.55);
+}
+
+.legacy-teaser__card .section-kicker {
+    margin-bottom: 0.6rem;
+}
+
+.legacy-teaser__card h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.legacy-teaser__card p {
+    margin: 0 auto 1.6rem;
+    max-width: 54ch;
+    color: var(--muted);
+}
+
+.legacy-teaser__highlights {
+    margin: 0 0 1.8rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.4rem;
+    justify-content: center;
+}
+
+.legacy-teaser__highlights li {
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    background: rgba(var(--accent-rgb), 0.16);
+    border: 1px solid rgba(var(--accent-rgb), 0.28);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
 }
 
 .section::before {
@@ -2037,10 +2098,6 @@ main {
         max-height: none;
     }
 
-    .site-header--home .header-disclaimer {
-        top: calc(var(--safe-top) + 0.8rem);
-    }
-
     .top-bar {
         padding-block: 1rem;
         padding-inline: 6%;
@@ -2122,6 +2179,17 @@ main {
         align-self: flex-start;
     }
 
+    .sale-banner {
+        gap: 0.6rem;
+        letter-spacing: 0.12em;
+        padding-inline: calc(6% + var(--safe-left)) calc(6% + var(--safe-right));
+    }
+
+    .sale-banner__text {
+        letter-spacing: 0.16em;
+        text-align: center;
+    }
+
     .has-submenu::after {
         display: none;
     }
@@ -2190,12 +2258,6 @@ main {
     .brand img {
         width: 44px;
         height: 44px;
-    }
-
-    .header-disclaimer {
-        font-size: 0.68rem;
-        letter-spacing: 0.12em;
-        padding: 0.55rem 0.8rem;
     }
 
     .header-promo-link {
@@ -2275,5 +2337,31 @@ main {
     .legacy-made-note::before {
         width: 40px;
         height: 40px;
+    }
+
+    .sale-banner {
+        padding-inline: calc(5% + var(--safe-left)) calc(5% + var(--safe-right));
+        letter-spacing: 0.1em;
+        gap: 0.5rem;
+    }
+
+    .sale-banner__label {
+        font-size: 0.66rem;
+        letter-spacing: 0.18em;
+    }
+
+    .sale-banner__text {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+    }
+
+    .legacy-teaser__highlights {
+        gap: 0.6rem;
+    }
+
+    .legacy-teaser__highlights li {
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        padding: 0.5rem 1rem;
     }
 }
