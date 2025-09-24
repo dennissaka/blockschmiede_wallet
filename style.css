@@ -213,7 +213,7 @@ main {
     max-width: none;
     max-height: 700px;
     overflow: hidden;
-    flex: 1;
+    flex: 1 1 auto;
 }
 
 .header-visual--fullimage .header-image-frame::before {
@@ -226,6 +226,7 @@ main {
     height: 100%;
     max-height: none;
     object-fit: cover;
+    object-position: bottom;
 }
 
 .header-visual--fullimage .header-card-text {
@@ -757,12 +758,34 @@ main {
 }
 
 .intro-card-body {
-    padding: 1.1rem 1.5rem 1.4rem;
+    display: grid;
+    grid-template-rows: 0fr;
+    padding: 0 1.5rem;
     color: rgba(240, 240, 240, 0.88);
+    transition: grid-template-rows 0.35s ease, padding 0.35s ease;
+}
+
+.intro-card-body > * {
+    overflow: hidden;
+}
+
+.intro-card[open] .intro-card-body {
+    grid-template-rows: 1fr;
+    padding: 1.1rem 1.5rem 1.4rem;
+}
+
+.intro-card:not([open]) .intro-card-body {
+    padding-bottom: 0;
 }
 
 .intro-card-body p {
     margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.intro-card[open] .intro-card-body p {
+    opacity: 1;
 }
 
 .hero-impressions {
@@ -855,6 +878,30 @@ main {
 
 .legacy-teaser {
     padding-bottom: 4.2rem;
+}
+
+.legacy-teaser__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.legacy-teaser__media {
+    position: relative;
+    border-radius: 2.4rem;
+    overflow: hidden;
+    box-shadow: 0 26px 52px rgba(0, 0, 0, 0.55);
+}
+
+.legacy-teaser__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
 }
 
 .legacy-teaser__card {
@@ -1369,8 +1416,9 @@ main {
     min-width: 220px;
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
     transform: translate3d(16px, 0, 0) scale(0.98);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .floating-contact__panel::before {
@@ -1391,6 +1439,7 @@ main {
 .floating-contact.is-open .floating-contact__panel {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
     transform: translate3d(0, 0, 0) scale(1);
 }
 
@@ -1850,7 +1899,7 @@ svg.usecase-icon {
 }
 
 .usecase-icon--birth {
-    font-size: clamp(3.2rem, 9.4vw, 5.2rem);
+    font-size: clamp(3.6rem, 11vw, 5.8rem);
 }
 
 .usecase-icon--birth .fa-sparkles {
@@ -1861,34 +1910,12 @@ svg.usecase-icon {
 }
 
 .usecase-icon--coffee {
-    font-size: clamp(3.4rem, 9.6vw, 5.4rem);
-}
-
-.usecase-icon--coffee .fa-bolt {
-    font-size: 0.58em;
-    margin-left: clamp(0.18rem, 1vw, 0.4rem);
-    color: rgba(255, 255, 255, 0.82);
-    transform: translateY(-28%);
+    font-size: clamp(3.6rem, 10vw, 5.6rem);
 }
 
 .usecase-icon--wedding {
     font-size: clamp(3.6rem, 10.5vw, 5.8rem);
-    gap: clamp(0.35rem, 2vw, 0.8rem);
-    align-items: flex-end;
-}
-
-.usecase-icon--wedding .fa-heart {
-    font-size: 0.55em;
-    margin: 0 clamp(0.15rem, 0.9vw, 0.35rem);
-    color: rgba(255, 255, 255, 0.85);
-    transform: translateY(-40%);
-}
-
-.usecase-icon--wedding .fa-ring {
-    font-size: 0.5em;
-    margin-left: clamp(0.1rem, 0.8vw, 0.3rem);
-    color: rgba(255, 255, 255, 0.78);
-    transform: translate(-12%, -55%);
+    gap: clamp(0.4rem, 2.4vw, 0.95rem);
 }
 
 .usecase-visual.is-birthday {
@@ -2128,10 +2155,19 @@ svg.usecase-icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: bottom;
 }
 
 @media (max-width: 1080px) {
+    .legacy-teaser__grid {
+        grid-template-columns: 1fr;
+        max-width: 680px;
+    }
+
+    .legacy-teaser__media {
+        border-radius: 1.6rem;
+    }
+
     .top-bar {
         gap: 1rem;
     }
@@ -2156,10 +2192,13 @@ svg.usecase-icon {
         margin-right: 0;
         border-radius: 0;
         max-height: none;
+        flex: none;
+        height: auto;
     }
 
     .header-visual--fullimage .header-image {
         max-height: none;
+        height: auto;
     }
 
     .top-bar {
