@@ -749,6 +749,22 @@ main {
 .mosaic {
     display: grid;
     gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+@media (min-width: 960px) {
+    .intro-cards {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .intro-card {
+        flex: 1;
+    }
+
+    .mosaic {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 .mosaic-card {
@@ -1350,15 +1366,15 @@ main {
 }
 
 .floating-contact__action--phone .floating-contact__icon {
-    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23f7931a'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M6.2%204.8%208.8%205.3a1.7%201.7%200%200%201%201.2%201l1%202.5a1.6%201.6%200%200%1-.4%201.7l-1.4%201.3a14.3%2014.3%200%200%200%206.8%206.8l1.3-1.4a1.6%201.6%200%200%201%201.7-.4l2.5%201a1.7%201.7%200%200%201%201%201.2l.5%202.6a1.7%201.7%200%200%201-1.7%202H19c-9.4%200-17-7.6-17-17V6.5a1.7%201.7%200%200%201%202-1.7z'/%3E%3C/svg%3E");
+    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23f7931a%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M5.4%202.8h4l1.7%204.8-2.3%202.1a10%2010%200%200%200%205.5%205.5l2.1-2.3%204.8%201.7v4c0%201-.8%201.8-1.8%201.8-8.8%200-16-7.2-16-16%200-1%20.8-1.8%201.8-1.8z%27/%3E%3C/svg%3E");
 }
 
 .floating-contact__action--whatsapp .floating-contact__icon {
-    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23f7931a'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M3.5%2019.7%205.2%2015a8.5%208.5%200%201%201%203.3%203.3z'/%3E%3Cpath%20d%3D'M8.7%2010.8c.4%201.4%201.6%203%203%203.6 1.2.5%201.9.5%202.5-.3.5-.6.9-1.1.4-1.8-.4-.6-1-.3-1.6-.1-.6.2-.9-.1-1.3-.5-.7-.5-1.3-1.2-1.6-2-.3-.6-.1-1%20.3-1.4s.6-1%20.2-1.6c-.5-.8-1-1-1.6-.7-.7.4-1.5%201.2-1.3%202.8z'/%3E%3C/svg%3E");
+    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23f7931a%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M4.3%2019.2%205.8%2015A8.5%208.5%200%201%201%2015%2020.2l-4.2%201.5z%27/%3E%3Cpath%20d%3D%27M8.8%2010.5c.3%201.3%201.5%203%202.8%203.6%201.1.5%201.7.5%202.3-.3.5-.6.8-1%20.4-1.8-.3-.6-.9-.3-1.5-.1-.6.2-.9-.1-1.3-.5-.7-.5-1.2-1.1-1.5-1.9-.3-.6-.1-1%20.3-1.4s.6-1%20.2-1.6c-.5-.8-1-.9-1.5-.6-.6.3-1.4%201.2-1.2%202.6z%27/%3E%3C/svg%3E");
 }
 
 .floating-contact__action--mail .floating-contact__icon {
-    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23f7931a'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Crect%20x%3D'3'%20y%3D'5'%20width%3D'18'%20height%3D'14'%20rx%3D'2'/%3E%3Cpath%20d%3D'M3%207l9%206%209-6'/%3E%3C/svg%3E");
+    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23f7931a%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Crect%20x%3D%273%27%20y%3D%275%27%20width%3D%2718%27%20height%3D%2714%27%20rx%3D%272%27/%3E%3Cpath%20d%3D%27m3%207%209%206%209-6%27/%3E%3C/svg%3E");
 }
 
 .floating-contact__note {
