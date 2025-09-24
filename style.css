@@ -123,6 +123,12 @@ main {
     overflow: hidden;
 }
 
+.header-visual--fullimage {
+    padding: 0;
+    min-height: 0;
+    align-items: stretch;
+}
+
 .header-visual::after {
     content: '';
     position: absolute;
@@ -164,12 +170,13 @@ main {
 
 .header-image-frame {
     position: relative;
-    width: min(960px, 100%);
-    border-radius: 1.8rem;
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 32px 60px rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(0, 0, 0, 0.35);
+    box-shadow: none;
+    border: none;
+    background: none;
 }
 
 .header-card-link {
@@ -194,6 +201,30 @@ main {
     background: linear-gradient(180deg, rgba(5, 5, 5, 0.2), transparent 55%, rgba(5, 5, 5, 0.65));
     pointer-events: none;
     z-index: 1;
+}
+
+.header-visual--fullimage .header-card-link {
+    display: block;
+    width: 100%;
+}
+
+.header-visual--fullimage .header-image-frame::before {
+    display: none;
+}
+
+.header-visual--fullimage .header-image {
+    display: block;
+}
+
+.header-visual--fullimage .header-disclaimer {
+    padding: clamp(0.75rem, 2vw, 1.1rem) clamp(1.6rem, 5vw, 3.2rem);
+    background: linear-gradient(90deg, rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.58));
+}
+
+.header-visual--fullimage .header-card-text {
+    bottom: clamp(1.4rem, 4vw, 3rem);
+    background: rgba(5, 5, 5, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .header-disclaimer {
@@ -1682,72 +1713,49 @@ main {
 
 .usecase-visual {
     position: relative;
-    min-height: 220px;
+    min-height: 240px;
     border-radius: 1.4rem;
     margin: 1.1rem 1.1rem 0;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
-    padding: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.72);
-    --usecase-icon: none;
-}
-
-.usecase-visual::before {
-    content: '';
-    position: absolute;
-    top: 1.4rem;
-    left: 1.4rem;
-    width: 54px;
-    height: 54px;
-    border-radius: 1.2rem;
-    background: rgba(7, 7, 7, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(6px);
-    background-image: var(--usecase-icon);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 28px 28px;
-    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(2.2rem, 7vw, 3.4rem);
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .usecase-visual::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.65));
+    background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.48));
     z-index: 1;
 }
 
-.usecase-visual span {
+.usecase-icon {
     position: relative;
-    z-index: 3;
-    letter-spacing: 0.16em;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    max-width: 420px;
+    max-height: 420px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .usecase-visual.is-birthday {
-    background: linear-gradient(145deg, rgba(255, 149, 205, 0.8), rgba(99, 41, 124, 0.85));
-    --usecase-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M4%2011h16v7a2%202%200%200%201-2%202H6a2%202%200%200%201-2-2z'/%3E%3Cpath%20d%3D'M4%2014h16'/%3E%3Cpath%20d%3D'M8%207c1%200%201.5-.8%201-1.6-.5-.8-1-1-.5-1.9.3-.5.5-1.1.5-1.5'/%3E%3Cpath%20d%3D'M12%207c1%200%201.5-.8%201-1.6-.5-.8-1-1-.5-1.9.3-.5.5-1.1.5-1.5'/%3E%3Cpath%20d%3D'M16%207c1%200%201.5-.8%201-1.6-.5-.8-1-1-.5-1.9.3-.5.5-1.1.5-1.5'/%3E%3C/svg%3E");
+    background: linear-gradient(145deg, rgba(255, 149, 205, 0.82), rgba(99, 41, 124, 0.92));
 }
 
 .usecase-visual.is-birth {
-    background: linear-gradient(145deg, rgba(132, 210, 255, 0.78), rgba(36, 62, 108, 0.85));
-    --usecase-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M12%207a4%204%200%201%201%200%208%204%204%200%200%201%200-8z'/%3E%3Cpath%20d%3D'M6%2011c-1.7%200-3%201.8-3%203.6S4.5%2019%206.5%2019H9'/%3E%3Cpath%20d%3D'M18%2011c1.7%200%203%201.8%203%203.6S19.5%2019%2017.5%2019H15'/%3E%3Cpath%20d%3D'M9%207.5c.8-1.5%202.2-2.5%203-2.5s2.2%201%203%202.5'/%3E%3C/svg%3E");
+    background: linear-gradient(145deg, rgba(132, 210, 255, 0.82), rgba(36, 62, 108, 0.92));
 }
 
 .usecase-visual.is-coffee {
     background: linear-gradient(145deg, rgba(203, 164, 124, 0.82), rgba(57, 34, 24, 0.9));
-    --usecase-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M4%208h12a2%202%200%200%201%202%202v5a4%204%200%200%201-4%204H8a4%204%200%200%201-4-4V8z'/%3E%3Cpath%20d%3D'M16%209h3a2%202%200%200%201%202%202%202%202%200%200%201-2%202h-3'/%3E%3Cpath%20d%3D'M6%205c0-1%201-1.5%201-2.5S6%200%206%200'/%3E%3Cpath%20d%3D'M10%205c0-1%201-1.5%201-2.5S10%200%2010%200'/%3E%3Cpath%20d%3D'M14%205c0-1%201-1.5%201-2.5S14%200%2014%200'/%3E%3C/svg%3E");
 }
 
 .usecase-visual.is-wedding {
-    background: linear-gradient(145deg, rgba(255, 207, 143, 0.78), rgba(102, 74, 53, 0.85));
-    --usecase-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'1.8'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%3E%3Cpath%20d%3D'M7.5%2010.5a4.5%204.5%200%201%201%206.4-6.3'/%3E%3Cpath%20d%3D'M16.5%2010.5a4.5%204.5%200%201%200-6.4-6.3'/%3E%3Cpath%20d%3D'M4%2014.5c2.2-2.3%205.9-2.4%208.1-.2l0%200c2.2-2.2%205.9-2.1%208.1.2'/%3E%3Cpath%20d%3D'M6.5%2019.5a4%204%200%201%201%200-8%204%204%200%200%201%200%208z'/%3E%3Cpath%20d%3D'M17.5%2019.5a4%204%200%201%201%200-8%204%204%200%200%201%200%208z'/%3E%3C/svg%3E");
+    background: linear-gradient(145deg, rgba(255, 207, 143, 0.82), rgba(102, 74, 53, 0.9));
 }
 
 .usecase-card figcaption {
