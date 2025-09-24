@@ -211,7 +211,6 @@ main {
 .header-visual--fullimage .header-image-frame {
     width: 100%;
     max-width: none;
-    max-height: 700px;
     overflow: hidden;
     flex: 1 1 auto;
 }
@@ -1404,7 +1403,9 @@ main {
 }
 
 .floating-contact__panel {
-    position: relative;
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
     display: grid;
     gap: 0.6rem;
     padding: 1rem 1.2rem;
@@ -1417,15 +1418,15 @@ main {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transform: translate3d(16px, 0, 0) scale(0.98);
+    transform: translate3d(12px, 6px, 0) scale(0.98);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .floating-contact__panel::before {
     content: '';
     position: absolute;
-    right: -10px;
-    bottom: 16px;
+    right: 23px;
+    bottom: -9px;
     width: 18px;
     height: 18px;
     background: inherit;
@@ -1861,6 +1862,7 @@ main {
     justify-content: center;
     padding: clamp(2.2rem, 7vw, 3.4rem);
     color: rgba(255, 255, 255, 0.92);
+    --usecase-icon-size: clamp(7rem, 18vw, 8.6rem);
 }
 
 .usecase-visual::after {
@@ -1875,22 +1877,28 @@ main {
     position: relative;
     z-index: 2;
     color: rgba(255, 255, 255, 0.9);
+    width: var(--usecase-icon-size);
+    height: var(--usecase-icon-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 svg.usecase-icon {
     display: block;
-    width: 100%;
-    height: 100%;
-    max-width: 420px;
-    max-height: 420px;
+    width: var(--usecase-icon-size);
+    height: var(--usecase-icon-size);
 }
 
 .usecase-icon:not(svg) {
+    width: var(--usecase-icon-size);
+    height: var(--usecase-icon-size);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(0.45rem, 2.2vw, 0.9rem);
-    font-size: clamp(3.4rem, 10vw, 5.6rem);
+    gap: clamp(0.4rem, 2vw, 0.9rem);
+    font-size: calc(var(--usecase-icon-size) * 0.6);
+    line-height: 1;
 }
 
 .usecase-icon:not(svg) i {
@@ -1898,24 +1906,15 @@ svg.usecase-icon {
     line-height: 1;
 }
 
-.usecase-icon--birth {
-    font-size: clamp(3.6rem, 11vw, 5.8rem);
-}
-
 .usecase-icon--birth .fa-sparkles {
-    font-size: 0.5em;
-    margin-left: clamp(0.2rem, 1.1vw, 0.45rem);
+    font-size: 0.48em;
+    margin-left: clamp(0.2rem, 1vw, 0.4rem);
     color: rgba(255, 255, 255, 0.8);
     transform: translateY(-35%);
 }
 
-.usecase-icon--coffee {
-    font-size: clamp(3.6rem, 10vw, 5.6rem);
-}
-
 .usecase-icon--wedding {
-    font-size: clamp(3.6rem, 10.5vw, 5.8rem);
-    gap: clamp(0.4rem, 2.4vw, 0.95rem);
+    gap: clamp(0.35rem, 1.8vw, 0.8rem);
 }
 
 .usecase-visual.is-birthday {
@@ -2186,6 +2185,10 @@ svg.usecase-icon {
         line-height: 1.6;
     }
 
+    .header-visual--fullimage {
+        min-height: auto;
+    }
+
     .header-visual--fullimage .header-image-frame {
         width: 100%;
         margin-left: 0;
@@ -2194,6 +2197,10 @@ svg.usecase-icon {
         max-height: none;
         flex: none;
         height: auto;
+    }
+
+    .header-visual--fullimage .header-image-frame.is-visible {
+        width: 100%;
     }
 
     .header-visual--fullimage .header-image {
@@ -2411,13 +2418,14 @@ svg.usecase-icon {
 
     .floating-contact__panel {
         right: 0;
+        bottom: calc(100% + 8px);
         margin-right: 0;
         gap: 0.5rem;
-        transform: translate3d(0, 12px, 0) scale(0.98);
+        transform: translate3d(0, 10px, 0) scale(0.98);
     }
 
     .floating-contact__panel::before {
-        right: 28px;
+        right: 18px;
         bottom: -10px;
     }
 
