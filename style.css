@@ -1951,6 +1951,10 @@ main {
     border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+.tips-accordion__panel[hidden] {
+    display: none !important;
+}
+
 .tips-search {
     display: flex;
     flex-direction: column;
