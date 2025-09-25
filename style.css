@@ -201,7 +201,6 @@ main {
     max-width: none;
     overflow: hidden;
     flex: 1 1 auto;
-    max-height: 700px;
     object-fit: cover;
     object-position: bottom;
 }
