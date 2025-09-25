@@ -109,18 +109,6 @@ main {
     justify-content: center;
     gap: 1.8rem;
     min-height: 280px;
-    padding: 2.4rem 8% 3.2rem;
-    padding-inline-start: calc(8% + var(--safe-left));
-    padding-inline-end: calc(8% + var(--safe-right));
-    background-color: #050505;
-    background-image: linear-gradient(135deg, rgba(var(--accent-rgb), 0.32), rgba(var(--accent-rgb), 0.06)),
-                      linear-gradient(180deg, #111 0%, #050505 85%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    overflow: hidden;
 }
 
 .header-visual--fullimage {
@@ -213,6 +201,9 @@ main {
     max-width: none;
     overflow: hidden;
     flex: 1 1 auto;
+    max-height: 700px;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 .header-visual--fullimage .header-image-frame::before {
@@ -588,10 +579,6 @@ main {
 @media (min-width: 1024px) {
     .header-visual {
         min-height: 420px;
-        background-image: url('img/header-desktop.svg'),
-                          linear-gradient(135deg, rgba(var(--accent-rgb), 0.32), rgba(var(--accent-rgb), 0.06)),
-                          linear-gradient(180deg, #111 0%, #050505 85%);
-        background-size: cover, cover, auto;
     }
 }
 
@@ -2236,13 +2223,6 @@ svg.usecase-icon {
     .main-nav.is-open {
         display: block;
         animation: navReveal 0.3s ease forwards;
-    }
-
-    .header-visual {
-        padding: 2rem 6% 2.6rem;
-        padding-inline-start: calc(6% + var(--safe-left));
-        padding-inline-end: calc(6% + var(--safe-right));
-        gap: 1.4rem;
     }
 
     .header-promo-link {
