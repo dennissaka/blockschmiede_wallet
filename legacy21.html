@@ -246,6 +246,151 @@
             </div>
         </section>
 
+        <section class="section" id="tips-tricks" aria-labelledby="tips-tricks-title">
+            <div class="tips-accordion" data-tips-accordion>
+                <h2 class="tips-accordion__title">
+                    <button class="tips-accordion__toggle" type="button" id="tips-tricks-title" aria-expanded="false" aria-controls="tips-tricks-panel">
+                        <span class="tips-accordion__label">Tipps &amp; Tricks</span>
+                        <span class="tips-accordion__icon" aria-hidden="true"></span>
+                    </button>
+                </h2>
+                <div class="tips-accordion__panel" id="tips-tricks-panel" hidden>
+                    <div class="tips-search">
+                        <label class="sr-only" for="tips-search-input">Tipps durchsuchen</label>
+                        <input id="tips-search-input" class="tips-search__input" type="search" placeholder="Tipps durchsuchen…" autocomplete="off" data-tips-search>
+                    </div>
+                    <div class="tips-card-stack" data-tips-cards>
+                        <article class="tips-card" data-filter-text="Strukturierte Zusammenfassung Kurz Prägnant Überblick">
+                            <h3>Strukturierte Zusammenfassung</h3>
+                            <p class="tips-card__lead">Kurz &amp; prägnant: Die wichtigsten Hinweise zur Legacy21 Karte im Überblick.</p>
+                        </article>
+                        <article class="tips-card" data-filter-text="PIN Schreibvorgang Fehlermeldungen vierstellig Ziffern NFC Fehler">
+                            <h3>PIN, Schreibvorgang &amp; Fehlermeldungen</h3>
+                            <ul>
+                                <li>PIN wird bei Nutzung der Karte angefordert und muss exakt vierstellig sein.</li>
+                                <li>Nur Ziffern von 0–9 verwenden, Sonderzeichen oder Buchstaben sind nicht zulässig.</li>
+                                <li>Tritt beim Beschreiben der Karte eine Fehlermeldung auf, einfach den Vorgang erneut starten.</li>
+                                <li>Häufige Ursache sind NFC-Leser-Probleme, z.&nbsp;B. ein ungünstiger Abstand – kein Grund zur Sorge.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Seed Backup Sicherheit aufschreiben nicht zeigen PIN Schutz Haftung">
+                            <h3>Seed, Backup &amp; Sicherheit</h3>
+                            <ul>
+                                <li>Seed unbedingt von Hand aufschreiben und sicher verwahren – digitale Kopien vermeiden.</li>
+                                <li>Seed niemals weitergeben oder zeigen, um vollständigen Zugriffsschutz zu behalten.</li>
+                                <li>Mit aktivierter PIN bleibt das Guthaben selbst bei Kartenverlust geschützt.</li>
+                                <li>Der Hersteller nennt eine Lebensdauer der Karte von mindestens zehn Jahren; es besteht keine Gewährleistung.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Geschenk Hinweise Seed Schenker Empfänger Coldwallet">
+                            <h3>Geschenktipp: Seed-Verantwortung</h3>
+                            <ul>
+                                <li>Wird die Karte verschenkt und soll beim Empfänger bleiben, darf der Schenkende den Seed nicht notieren.</li>
+                                <li>Der Empfänger notiert den Seed, entscheidet über Nutzung auf der Karte oder Übertrag in eine eigene Coldwallet.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Haftung Erstattung Verantwortung Verlust Fehlbedienung">
+                            <h3>Haftung, Erstattung &amp; Verantwortung</h3>
+                            <p>Keine Erstattung bei Verlust, Fehlversand oder Fehlbedienung – jede Person trägt die Verantwortung für ihre Karte und das Guthaben.</p>
+                        </article>
+                        <article class="tips-card" data-filter-text="Payments Lightning Layer2 Nutzung Mikrotransaktionen Features Aufladen Senden Kursanzeige">
+                            <h3>Payments (Lightning, Layer&nbsp;2)</h3>
+                            <ul>
+                                <li>Für aktive Nutzung mit schnellen und günstigen Mikrotransaktionen gedacht.</li>
+                                <li>Eignet sich ideal für geplante Transaktionen wie Demos oder das Aufteilen einer Rechnung.</li>
+                                <li>Funktionen: Aufladen, Empfangen inklusive Rechnungen, Senden, Verlauf, Echtzeit-Kurs sowie Anzeige in EUR, sats und BTC.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Savings Onchain Layer1 Aufbewahrung Geschenk Coldwallet Import Empfehlung">
+                            <h3>Savings (On-Chain, Layer&nbsp;1)</h3>
+                            <ul>
+                                <li>Für langfristige Aufbewahrung und Geschenke ausgelegt – nicht für häufige Transaktionen.</li>
+                                <li>Für On-Chain-Transfers den Seed in eine andere Wallet importieren, z.&nbsp;B. eine Coldwallet.</li>
+                                <li>Geschenke profitieren von Savings: Empfänger entscheidet später über Verbleib oder Transfer.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Empfehlung Schenkung Demo Nutzung Lightning Savings">
+                            <h3>Kurzempfehlung</h3>
+                            <p>Für Geschenke empfiehlt sich die Savings-Wallet. Für Demos, Schulungen oder sofortige Nutzung eignet sich Payments über Lightning.</p>
+                        </article>
+                        <article class="tips-card" data-filter-text="Anwendungsbeispiele Lightning Fußballabend Pizza Demo">
+                            <h3>Anwendungsbeispiele: Lightning</h3>
+                            <ul>
+                                <li>Beim Fußballabend die Pizza teilen: Jede Person sendet 1.000&nbsp;sats von Karte zu Karte.</li>
+                                <li>In Demos Bitcoin live erklären und schnelle Transaktionen demonstrieren.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Anwendungsbeispiele Savings Geschenk Geburt Geburtstag Kursentwicklung">
+                            <h3>Anwendungsbeispiele: Savings</h3>
+                            <ul>
+                                <li>Geschenke zur Geburt oder zum Geburtstag als langfristige Wertanlage verschenken.</li>
+                                <li>Die Karte erinnert an das Ereignis und zeigt die Kursentwicklung jederzeit an.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Lightning Funktionen Empfangen Invoice Senden Verlauf Aufladen Anzeige">
+                            <h3>Lightning: Funktionen &amp; Hinweise</h3>
+                            <ul>
+                                <li>Empfangen: Rechnung (Invoice) erstellen, Empfänger scannt oder importiert sie.</li>
+                                <li>Senden: Betrag festlegen, optional Invoice nutzen und Zahlung bestätigen.</li>
+                                <li>Transaktionsübersicht für Verlauf und Details jederzeit einsehbar.</li>
+                                <li>Aufladen (Top-Up) innerhalb der App – Details zu Partnern beachten.</li>
+                                <li>Anzeigeeinheit lässt sich per Klick auf das €-Symbol zwischen EUR, sats und BTC wechseln.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="TopUp Partnerschaften Moonpay Gebühren Alternativen Strike Coinfinity 21 Bitcoin">
+                            <h3>Top-Up &amp; Partner</h3>
+                            <ul>
+                                <li>Moonpay ist aktuell integriert: legal in DACH, KYC möglich, Kreditkartenkauf – jedoch mit hohen Gebühren.</li>
+                                <li>Empfohlene Alternativen: Strike, Coinfinity sowie 21.co bzw. 21&nbsp;Bitcoin.</li>
+                                <li>Vorgehen: BTC beim bevorzugten Broker kaufen und anschließend auf die Karte transferieren.</li>
+                                <li>Praxistipp: Beim Test mit Moonpay Guthaben aufladen und persönliche Daten bei Bedarf schwärzen.</li>
+                                <li>Weitere Partnerschaften sind geplant, um günstigere Optionen anzubieten.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Bedienung Senden Rechnung erstellen Aufladen Fremd Wallet Schritt für Schritt">
+                            <h3>Bedienung: Senden &amp; Aufladen</h3>
+                            <ul>
+                                <li>Zeigt Schritt für Schritt, wie Guthaben von einer anderen Wallet auf die Karte übertragen wird.</li>
+                                <li>Gleicher Ablauf für das Senden: Invoice erstellen, scannen und anschließend bezahlen.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="UI Anzeige Multi Device Nutzung Daten auf Karte">
+                            <h3>UI &amp; Multi-Device Nutzung</h3>
+                            <ul>
+                                <li>Anzeigeeinheit jederzeit per Klick auf das €-Symbol zwischen EUR, sats und BTC umschalten.</li>
+                                <li>Die Karte funktioniert auf jedem Gerät mit der App, da alle relevanten Daten direkt auf dem NFC-Chip gespeichert sind.</li>
+                            </ul>
+                        </article>
+                        <article class="tips-card" data-filter-text="Struktur Übersicht Anleitung Kurzinfo Warnhinweise FAQ Unterschiede TopUp Bedienhinweise Geschenk Checkliste">
+                            <h3>Empfohlene Struktur für Anleitungen</h3>
+                            <ol>
+                                <li>Kurzinfo &amp; Warnhinweise zu PIN, Seed und Haftung.</li>
+                                <li>Schnell-FAQ, z.&nbsp;B. zum Wiederholen bei Fehlermeldungen.</li>
+                                <li>Unterschiede zwischen Payments und Savings inklusive Layer-Erklärung.</li>
+                                <li>Anwendungsbeispiele für Lightning und Savings.</li>
+                                <li>Lightning-Funktionen: Empfangen, Senden, Rechnungen, Aufladen.</li>
+                                <li>Top-Up-Optionen: Moonpay sowie empfohlene Broker und Kostenhinweise.</li>
+                                <li>Bedienhinweise zu Anzeigeeinheiten, Multi-Device-Nutzung und Seed-Backup.</li>
+                                <li>Geschenk-Checkliste für Schenkende und Beschenkte.</li>
+                            </ol>
+                        </article>
+                        <article class="tips-card" data-filter-text="Kurz Checkliste PIN Seed Haftung Geschenk Aufladen App mehrfach Geräte">
+                            <h3>Kurz-Checkliste</h3>
+                            <ul>
+                                <li>PIN vierstellig und ausschließlich Zahlen.</li>
+                                <li>Bei Schreibfehlern den Vorgang wiederholen und den NFC-Abstand prüfen.</li>
+                                <li>Seed sofort notieren und niemandem zeigen.</li>
+                                <li>Keine Erstattung bei Verlust oder Fehlversand.</li>
+                                <li>Bei Geschenken Savings empfehlen; Schenkende notieren keinen Seed.</li>
+                                <li>Aufladen über Moonpay oder günstigere Broker.</li>
+                                <li>App auf mehreren Geräten nutzbar, da Daten auf der Karte liegen.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section legacy-experience" aria-labelledby="legacy-experience-heading">
             <div class="section-header">
                 <span class="section-kicker">Mission</span>
@@ -417,6 +562,64 @@
             });
 
             animatedElements.forEach((element) => observer.observe(element));
+        })();
+
+        (function () {
+            const accordion = document.querySelector('[data-tips-accordion]');
+            if (!accordion) {
+                return;
+            }
+
+            const toggle = accordion.querySelector('.tips-accordion__toggle');
+            const panel = accordion.querySelector('.tips-accordion__panel');
+            const searchInput = accordion.querySelector('[data-tips-search]');
+            const cards = Array.from(accordion.querySelectorAll('.tips-card'));
+
+            if (!toggle || !panel) {
+                return;
+            }
+
+            const filterCards = (query) => {
+                const normalized = query.trim().toLowerCase();
+                cards.forEach((card) => {
+                    const filterText = (card.dataset.filterText || card.textContent || '').toLowerCase();
+                    card.hidden = Boolean(normalized) && !filterText.includes(normalized);
+                });
+            };
+
+            const setOpen = (nextState) => {
+                toggle.setAttribute('aria-expanded', String(nextState));
+                panel.hidden = !nextState;
+                accordion.classList.toggle('is-open', nextState);
+                if (!nextState && searchInput) {
+                    searchInput.value = '';
+                    filterCards('');
+                }
+                if (nextState && searchInput) {
+                    window.setTimeout(() => searchInput.focus({ preventScroll: true }), 0);
+                }
+            };
+
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                setOpen(!isExpanded);
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (event) => {
+                    const target = event.target;
+                    if (!(target instanceof HTMLInputElement)) {
+                        return;
+                    }
+                    filterCards(target.value);
+                });
+            }
+
+            accordion.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    setOpen(false);
+                }
+            });
         })();
 
         (function () {
