@@ -1718,7 +1718,7 @@ main {
 }
 
 .legacy-app-downloads {
-    margin: 1.6rem 0 2.4rem;
+    margin: 1.6rem 0 1.6rem;
     display: grid;
     gap: 0.8rem;
 }
