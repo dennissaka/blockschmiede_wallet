@@ -1717,6 +1717,36 @@ main {
     margin-bottom: 1.6rem;
 }
 
+.legacy-app-downloads {
+    margin: 1.6rem 0 1.6rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.legacy-app-downloads__label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(233, 241, 255, 0.82);
+}
+
+.legacy-app-downloads__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.legacy-app-downloads .button {
+    min-width: 180px;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.legacy-app-downloads .button i {
+    font-size: 1.1rem;
+}
+
 .legacy-hero-highlights {
     list-style: none;
     margin: 0 0 2.2rem;
