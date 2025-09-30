@@ -940,8 +940,14 @@ main {
     margin-top: 2rem;
 }
 
-.legacy-teaser__embed .twitter-tweet {
+.legacy-teaser__tweet {
+    width: min(100%, 550px);
     margin: 0 auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    background: #fff;
+    min-height: 480px;
 }
 
 .section::before {
