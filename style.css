@@ -936,6 +936,14 @@ main {
     font-size: 0.72rem;
 }
 
+.legacy-teaser__embed {
+    margin-top: 2rem;
+}
+
+.legacy-teaser__embed .twitter-tweet {
+    margin: 0 auto;
+}
+
 .section::before {
     content: '';
     position: absolute;
