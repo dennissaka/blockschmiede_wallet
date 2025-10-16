@@ -685,6 +685,29 @@ main {
     border-bottom: 1px solid transparent;
 }
 
+.intro-card-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.intro-card-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.1rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(var(--accent-rgb), 0.14);
+    border: 1px solid rgba(var(--accent-rgb), 0.24);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(var(--accent-rgb), 0.92);
+}
+
 .intro-card summary::-webkit-details-marker {
     display: none;
 }
@@ -934,6 +957,271 @@ main {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 0.72rem;
+}
+
+.collaborations {
+    padding-top: 0;
+    padding-bottom: 5rem;
+}
+
+.hero-intro > .collaborations {
+    margin-top: 3rem;
+    padding-bottom: 3.2rem;
+}
+
+.collaborations-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.collaborations-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.collaborations-header p {
+    margin: 0.8rem 0 0;
+    color: var(--muted);
+}
+
+.collaborations-carousel {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+}
+
+.collaborations-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, calc((100% - 3rem) / 3));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    padding: 0.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--accent-rgb), 0.4) transparent;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    border-radius: 2rem;
+    background: rgba(15, 15, 15, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.collaborations-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.collaborations-track::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.collaborations-track::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+}
+
+.collaboration-card {
+    position: relative;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 1.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.8rem 1.6rem 1.6rem;
+    scroll-snap-align: start;
+    min-height: 100%;
+}
+
+.collaboration-card--discount {
+    padding-top: 2.8rem;
+}
+
+.collaboration-card--placeholder {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-block: 2.2rem;
+}
+
+.collaboration-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 1.2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 2rem 1.4rem;
+}
+
+.collaboration-ribbon {
+    position: absolute;
+    top: 20px;
+    right: 1.8rem;
+    transform: translateY(-55%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.9rem 0.75rem;
+    background: var(--accent);
+    color: #050505;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.7rem;
+    border-radius: 0.7rem 0.7rem 0.4rem 0.4rem;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+    box-shadow: 0 18px 36px rgba(var(--accent-rgb), 0.35);
+}
+
+.collaboration-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.4rem;
+    aspect-ratio: 4 / 3;
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+}
+
+.collaboration-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collaboration-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.collaboration-body h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.collaboration-body p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.collaboration-offer {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.collaboration-offer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+}
+
+.collaboration-offer dt {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(var(--accent-rgb), 0.7);
+}
+
+.collaboration-offer dd {
+    margin: 0;
+    font-weight: 600;
+}
+
+.collaboration-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(var(--accent-rgb), 0.16);
+    border: 1px solid rgba(var(--accent-rgb), 0.28);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+}
+
+.collaboration-link {
+    margin-top: auto;
+}
+
+.collaborations-nav {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    background: rgba(12, 12, 12, 0.85);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.collaborations-nav::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.collaborations-nav--prev::before {
+    transform: rotate(225deg);
+}
+
+.collaborations-nav:hover,
+.collaborations-nav:focus-visible {
+    background: rgba(var(--accent-rgb), 0.18);
+    border-color: rgba(var(--accent-rgb), 0.65);
+    transform: translateY(-1px);
+}
+
+.collaborations-nav[disabled] {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 1024px) {
+    .collaborations-track {
+        grid-auto-columns: minmax(240px, calc((100% - 2rem) / 2));
+    }
+}
+
+@media (max-width: 640px) {
+    .collaborations {
+        padding-inline-start: calc(6% + var(--safe-left));
+        padding-inline-end: calc(6% + var(--safe-right));
+    }
+
+    .collaborations-track {
+        grid-auto-columns: minmax(200px, 100%);
+    }
 }
 
 .section::before {
@@ -1481,6 +1769,14 @@ main {
 
 .floating-contact__action--mail .floating-contact__icon {
     --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23f7931a%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Crect%20x%3D%273%27%20y%3D%275%27%20width%3D%2718%27%20height%3D%2714%27%20rx%3D%272%27/%3E%3Cpath%20d%3D%27m3%207%209%206%209-6%27/%3E%3C/svg%3E");
+}
+
+.floating-contact__action--instagram .floating-contact__icon {
+    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23f7931a%27%20stroke-width%3D%271.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%275%27/%3E%3Ccircle%20cx%3D%2712%27%20cy%3D%2712%27%20r%3D%273.5%27/%3E%3Ccircle%20cx%3D%2717.5%27%20cy%3D%276.5%27%20r%3D%271.2%27%20fill%3D%27%23f7931a%27%20stroke%3D%27none%27/%3E%3C/svg%3E");
+}
+
+.floating-contact__action--x .floating-contact__icon {
+    --contact-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23f7931a%27%20stroke-width%3D%271.8%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M4.8%204h3l4.2%205.8L16.2%204h3l-5.7%207.5L19.2%2020h-3l-4.2-5.7L7.8%2020h-3l5.7-7.5L4.8%204Z%27/%3E%3C/svg%3E");
 }
 
 .floating-contact__note {
