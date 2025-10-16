@@ -964,6 +964,11 @@ main {
     padding-bottom: 5rem;
 }
 
+.hero-intro > .collaborations {
+    margin-top: 3rem;
+    padding-bottom: 3.2rem;
+}
+
 .collaborations-inner {
     max-width: 1100px;
     margin: 0 auto;
@@ -1038,6 +1043,30 @@ main {
     padding-top: 2.8rem;
 }
 
+.collaboration-card--placeholder {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-block: 2.2rem;
+}
+
+.collaboration-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 160px;
+    border-radius: 1.2rem;
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 2rem 1.4rem;
+}
+
 .collaboration-ribbon {
     position: absolute;
     top: 0;
@@ -1103,15 +1132,16 @@ main {
 
 .collaboration-offer div {
     display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
 }
 
 .collaboration-offer dt {
-    font-size: 0.85rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: rgba(var(--accent-rgb), 0.8);
+    letter-spacing: 0.2em;
+    color: rgba(var(--accent-rgb), 0.7);
 }
 
 .collaboration-offer dd {
