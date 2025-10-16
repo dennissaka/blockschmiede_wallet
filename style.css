@@ -1219,8 +1219,30 @@ main {
         padding-inline-end: calc(6% + var(--safe-right));
     }
 
+    .collaborations-carousel {
+        position: relative;
+        grid-template-columns: 1fr;
+        padding-top: 3.5rem;
+    }
+
     .collaborations-track {
         grid-auto-columns: minmax(200px, 100%);
+        grid-column: 1 / -1;
+    }
+
+    .collaborations-nav {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        transform: translateY(-50%);
+    }
+
+    .collaborations-nav--prev {
+        left: 0;
+    }
+
+    .collaborations-nav--next {
+        right: 0;
     }
 }
 
