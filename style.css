@@ -1096,7 +1096,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: clamp(180px, 55vw, 260px);
+    min-height: 260px;
+    max-width: 100%;
 }
 
 .collaboration-media img {
