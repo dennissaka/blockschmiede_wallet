@@ -100,7 +100,6 @@ a:focus-visible {
 main {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
 }
 
 .site-header {
@@ -3187,6 +3186,13 @@ svg.usecase-icon {
     place-items: center;
 }
 
+.advent-hero__visual img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+}
+
 .advent-calendar-card {
     position: relative;
     width: min(420px, 100%);
@@ -3348,22 +3354,6 @@ svg.usecase-icon {
     flex-direction: column;
     gap: 1.2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.advent-step::before {
-    content: attr(data-step);
-    position: absolute;
-    top: -18px;
-    left: 24px;
-    width: 56px;
-    height: 56px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #FBC02D 0%, #E65100 100%);
-    color: #7B1F1F;
-    font-weight: 800;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .advent-step:hover {
