@@ -38,7 +38,15 @@ body {
     min-height: 100vh;
 }
 
-body.nav-open {
+body.advent-page {
+    background: radial-gradient(circle at 15% 20%, rgba(255, 211, 105, 0.28), transparent 42%),
+                radial-gradient(circle at 75% 0%, rgba(255, 255, 255, 0.14), transparent 38%),
+                linear-gradient(160deg, #E12B2B 0%, #B50707 60%, #7d0303 100%);
+    color: #fff;
+}
+
+body.nav-open,
+body.modal-open {
     overflow: hidden;
 }
 
@@ -3000,3 +3008,841 @@ svg.usecase-icon {
         padding: 0.5rem 1rem;
     }
 }
+
+/* Advent calendar landing page */
+
+.advent-page .site-header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.advent-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4rem, 12vw, 8rem) clamp(1.5rem, 6vw, 6rem) clamp(4rem, 11vw, 7rem);
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+}
+
+.advent-hero::before,
+.advent-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.advent-hero::before {
+    background: radial-gradient(circle at 20% 18%, rgba(255, 211, 105, 0.24), transparent 55%),
+                radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.18), transparent 48%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
+}
+
+.advent-hero::after {
+    background: url('img/particles-gold.svg');
+    background-size: 480px;
+    opacity: 0.12;
+    animation: adventParallax 18s linear infinite;
+}
+
+@keyframes adventParallax {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(-4%, -5%, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.advent-hero__content {
+    position: relative;
+    z-index: 2;
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.8rem);
+}
+
+.advent-hero__kicker {
+    font-size: 0.9rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
+}
+
+.advent-hero h1 {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 3.75rem);
+    margin: 0;
+    line-height: 1.05;
+    text-shadow: 0 0 40px rgba(255, 211, 105, 0.25);
+}
+
+.advent-hero__subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.86);
+    margin: 0;
+}
+
+.advent-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.advent-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 2.6rem;
+    border-radius: 999px;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #FFD369 0%, #F7931A 100%);
+    color: #B50707;
+    box-shadow: 0 0 20px rgba(255, 211, 105, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.advent-cta:hover,
+.advent-cta:focus-visible {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 32px rgba(255, 211, 105, 0.65);
+}
+
+.advent-cta--secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.advent-cta--secondary:hover,
+.advent-cta--secondary:focus-visible {
+    box-shadow: 0 0 32px rgba(255, 255, 255, 0.32);
+}
+
+.advent-hero__meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+.advent-hero__meta > div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.advent-hero__meta-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    display: grid;
+    place-items: center;
+    color: #FFD369;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.advent-hero__visual {
+    position: relative;
+    grid-column: span 6;
+    display: grid;
+    place-items: center;
+}
+
+.advent-calendar-card {
+    position: relative;
+    width: min(420px, 100%);
+    aspect-ratio: 3 / 4;
+    border-radius: 32px;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(14px);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4), 0 0 120px rgba(255, 211, 105, 0.18);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.advent-calendar-card::before {
+    content: '';
+    position: absolute;
+    inset: 12% 16%;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 32px rgba(255, 211, 105, 0.18);
+    filter: blur(0.5px);
+}
+
+.advent-calendar-card__title {
+    position: relative;
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.advent-calendar-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.45rem;
+    padding: 0.5rem;
+}
+
+.advent-calendar-grid span {
+    display: grid;
+    place-items: center;
+    height: 48px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.advent-calendar-grid span:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.advent-calendar-grid span:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(255, 211, 105, 0.18);
+}
+
+.advent-calendar-card__footer {
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.18em;
+}
+
+.advent-section {
+    position: relative;
+    padding: clamp(4rem, 11vw, 6.5rem) clamp(1.5rem, 7vw, 6rem);
+}
+
+.advent-section__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.advent-section__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.advent-section__kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.advent-section__title {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin: 0;
+}
+
+.advent-section__lead {
+    font-size: 1.08rem;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 760px;
+}
+
+.advent-note {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
+}
+
+.advent-note__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 211, 105, 0.6), rgba(247, 147, 26, 0.6));
+    display: grid;
+    place-items: center;
+    color: #B50707;
+    font-size: 1.6rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.24);
+}
+
+.advent-note__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.advent-note__text strong {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: 1.1rem;
+}
+
+.advent-steps {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.advent-step {
+    position: relative;
+    padding: 2.2rem 2rem;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advent-step::before {
+    content: attr(data-step);
+    position: absolute;
+    top: -18px;
+    left: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #FFD369 0%, #F7931A 100%);
+    color: #B50707;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.advent-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 211, 105, 0.26);
+}
+
+.advent-step__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    display: grid;
+    place-items: center;
+    color: #FFD369;
+}
+
+.advent-step__title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+}
+
+.advent-step__actions {
+    margin-top: auto;
+}
+
+.advent-step__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #FFD369;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.advent-step__link:hover,
+.advent-step__link:focus-visible {
+    transform: translateX(4px);
+}
+
+.advent-step__socials {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.advent-social {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    display: grid;
+    place-items: center;
+    color: #FFD369;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.advent-social:hover,
+.advent-social:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+}
+
+.advent-partner-grid {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.advent-partner-card {
+    position: relative;
+    padding: 1.6rem 1.4rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.32);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.advent-partner-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255, 211, 105, 0.25), rgba(247, 147, 26, 0.15));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.advent-partner-card:hover,
+.advent-partner-card:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 56px rgba(0, 0, 0, 0.38), 0 0 32px rgba(255, 211, 105, 0.24);
+    border-color: rgba(255, 211, 105, 0.6);
+}
+
+.advent-partner-card:hover::after,
+.advent-partner-card:focus-visible::after {
+    opacity: 1;
+}
+
+.advent-partner-card__logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    display: grid;
+    place-items: center;
+    color: #FFD369;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.advent-partner-card__name {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.advent-partner-card__value {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.advent-partner-card__cta {
+    margin-top: auto;
+    display: inline-flex;
+    gap: 0.35rem;
+    align-items: center;
+    font-weight: 600;
+    color: #FFD369;
+}
+
+.advent-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 90;
+}
+
+.advent-modal.is-open {
+    display: flex;
+}
+
+.advent-modal__dialog {
+    max-width: 520px;
+    width: min(92vw, 520px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: clamp(1.6rem, 3vw, 2.4rem);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 32px 70px rgba(0, 0, 0, 0.45);
+    position: relative;
+}
+
+.advent-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+}
+
+.advent-modal__title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.advent-modal__text {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.advent-modal__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+    color: #FFD369;
+    font-weight: 600;
+}
+
+.advent-progress {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: clamp(1.8rem, 4vw, 2.6rem);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 26px 50px rgba(0, 0, 0, 0.35);
+    display: grid;
+    gap: 1.6rem;
+}
+
+.advent-progress__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.advent-progress__value {
+    font-size: clamp(2rem, 3.2vw, 2.6rem);
+    font-weight: 700;
+    color: #FFD369;
+}
+
+.advent-progress__bar {
+    position: relative;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+}
+
+.advent-progress__bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(135deg, #FFD369 0%, #F7931A 100%);
+    width: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 18px rgba(255, 211, 105, 0.45);
+}
+
+.advent-progress__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+}
+
+.advent-progress__stat {
+    padding: 1.2rem 1.4rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.advent-progress__stat strong {
+    font-size: 1.2rem;
+}
+
+.advent-faq {
+    display: grid;
+    gap: 1rem;
+}
+
+.advent-faq details {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28);
+}
+
+.advent-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+}
+
+.advent-faq p {
+    margin-top: 0.8rem;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.advent-footer {
+    padding: 3rem clamp(1.5rem, 6vw, 6rem) 3.5rem;
+    background: rgba(0, 0, 0, 0.35);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.advent-footer__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2.2rem;
+}
+
+.advent-footer__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.advent-footer__partners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.advent-footer__partner {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+}
+
+.advent-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.advent-footer__links {
+    display: flex;
+    gap: 1rem;
+}
+
+.advent-sticky-cta {
+    position: fixed;
+    inset-inline: 0;
+    bottom: max(12px, var(--safe-bottom));
+    display: none;
+    justify-content: center;
+    z-index: 80;
+}
+
+.advent-sticky-cta__inner {
+    display: inline-flex;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(5, 5, 5, 0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+.advent-floating-badge {
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.1rem 1.2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.28);
+    text-align: center;
+    animation: adventFloat 6s ease-in-out infinite;
+}
+
+@keyframes adventFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.advent-floating-badge strong {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: 1.6rem;
+    color: #FFD369;
+}
+
+.advent-floating-badge span {
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 1200px) {
+    .advent-hero {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        text-align: center;
+    }
+
+    .advent-hero__content,
+    .advent-hero__visual {
+        grid-column: auto;
+    }
+
+    .advent-hero__actions {
+        justify-content: center;
+    }
+
+    .advent-floating-badge {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 2rem auto 0;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .advent-hero {
+        padding-inline: clamp(1.2rem, 5vw, 1.6rem);
+    }
+
+    .advent-calendar-card {
+        width: min(320px, 90vw);
+    }
+
+    .advent-calendar-grid span {
+        height: 44px;
+        font-size: 0.85rem;
+    }
+
+    .advent-note {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .advent-progress__stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .advent-footer__top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advent-footer__bottom {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .advent-sticky-cta {
+        display: flex;
+    }
+}
+
+@media (max-width: 540px) {
+    .advent-hero h1 {
+        font-size: clamp(2.2rem, 9vw, 2.6rem);
+    }
+
+    .advent-hero__subtitle {
+        font-size: 1.05rem;
+    }
+
+    .advent-calendar-card {
+        border-radius: 26px;
+        padding: 1.6rem;
+    }
+
+    .advent-calendar-card::before {
+        inset: 15% 12%;
+    }
+
+    .advent-section {
+        padding-inline: clamp(1rem, 4vw, 1.4rem);
+    }
+
+    .advent-step {
+        padding-inline: 1.5rem;
+    }
+
+    .advent-sticky-cta__inner {
+        flex-direction: column;
+        padding: 0.85rem 1rem;
+        gap: 0.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .advent-hero::after,
+    .advent-floating-badge,
+    .advent-partner-card,
+    .advent-step,
+    .advent-calendar-grid span,
+    .advent-sticky-cta__inner,
+    .advent-cta {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .advent-modal {
+        backdrop-filter: none;
+    }
+}
+
