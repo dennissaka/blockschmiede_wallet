@@ -24,6 +24,8 @@
 </head>
 
 <body class="advent-page">
+    <div class="snow-layer" data-snow aria-hidden="true"></div>
+
     <header class="site-header">
         <div class="top-bar">
             <a class="brand" href="index.html">
@@ -57,23 +59,149 @@
     <main>
         <section class="advent-hero" id="start">
             <div class="advent-hero__visual" data-animate style="--animate-delay: 0.12s;">
-                <img src="img/geschenkBtc.png" alt="">
+                <figure class="advent-hero__figure">
+                    <img src="img/geschenkBtc.png"
+                        alt="Illustration eines geöffneten Adventskalenders mit fliegenden Geschenken">
+                </figure>
+                <div class="advent-hero__badge" aria-label="Unterstützte Initiativen">
+                    <span>Aktion Kinderkrankenhaus München</span>
+                    <span>Ronald McDonald Kinderhilfe Stiftung</span>
+                </div>
             </div>
             <div class="advent-hero__content" data-animate>
-                <span class="advent-hero__kicker">Gemeinsam Gutes bewirken</span>
-                <h1>Überraschungen für den guten Zweck</h1>
-                <p class="advent-hero__subtitle">Jeden Tag wartet eine neue Überraschung hinter deinem Türchen.
-                    Gemeinsam
-                    sammeln wir Spenden und ballen die Kraft der Bitcoin-Community.</p>
-                <p class="advent-hero__value" data-animate style="--animate-delay: 0.05s;"><strong>Ca. 1.200 €
-                        Gesamtwert</strong> werden verlost – ermöglicht durch starke Partner aus dem
-                    Bitcoin-Ökosystem.</p>
+                <p class="advent-hero__headline">Bitcoin-Community for Charity 2025</p>
+                <h1>Gemeinsam Gutes bewirken – Gewinne für den guten Zweck</h1>
+                <p class="advent-hero__subtitle">Mit dem ersten Charity-Adventskalender der Bitcoin-Community DACH
+                    hast du jeden Tag die Chance auf großartige Preise und spendest automatisch für den guten Zweck.</p>
+                <p class="advent-hero__value"><strong>Gesamtgewinne im Gegenwert von</strong><span>xxxxx €</span></p>
+                <ul class="advent-hero__highlights">
+                    <li>24 Türchen voller Highlights aus dem Bitcoin-Space.</li>
+                    <li>Jeder Kauf erhöht das Spendenvolumen für Familien in schweren Zeiten.</li>
+                    <li>Tägliche Ziehungen und transparente Kommunikation auf all unseren Kanälen.</li>
+                </ul>
                 <div class="advent-hero__actions">
                     <a class="advent-cta" href="https://shop.blockschmiede.com" target="_blank"
                         rel="noopener noreferrer">
-                        <span aria-hidden="true">🛒</span>
+                        <span aria-hidden="true">🎄</span>
                         Adventskalender sichern
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="advent-section advent-section--two-column" id="sei-dabei">
+            <div class="advent-section__inner" data-animate>
+                <div class="advent-section__content">
+                    <span class="advent-section__kicker">Sei dabei</span>
+                    <h2 class="advent-section__title">Jeder Kalender bewegt etwas</h2>
+                    <p class="advent-section__lead">Durch den Kauf eines Adventskalenders sicherst du dir die Chance auf
+                        besondere Gewinne aus dem Bitcoin-Space. Hinter jedem der 24 Türchen wartet eine Überraschung –
+                        und gleichzeitig wächst mit jeder Bestellung die Spendensumme.</p>
+                    <div class="advent-feature-list">
+                        <article>
+                            <h3>Gemeinsam Gutes bewirken</h3>
+                            <p>Mit jedem Kauf unterstützt du aktiv die Aktion Kinderkrankenhaus München und die Ronald
+                                McDonald Kinderhilfe Stiftung.</p>
+                        </article>
+                        <article>
+                            <h3>Gewinne für den guten Zweck</h3>
+                            <p>Alle Preise werden von großartigen Partnern aus der Bitcoin-Community zur Verfügung
+                                gestellt und machen jeden Tag zu etwas Besonderem.</p>
+                        </article>
+                        <article>
+                            <h3>Community-Spirit</h3>
+                            <p>Teile die Aktion mit Freundinnen und Freunden und hilf dabei, das Spendenziel zu
+                                erreichen – je mehr Kalender, desto höher die Unterstützung.</p>
+                        </article>
+                    </div>
+                </div>
+                <aside class="advent-section__visual" aria-hidden="true">
+                    <div class="advent-section__card">
+                        <p>„Mit deinem Adventskalender bringst du Licht in die Festtage von Familien, die gerade eine
+                            schwere Zeit durchstehen.“</p>
+                        <span>– Die Blockschmiede</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="advent-section" id="so-funktionierts">
+            <div class="advent-section__inner" data-animate>
+                <div class="advent-section__header">
+                    <span class="advent-section__kicker">So funktioniert&rsquo;s</span>
+                    <h2 class="advent-section__title">Dein Weg zum Tagesgewinn</h2>
+                    <p class="advent-section__lead">Jeder Kalender hat eine individuelle Nummer und ein besonderes
+                        Rubbelfeld. Damit bist du bestens vorbereitet, wenn deine Nummer gezogen wird.</p>
+                </div>
+                <ol class="advent-steps advent-steps--numbered">
+                    <li>
+                        <h3>Kalender sichern</h3>
+                        <p>Nach dem Kauf erhältst du deinen Adventskalender mit einer eindeutigen Kalendernummer.
+                            Bewahre ihn gut auf – sie ist dein Schlüssel zum Gewinn.</p>
+                    </li>
+                    <li>
+                        <h3>Rubbelfeld freilegen</h3>
+                        <p>Unter dem Rubbelfeld befindet sich dein persönlicher Prüfcodesatz. Rubble das Feld frei,
+                            sobald deine Kalendernummer gezogen wurde, und halte Code sowie Nummer bereit.</p>
+                    </li>
+                    <li>
+                        <h3>Gewinn einlösen</h3>
+                        <p>Fotografiere Kalendernummer und freigerubbelten Code. Sende den Nachweis innerhalb von 14
+                            Tagen per E-Mail an <a href="mailto:advent@blockschmiede.com">advent@blockschmiede.com</a>.
+                            Wir koordinieren anschließend die Gewinnauslieferung mit dem jeweiligen Partner.</p>
+                    </li>
+                    <li>
+                        <h3>Tägliche Ziehungen verfolgen</h3>
+                        <p>Wir veröffentlichen jeden Tag die Gewinnnummer auf unseren Social-Media-Kanälen und auf dieser
+                            Webseite. So verpasst du garantiert kein Türchen.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="advent-section advent-section--spotlight" id="ueber-die-aktion">
+            <div class="advent-section__inner" data-animate>
+                <div class="advent-section__header">
+                    <span class="advent-section__kicker">Über die Aktion</span>
+                    <h2 class="advent-section__title">Ein Kalender, viele helfende Hände</h2>
+                    <p class="advent-section__lead">Die Blockschmiede hat gemeinsam mit engagierten Partnern aus der
+                        Bitcoin-DACH-Community einen einzigartigen Adventskalender gestaltet. Jeder verkaufte Kalender
+                        trägt dazu bei, Gutes zu bewirken – denn alle Einnahmen abzüglich der Produktionskosten werden
+                        gespendet.</p>
+                </div>
+                <div class="advent-section__grid">
+                    <article>
+                        <h3>Einzigartige Community-Aktion</h3>
+                        <p>Möglich wird das Projekt nur durch das großartige, selbstlose Mitmachen unserer Partner.
+                            Alle Gewinne wurden für diesen Kalender gespendet – vielen herzlichen Dank!</p>
+                    </article>
+                    <article>
+                        <h3>Spendenziel 2025</h3>
+                        <p>Als Spendenempfänger der ersten Auflage haben wir die Ronald McDonald Kinderhilfe ausgewählt.
+                            Seit 1987 schafft sie Räume, in denen Familien ganz nah bei ihren schwer erkrankten Kindern
+                            sein können.</p>
+                    </article>
+                    <article>
+                        <h3>Weihnachtliche Freude schenken</h3>
+                        <p>Was gibt es Schöneres, als Kindern zu Weihnachten ein Lächeln zu schenken? Genau dafür steht
+                            unser Adventskalender – und jede verkaufte Ausgabe trägt dazu bei.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="advent-section advent-section--donation" id="mitmachen-ehrensache">
+            <div class="advent-section__inner" data-animate>
+                <div class="advent-section__header">
+                    <span class="advent-section__kicker">Mitmachen Ehrensache</span>
+                    <h2 class="advent-section__title">Noch mehr bewirken</h2>
+                    <p class="advent-section__lead">Zusätzlich zum Kalenderkauf kannst du über unser offizielles
+                        PayPal-Spendenkonto direkt dazu beitragen, den Spendenbetrag zu erhöhen.</p>
+                </div>
+                <div class="advent-donation">
+                    <blockquote>
+                        „Denn am Ende zählt nicht, was wir haben, sondern die guten Taten.“
+                    </blockquote>
                     <a class="advent-cta advent-cta--secondary"
                         href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_ID" target="_blank"
                         rel="noopener noreferrer">
@@ -84,349 +212,37 @@
             </div>
         </section>
 
-        <section class="advent-section" id="aktion">
-            <div class="advent-section__inner" data-animate>
-                <div class="advent-section__header">
-                    <span class="advent-section__kicker">Über die Aktion</span>
-                    <h2 class="advent-section__title">Worum es geht</h2>
-                    <p class="advent-section__lead">Die Blockschmiede hat gemeinsam mit Partnern aus der
-                        Bitcoin-Community einen
-                        einzigartigen Adventskalender gestaltet. Jeder verkaufte Kalender trägt dazu bei, Gutes zu
-                        bewirken –
-                        denn alle Einnahmen abzüglich der Produktionskosten werden gespendet.</p>
-                </div>
-                <p>Zusätzlich kannst du über unser offizielles PayPal-Spendenkonto direkt beitragen, um das
-                    Spendenvolumen
-                    weiter zu erhöhen. Damit schaffen wir als Community einen sichtbaren Unterschied.</p>
-                <div class="advent-note">
-                    <div class="advent-note__icon" aria-hidden="true">💡</div>
-                    <div class="advent-note__text">
-                        <strong>Transparente Spenden</strong>
-                        <p>Die Spenden gehen an eine anerkannte gemeinnützige Organisation in Deutschland. Details zur
-                            Spendenübergabe und Gesamtsumme veröffentlichen wir transparent.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="advent-section" id="partner">
-            <div class="advent-section__inner">
-                <div class="advent-section__header" data-animate>
+            <div class="advent-section__inner" data-animate>
+                <div class="advent-section__header">
                     <span class="advent-section__kicker">Partner &amp; Sponsoren</span>
-                    <h2 class="advent-section__title">Gemeinsam stark</h2>
-                    <p class="advent-section__lead">Mehr als 20 Partner aus der Bitcoin-Community füllen den
-                        Kalender. Jeden Tag wartet eine neue Überraschung auf dich.</p>
+                    <h2 class="advent-section__title">Gemeinsam Gutes bewirken</h2>
+                    <p class="advent-section__lead">Mehr als 20 großartige Partner aus der Bitcoin-Community beteiligen
+                        sich an dieser Aktion. Jeden Tag warten spannende Preise auf dich.</p>
                 </div>
-                <div class="advent-partner-grid" data-partner-grid>
-                    <button type="button" class="advent-partner-card" data-partner-name="Bitcoiner Shop"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://bitcoiner-shop.com">
-                        <span class="advent-partner-card__logo">01</span>
-                        <h3 class="advent-partner-card__name">Bitcoiner Shop</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="denzentralshop"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://denzentral.shop">
-                        <span class="advent-partner-card__logo">02</span>
-                        <h3 class="advent-partner-card__name">denzentralshop</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Bitvestis"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://bitvestis.de">
-                        <span class="advent-partner-card__logo">03</span>
-                        <h3 class="advent-partner-card__name">Bitvestis</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Cryptage Beverage"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://cryptagebeverage.com">
-                        <span class="advent-partner-card__logo">04</span>
-                        <h3 class="advent-partner-card__name">Cryptage Beverage</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="21Bitcoin.Shop"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://21bitcoin.shop">
-                        <span class="advent-partner-card__logo">05</span>
-                        <h3 class="advent-partner-card__name">21Bitcoin.Shop</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="21Statues"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://21statues.de">
-                        <span class="advent-partner-card__logo">06</span>
-                        <h3 class="advent-partner-card__name">21Statues</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Blockschmiede"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://blockschmiede.com">
-                        <span class="advent-partner-card__logo">07</span>
-                        <h3 class="advent-partner-card__name">Blockschmiede</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Nerdminer"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://github.com/nerdminer">
-                        <span class="advent-partner-card__logo">08</span>
-                        <h3 class="advent-partner-card__name">Nerdminer</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Crypto-Mentor"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://crypto-mentor.de">
-                        <span class="advent-partner-card__logo">09</span>
-                        <h3 class="advent-partner-card__name">Crypto-Mentor</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Fab"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://aprycot.media">
-                        <span class="advent-partner-card__logo">10</span>
-                        <h3 class="advent-partner-card__name">Fab (Aprycot Media / Coinfinity)</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Luca Rolle"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">11</span>
-                        <h3 class="advent-partner-card__name">Luca Rolle</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Dominik ›Alles Betrug‹"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">12</span>
-                        <h3 class="advent-partner-card__name">Dominik „Alles Betrug“</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Seedor"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">13</span>
-                        <h3 class="advent-partner-card__name">Seedor</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Abu"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://21millionfashion.com">
-                        <span class="advent-partner-card__logo">14</span>
-                        <h3 class="advent-partner-card__name">Abu (21MillionFashion)</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Bitcoin-Familie"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">15</span>
-                        <h3 class="advent-partner-card__name">Bitcoin-Familie</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Martin Wunderlich"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung" data-partner-link="https://bitcoin-erleben.de">
-                        <span class="advent-partner-card__logo">16</span>
-                        <h3 class="advent-partner-card__name">Martin Wunderlich (Bitcoin erleben)</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Podcast ›Dein Weg zu Bitcoin‹"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">17</span>
-                        <h3 class="advent-partner-card__name">Podcast „Dein Weg zu Bitcoin“</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 18"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">18</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 19"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">19</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 20"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">20</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 21"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">21</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 22"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">22</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 23"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">23</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
-                    <button type="button" class="advent-partner-card" data-partner-name="Community Partner 24"
-                        data-partner-description="Jeden Tag wartet eine neue Überraschung – Mehr erfahren!"
-                        data-partner-value="Bleibt eine Überraschung">
-                        <span class="advent-partner-card__logo">24</span>
-                        <h3 class="advent-partner-card__name">Platzhalter Partner</h3>
-
-                        <span class="advent-partner-card__cta">Mehr erfahren →</span>
-                    </button>
+                <div class="advent-partners">
+                    <img src="img/kooperationen/21bitcoin.png" alt="Logo 21bitcoin" loading="lazy">
+                    <img src="img/kooperationen/bitcoinershop.png" alt="Logo Bitcoiner Shop" loading="lazy">
+                    <img src="img/kooperationen/bitvestis.png" alt="Logo Bitvestis" loading="lazy">
+                    <img src="img/kooperationen/statue.webp" alt="Logo 21Statues" loading="lazy">
                 </div>
+                <p class="advent-partners__note">Weitere Partner werden fortlaufend bekanntgegeben – danke für euren
+                    Support!</p>
             </div>
         </section>
 
-        <section class="advent-section" id="mitmachen">
+        <section class="advent-section" id="spendenstand">
             <div class="advent-section__inner" data-animate>
                 <div class="advent-section__header">
-                    <span class="advent-section__kicker">Mitmachen</span>
-                    <h2 class="advent-section__title">So bist du dabei</h2>
-                    <p class="advent-section__lead">Drei Wege, um unsere Spendenaktion zu unterstützen – suche dir
-                        deinen Favoriten aus
-                        oder kombiniere alle.</p>
+                    <span class="advent-section__kicker">Was wir gemeinsam schon erreicht haben</span>
+                    <h2 class="advent-section__title">Aktuelle Einblicke</h2>
+                    <p class="advent-section__lead">Wir aktualisieren regelmäßig den Spendenstand und zeigen euch, wie
+                        viel bereits bewegt wurde.</p>
                 </div>
-                <div class="advent-steps">
-                    <article class="advent-step">
-                        <div class="advent-step__icon" aria-hidden="true">🎁</div>
-                        <h3 class="advent-step__title">Adventskalender kaufen</h3>
-                        <p>Erhalte 24 Bitcoin-Überraschungen und trage aktiv zur Spende bei. Jeder Kalender zählt.</p>
-                        <div class="advent-step__actions">
-                            <a class="advent-step__link" href="https://shop.blockschmiede.com" target="_blank"
-                                rel="noopener noreferrer">Kalender bestellen →</a>
-                        </div>
-                    </article>
-                    <article class="advent-step">
-                        <div class="advent-step__icon" aria-hidden="true">❤️</div>
-                        <h3 class="advent-step__title">Direkt spenden</h3>
-                        <p>Jeder Euro zählt. Alle Spenden werden gesammelt und gemeinsam übergeben.</p>
-                        <div class="advent-step__actions">
-                            <a class="advent-step__link"
-                                href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_ID" target="_blank"
-                                rel="noopener noreferrer">Jetzt spenden →</a>
-                        </div>
-                    </article>
-                    <article class="advent-step">
-                        <div class="advent-step__icon" aria-hidden="true">🌐</div>
-                        <h3 class="advent-step__title">Community stärken</h3>
-                        <p>Teile die Aktion mit <strong>#BitcoinAdventskalender</strong> und hilf, Gutes zu verbreiten.
-                        </p>
-                        <div class="advent-step__socials" aria-label="Social-Media-Links">
-                            <a class="advent-social"
-                                href="https://x.com/intent/tweet?text=Bitcoin%20Adventskalender%202025" target="_blank"
-                                rel="noopener noreferrer" aria-label="Auf X teilen">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path
-                                        d="M3 3h4.5l4.2 6.4L16.5 3H21l-7.4 9.3L21 21h-4.5l-4.5-6.9L7.5 21H3l7.6-9.6L3 3z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a class="advent-social" href="https://njump.me/blockschmiede" target="_blank"
-                                rel="noopener noreferrer" aria-label="Auf Nostr teilen">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path
-                                        d="M12 2c5.5 0 10 4.48 10 10s-4.5 10-10 10S2 17.52 2 12 6.5 2 12 2zm0 2.2A7.8 7.8 0 0 0 4.2 12 7.8 7.8 0 0 0 12 19.8 7.8 7.8 0 0 0 19.8 12 7.8 7.8 0 0 0 12 4.2zm3.6 10.2-3.1-4.4V17h-1V7.8h.9l3.4 4.8V7h1v7.4h-1.2z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a class="advent-social" href="https://t.me/share/url?url=https://blockschmiede.com"
-                                target="_blank" rel="noopener noreferrer" aria-label="Auf Telegram teilen">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path
-                                        d="M20.5 3.2 3.7 10.1c-1 .4-1 1.5-.1 1.8l4.3 1.3 1.6 5c.2.6 1 .8 1.5.3l2.3-2.3 4.3 3.2c.6.5 1.6.1 1.8-.7l2.9-13c.3-1-.6-1.8-1.8-1.4z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                            <a class="advent-social" href="https://www.instagram.com/" target="_blank"
-                                rel="noopener noreferrer" aria-label="Auf Instagram teilen">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path
-                                        d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm8 2H8a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm-4 3.4A3.6 3.6 0 1 1 8.4 12 3.6 3.6 0 0 1 12 8.4zm0 5.8A2.2 2.2 0 1 0 9.8 12 2.2 2.2 0 0 0 12 14.2zm4.6-6.8a.8.8 0 1 1-.8-.8.8.8 0 0 1 .8.8z"
-                                        fill="currentColor" />
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="advent-section" id="transparenz">
-            <div class="advent-section__inner" data-animate>
-                <div class="advent-section__header">
-                    <span class="advent-section__kicker">Transparenz</span>
-                    <h2 class="advent-section__title">Gemeinsam den Spendenstand feiern</h2>
-                    <p class="advent-section__lead">Wir halten euch über jeden Meilenstein auf dem Laufenden. So seht
-                        ihr jederzeit, wie
-                        stark unsere Community wirkt.</p>
-                </div>
-                <div class="advent-progress" data-progress="46.8">
-                    <div class="advent-progress__headline">
-                        <span class="advent-progress__value">Aktueller Spendenstand: 2.340 € von 5.000 €</span>
-                        <p>Danke für eure Unterstützung! Wir aktualisieren die Zahlen regelmäßig.</p>
-                    </div>
-                    <div class="advent-progress__bar">
-                        <span aria-hidden="true"></span>
-                    </div>
-                    <div class="advent-progress__stats">
-                        <div class="advent-progress__stat">
-                            <span>Verkäufe Kalender</span>
-                            <strong>180 Stück</strong>
-                        </div>
-                        <div class="advent-progress__stat">
-                            <span>Direkte Spenden</span>
-                            <strong>780 €</strong>
-                        </div>
-                        <div class="advent-progress__stat">
-                            <span>Gesamtsumme bisher</span>
-                            <strong>2.340 €</strong>
-                        </div>
-                    </div>
-                    <p>Am 24. Dezember veröffentlichen wir den gesamten Betrag inklusive Spendenbeleg und Nachweis auf
-                        dieser
-                        Seite.</p>
-                </div>
+                <figure class="advent-progress-figure">
+                    <img src="img/spendenstand.svg" alt="Visualisierung des aktuellen Spendenstands" loading="lazy">
+                    <figcaption>Transparente Updates zum Fortschritt unserer Charity-Aktion.</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -436,28 +252,31 @@
                     <span class="advent-section__kicker">FAQ</span>
                     <h2 class="advent-section__title">Häufige Fragen</h2>
                     <p class="advent-section__lead">Du hast noch Fragen? Hier findest du schnelle Antworten. Schreib uns
-                        gerne, wenn
-                        etwas fehlt.</p>
+                        gerne, wenn etwas fehlt.</p>
                 </div>
                 <div class="advent-faq">
                     <details>
                         <summary>Wohin genau wird gespendet?</summary>
-                        <p>Wir wählen eine anerkannte gemeinnützige Organisation in Deutschland aus, die den Geist von
-                            „Gemeinsam Gutes bewirken“ teilt. Nach Abschluss der Aktion veröffentlichen wir alle Details
-                            sowie
-                            den offiziellen Spendenbeleg.</p>
+                        <p>Alle Einnahmen abzüglich der Produktionskosten gehen an die Aktion Kinderkrankenhaus München
+                            sowie die Ronald McDonald Kinderhilfe Stiftung. Nach Abschluss der Aktion veröffentlichen
+                            wir die Gesamtsumme und den Spendenbeleg.</p>
                     </details>
                     <details>
                         <summary>Wie läuft die Verlosung ab?</summary>
                         <p>Jeder Adventskalender besitzt eine individuelle Nummer. Jeden Tag losen wir eine Nummer und
-                            somit den Tagesgewinner.</p>
+                            veröffentlichen sie gemeinsam mit dem Tagesgewinn. Wenn deine Nummer gezogen wird, gehört
+                            der Gewinn dir.</p>
                     </details>
                     <details>
-                        <summary>Wie erhalte ich meinen Kalender?</summary>
-                        <p>Bestell unter <a href="https://shop.blockschmiede.com" target="_blank"
-                                rel="noopener noreferrer">shop.blockschmiede.com</a>. Der Kalender wird bequem zu dir
-                            nach Hause geliefert. Du erhältst nach dem Kauf eine Bestätigung mit
-                            allen weiteren Informationen rund um Versand und Lieferung.</p>
+                        <summary>Wie nutze ich das Rubbelfeld als Nachweis?</summary>
+                        <p>Das freigerubbelte Feld zeigt deinen persönlichen Prüfcodesatz. Fotografiere Kalendernummer
+                            und Code und sende uns das Bild per E-Mail. So stellen wir sicher, dass der Gewinn bei der
+                            richtigen Person landet.</p>
+                    </details>
+                    <details>
+                        <summary>Was ist, wenn ich eine Ziehung verpasse?</summary>
+                        <p>Kein Stress: Wir veröffentlichen jede Gewinnnummer auf unseren Socials und auf der Webseite.
+                            Du kannst jederzeit nachsehen, ob dein Türchen schon geöffnet wurde.</p>
                     </details>
                 </div>
             </div>
@@ -470,9 +289,6 @@
                 <div>
                     <strong>Powered by Blockschmiede</strong>
                 </div>
-                <div class="advent-footer__partners" aria-label="Partnerlogos">
-
-                </div>
             </div>
             <div class="advent-footer__bottom">
                 <div class="advent-footer__links">
@@ -481,24 +297,11 @@
                 </div>
                 <div>
                     <a href="https://x.com/blockschmiede21" target="_blank" rel="noopener noreferrer">X</a> ·
-                    <a href="https://instagram.com/blockschmiede" target="_blank"
-                        rel="noopener noreferrer">Instagram</a>
+                    <a href="https://instagram.com/blockschmiede" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <div class="advent-modal" data-partner-modal aria-hidden="true" role="dialog">
-        <div class="advent-modal__dialog">
-            <button class="advent-modal__close" type="button" aria-label="Partner-Dialog schließen"
-                data-partner-close>✕</button>
-            <h3 class="advent-modal__title" data-partner-title>Partnername</h3>
-            <p class="advent-modal__text" data-partner-text>Beschreibung des Partners.</p>
-            <p class="advent-modal__text" data-partner-value></p>
-            <a class="advent-modal__link" data-partner-link href="#" target="_blank" rel="noopener noreferrer"
-                hidden>Zur Partnerseite →</a>
-        </div>
-    </div>
 
     <script>
         (function () {
@@ -521,29 +324,12 @@
             };
 
             navToggle.addEventListener('click', () => {
-                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-                const nextExpanded = !isExpanded;
-                navToggle.setAttribute('aria-expanded', String(nextExpanded));
-                navigation.classList.toggle('is-open', nextExpanded);
-                body.classList.toggle('nav-open', nextExpanded);
+                const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!isOpen));
+                navigation.classList.toggle('is-open');
+                body.classList.toggle('nav-open');
                 if (toggleLabel) {
-                    toggleLabel.textContent = nextExpanded ? 'Menü schließen' : 'Menü öffnen';
-                }
-            });
-
-            navigation.addEventListener('click', (event) => {
-                const target = event.target;
-                if (target instanceof Element) {
-                    const link = target.closest('a');
-                    if (link && navigation.contains(link)) {
-                        closeMenu();
-                    }
-                }
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    closeMenu();
+                    toggleLabel.textContent = isOpen ? 'Menü öffnen' : 'Menü schließen';
                 }
             });
 
@@ -552,15 +338,15 @@
                     closeMenu();
                 }
             });
+
+            navigation.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMenu);
+            });
         })();
 
         (function () {
             const animatedElements = document.querySelectorAll('[data-animate]');
-            if (!animatedElements.length) {
-                return;
-            }
-
-            if (!('IntersectionObserver' in window)) {
+            if (!animatedElements.length || !('IntersectionObserver' in window)) {
                 animatedElements.forEach((element) => {
                     element.classList.add('is-visible');
                 });
@@ -583,105 +369,30 @@
         })();
 
         (function () {
-            const modal = document.querySelector('[data-partner-modal]');
-            if (!modal) {
+            const snowContainer = document.querySelector('[data-snow]');
+            if (!snowContainer) {
                 return;
             }
-            const body = document.body;
-            const title = modal.querySelector('[data-partner-title]');
-            const text = modal.querySelector('[data-partner-text]');
-            const value = modal.querySelector('[data-partner-value]');
-            const link = modal.querySelector('[data-partner-link]');
-            const closeButton = modal.querySelector('[data-partner-close]');
-
-            const openModal = (button) => {
-                if (!(button instanceof HTMLElement)) {
-                    return;
-                }
-                const partnerName = button.getAttribute('data-partner-name') || 'Partner';
-                const partnerDescription = button.getAttribute('data-partner-description') || '';
-                const partnerValue = button.getAttribute('data-partner-value') || '';
-                const partnerLink = button.getAttribute('data-partner-link') || '';
-
-                if (title) {
-                    title.textContent = partnerName;
-                }
-                if (text) {
-                    text.textContent = partnerDescription;
-                }
-                if (value) {
-                    value.textContent = partnerValue;
-                }
-                if (link) {
-                    if (partnerLink) {
-                        link.href = partnerLink;
-                        link.hidden = false;
-                    } else {
-                        link.hidden = true;
-                    }
-                }
-
-                modal.classList.add('is-open');
-                modal.setAttribute('aria-hidden', 'false');
-                body.classList.add('modal-open');
-                closeButton?.focus();
-            };
-
-            const closeModal = () => {
-                modal.classList.remove('is-open');
-                modal.setAttribute('aria-hidden', 'true');
-                body.classList.remove('modal-open');
-            };
-
-            modal.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            closeButton?.addEventListener('click', closeModal);
-
-            window.addEventListener('keyup', (event) => {
-                if (event.key === 'Escape' && modal.classList.contains('is-open')) {
-                    closeModal();
-                }
-            });
-
-            const partnerButtons = document.querySelectorAll('[data-partner-name]');
-            partnerButtons.forEach((button) => {
-                button.addEventListener('click', () => openModal(button));
-            });
-        })();
-
-        (function () {
-            const progress = document.querySelector('[data-progress]');
-            if (!progress) {
+            const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
                 return;
             }
-            const bar = progress.querySelector('.advent-progress__bar span');
-            const target = parseFloat(progress.getAttribute('data-progress') || '0');
-
-            const animateBar = () => {
-                if (bar) {
-                    bar.style.width = Math.min(target, 100) + '%';
-                }
+            const flakeCount = 60;
+            const createFlake = () => {
+                const span = document.createElement('span');
+                span.style.setProperty('--x', `${(Math.random() * 40 - 20).toFixed(2)}px`);
+                span.style.left = `${(Math.random() * 100).toFixed(2)}%`;
+                span.style.animationDuration = `${(8 + Math.random() * 8).toFixed(2)}s`;
+                span.style.animationDelay = `${(-Math.random() * 12).toFixed(2)}s`;
+                span.style.opacity = `${(0.35 + Math.random() * 0.5).toFixed(2)}`;
+                const size = 4 + Math.random() * 6;
+                span.style.width = `${size.toFixed(2)}px`;
+                span.style.height = `${size.toFixed(2)}px`;
+                snowContainer.appendChild(span);
             };
-
-            if (!('IntersectionObserver' in window)) {
-                animateBar();
-                return;
+            for (let i = 0; i < flakeCount; i += 1) {
+                createFlake();
             }
-
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        animateBar();
-                        obs.disconnect();
-                    }
-                });
-            }, { threshold: 0.35 });
-
-            observer.observe(progress);
         })();
     </script>
 </body>
