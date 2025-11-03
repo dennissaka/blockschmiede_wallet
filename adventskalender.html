@@ -330,8 +330,9 @@
         </div>
     </footer>
 
-    <div class="advent-calendar-overlay" data-calendar-overlay aria-hidden="true">
-        <div class="advent-calendar" role="dialog" aria-modal="true" aria-labelledby="advent-calendar-title">
+    <section class="advent-calendar-stage" data-calendar-stage hidden aria-hidden="true"
+        aria-labelledby="advent-calendar-title">
+        <div class="advent-calendar">
             <header class="advent-calendar__header">
                 <h2 id="advent-calendar-title">Dein Adventskalender auf einen Blick</h2>
                 <p>Bleib neugierig – jeden Tag wartet ein neues Highlight hinter den 24 festlichen Türchen.</p>
@@ -509,7 +510,7 @@
             <p class="advent-calendar__hint">Klick auf die Türchen und lass dich überraschen – der Inhalt wird erst
                 am jeweiligen Tag enthüllt.</p>
         </div>
-    </div>
+    </section>
 
     <button class="floating-calendar-button" type="button" data-calendar-toggle data-state="closed"
         aria-hidden="true" aria-pressed="false" tabindex="-1">
@@ -619,7 +620,7 @@
         })();
 
         (function () {
-            const overlay = document.querySelector('[data-calendar-overlay]');
+            const stage = document.querySelector('[data-calendar-stage]');
             const toggleButton = document.querySelector('[data-calendar-toggle]');
             const openButtons = document.querySelectorAll('[data-calendar-open]');
             const sentinel = document.querySelector('[data-calendar-sentinel]');
@@ -628,11 +629,11 @@
             const siteFooter = document.querySelector('.advent-footer');
             const toggleLabel = toggleButton ? toggleButton.querySelector('[data-calendar-toggle-label]') : null;
 
-            if (!overlay || !toggleButton || !sentinel) {
+            if (!stage || !toggleButton || !sentinel) {
                 return;
             }
 
-            const dayButtons = overlay.querySelectorAll('[data-calendar-day]');
+            const dayButtons = stage.querySelectorAll('[data-calendar-day]');
             dayButtons.forEach((button) => {
                 button.addEventListener('click', () => {
                     if (button.classList.contains('is-shaking')) {
@@ -705,7 +706,8 @@
                 }
                 lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
                 document.body.classList.add('calendar-open');
-                overlay.setAttribute('aria-hidden', 'false');
+                stage.hidden = false;
+                stage.setAttribute('aria-hidden', 'false');
                 setAriaHidden(mainContent, true);
                 setAriaHidden(siteHeader, true);
                 setAriaHidden(siteFooter, true);
@@ -718,7 +720,8 @@
                     return;
                 }
                 document.body.classList.remove('calendar-open');
-                overlay.setAttribute('aria-hidden', 'true');
+                stage.hidden = true;
+                stage.setAttribute('aria-hidden', 'true');
                 setAriaHidden(mainContent, false);
                 setAriaHidden(siteHeader, false);
                 setAriaHidden(siteFooter, false);

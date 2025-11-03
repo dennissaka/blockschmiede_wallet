@@ -3771,22 +3771,17 @@ svg.usecase-icon {
     height: 1px;
 }
 
-.advent-calendar-overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.advent-calendar-stage {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
     padding: clamp(2rem, 6vw, 3.5rem);
     background: radial-gradient(circle at top, rgba(255, 214, 146, 0.18), rgba(20, 4, 4, 0.92) 60%);
-    backdrop-filter: blur(12px);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
-    z-index: 120;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .advent-calendar {
@@ -3801,9 +3796,7 @@ svg.usecase-icon {
     flex-direction: column;
     gap: clamp(1.8rem, 4vw, 2.6rem);
     position: relative;
-    max-height: calc(100vh - clamp(3rem, 12vh, 6rem));
-    overflow: auto;
-    overscroll-behavior: contain;
+    min-height: min(840px, 100%);
 }
 
 .advent-calendar::before {
@@ -3864,8 +3857,8 @@ svg.usecase-icon {
 }
 
 .advent-calendar__day-visual {
-    width: 70%;
-    max-width: 120px;
+    width: 82%;
+    max-width: 160px;
     filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.5));
 }
 
@@ -3942,8 +3935,8 @@ svg.usecase-icon {
 }
 
 @media (max-height: 780px) {
-    .advent-calendar-overlay {
-        align-items: flex-start;
+    .advent-calendar-stage {
+        justify-content: flex-start;
         padding-block: clamp(1.5rem, 6vh, 2.5rem);
     }
 
@@ -3953,9 +3946,8 @@ svg.usecase-icon {
 }
 
 @media (max-width: 720px) {
-    .advent-calendar {
-        max-height: calc(100dvh - clamp(2.5rem, 10vh, 4.5rem));
-        overflow-y: auto;
+    .advent-calendar-stage {
+        padding: clamp(1.8rem, 6vw, 2.5rem);
     }
 
     .advent-calendar__grid {
@@ -4004,7 +3996,7 @@ svg.usecase-icon {
     }
 
     .advent-calendar__day-visual {
-        width: 65%;
+        width: 78%;
     }
 }
 
@@ -4029,10 +4021,6 @@ svg.usecase-icon {
     display: inline-flex;
 }
 
-body.calendar-open {
-    overflow: hidden;
-}
-
 body.calendar-open .site-header,
 body.calendar-open main,
 body.calendar-open .advent-footer {
@@ -4042,10 +4030,8 @@ body.calendar-open .advent-footer {
     transition: opacity 0.25s ease;
 }
 
-body.calendar-open .advent-calendar-overlay {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+body.calendar-open .advent-calendar-stage {
+    display: flex;
 }
 
 @media (max-width: 1200px) {
