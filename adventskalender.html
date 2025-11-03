@@ -672,6 +672,7 @@
 
             let lastFocusedElement = null;
             let hasPassedSentinel = false;
+            let previousScrollPosition = 0;
 
             const updateToggleAppearance = () => {
                 const isOpen = document.body.classList.contains('calendar-open');
@@ -705,6 +706,8 @@
                     return;
                 }
                 lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+                previousScrollPosition = window.scrollY || window.pageYOffset || 0;
+                window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
                 document.body.classList.add('calendar-open');
                 stage.hidden = false;
                 stage.setAttribute('aria-hidden', 'false');
@@ -726,6 +729,7 @@
                 setAriaHidden(siteHeader, false);
                 setAriaHidden(siteFooter, false);
                 updateToggleAppearance();
+                window.scrollTo({ top: previousScrollPosition || 0, left: 0, behavior: 'auto' });
                 if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
                     lastFocusedElement.focus();
                 }

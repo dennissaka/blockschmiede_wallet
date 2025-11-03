@@ -4021,6 +4021,10 @@ svg.usecase-icon {
     display: inline-flex;
 }
 
+body.calendar-open {
+    overflow: hidden;
+}
+
 body.calendar-open .site-header,
 body.calendar-open main,
 body.calendar-open .advent-footer {
@@ -4032,6 +4036,10 @@ body.calendar-open .advent-footer {
 
 body.calendar-open .advent-calendar-stage {
     display: flex;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 @media (max-width: 1200px) {
