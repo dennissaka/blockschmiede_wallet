@@ -3785,6 +3785,8 @@ svg.usecase-icon {
     pointer-events: none;
     transition: opacity 0.35s ease, visibility 0.35s ease;
     z-index: 120;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .advent-calendar {
@@ -3799,6 +3801,9 @@ svg.usecase-icon {
     flex-direction: column;
     gap: clamp(1.8rem, 4vw, 2.6rem);
     position: relative;
+    max-height: calc(100vh - clamp(3rem, 12vh, 6rem));
+    overflow: auto;
+    overscroll-behavior: contain;
 }
 
 .advent-calendar::before {
@@ -3934,6 +3939,73 @@ svg.usecase-icon {
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
     z-index: 140;
+}
+
+@media (max-height: 780px) {
+    .advent-calendar-overlay {
+        align-items: flex-start;
+        padding-block: clamp(1.5rem, 6vh, 2.5rem);
+    }
+
+    .advent-calendar {
+        margin-top: clamp(1rem, 5vh, 2rem);
+    }
+}
+
+@media (max-width: 720px) {
+    .advent-calendar {
+        max-height: calc(100dvh - clamp(2.5rem, 10vh, 4.5rem));
+        overflow-y: auto;
+    }
+
+    .advent-calendar__grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .advent-calendar {
+        border-radius: 26px;
+        padding: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .advent-calendar::before {
+        inset: 10px;
+        border-radius: 22px;
+    }
+
+    .advent-calendar__grid {
+        grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+        gap: 0.9rem;
+    }
+
+    .advent-calendar__day {
+        border-radius: 20px;
+        padding: 0.7rem;
+    }
+
+    .advent-calendar__day-number {
+        font-size: clamp(1.2rem, 6vw, 1.4rem);
+    }
+}
+
+@media (max-width: 420px) {
+    .advent-calendar__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .advent-calendar__header h2 {
+        font-size: clamp(1.8rem, 8vw, 2.1rem);
+    }
+
+    .advent-calendar__header p {
+        font-size: 0.95rem;
+    }
+
+    .advent-calendar__day-visual {
+        width: 65%;
+    }
 }
 
 .floating-calendar-button svg {
