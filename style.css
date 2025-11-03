@@ -4308,6 +4308,32 @@ body.advent-page .advent-footer {
     gap: 1.6rem;
 }
 
+.advent-section--split .advent-section__inner {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.advent-section--split .advent-section__header {
+    gap: 1.2rem;
+}
+
+.advent-section--split .advent-section__lead {
+    max-width: none;
+}
+
+@media (min-width: 960px) {
+    .advent-section--split .advent-section__inner {
+        grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .advent-section--split .advent-section__header {
+        position: sticky;
+        top: calc(var(--safe-top) + clamp(1.5rem, 4vw, 2.5rem));
+        align-self: start;
+    }
+}
+
 .advent-feature-list {
     display: grid;
     gap: 1.4rem;
@@ -4528,23 +4554,23 @@ body.advent-page .advent-footer {
 
 .advent-partners {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.6rem;
-    align-items: center;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(1.4rem, 3vw, 2.2rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.advent-partners span {
-    display: inline-flex;
+.advent-partner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: clamp(0.8rem, 2vw, 1.2rem);
+    padding: clamp(1.4rem, 3vw, 1.9rem);
     text-align: center;
-    min-height: 92px;
-    width: 100%;
-    max-width: 220px;
-    padding: 1.2rem 1rem;
     background:
-        radial-gradient(circle at 28% 16%, rgba(255, 230, 170, 0.3), rgba(255, 230, 170, 0) 55%),
+        radial-gradient(circle at 28% 16%, rgba(255, 230, 170, 0.32), rgba(255, 230, 170, 0) 55%),
         linear-gradient(155deg, rgba(112, 18, 18, 0.92), rgba(44, 8, 8, 0.94));
     border-radius: 22px;
     border: 1px solid rgba(255, 214, 146, 0.6);
@@ -4552,6 +4578,41 @@ body.advent-page .advent-footer {
     color: #FFEACC;
     font-weight: 600;
     letter-spacing: 0.01em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.advent-partner:hover,
+.advent-partner:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 54px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 204, 120, 0.22);
+}
+
+.advent-partner__logo {
+    width: clamp(120px, 18vw, 160px);
+    height: clamp(60px, 9vw, 84px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 214, 146, 0.45);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    padding: 0.75rem;
+    overflow: hidden;
+}
+
+.advent-partner__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+}
+
+.advent-partner__name {
+    display: block;
+    font-size: 0.95rem;
+    color: #FFEACC;
+    line-height: 1.4;
 }
 
 .advent-partners__note {
@@ -4563,21 +4624,55 @@ body.advent-page .advent-footer {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
     align-items: center;
+    background:
+        radial-gradient(circle at 22% 12%, rgba(255, 230, 170, 0.35), rgba(255, 230, 170, 0) 60%),
+        linear-gradient(160deg, rgba(30, 30, 30, 0.35), rgba(0, 0, 0, 0.45));
+    border-radius: 28px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 26px 50px rgba(0, 0, 0, 0.38);
+}
+
+.advent-progress-figure__visual {
+    width: min(100%, 640px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 1.8rem);
+    border-radius: 20px;
+    background: rgba(12, 12, 12, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    overflow: hidden;
 }
 
 .advent-progress-figure img {
-    max-width: min(560px, 100%);
-    border-radius: 26px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.38);
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
 }
 
 .advent-progress-figure figcaption {
     color: rgba(255, 255, 255, 0.65);
     font-size: 0.95rem;
     text-align: center;
+}
+
+.advent-section--insights .advent-section__inner {
+    align-items: stretch;
+}
+
+.advent-section--insights .advent-progress-figure {
+    width: 100%;
+    align-items: stretch;
+}
+
+.advent-section--insights .advent-progress-figure figcaption {
+    max-width: 520px;
+    margin: 0 auto;
 }
 
 @media (max-width: 960px) {

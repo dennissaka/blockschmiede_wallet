@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="140" viewBox="0 0 240 140" role="img" aria-labelledby="title">
+  <title id="title">Platzhalter für Partnerlogo</title>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd49b" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#ffb347" stop-opacity="0.65" />
+    </linearGradient>
+    <linearGradient id="stroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff3e0" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#ffe0b2" stop-opacity="0.35" />
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="228" height="128" rx="20" ry="20" fill="rgba(30,0,0,0.75)" stroke="url(#stroke)" stroke-width="4" />
+  <rect x="18" y="18" width="204" height="104" rx="16" ry="16" fill="url(#grad)" opacity="0.8" />
+  <g fill="#42110a" font-family="'Poppins', 'Manrope', 'Segoe UI', sans-serif" font-weight="600" font-size="26" text-anchor="middle" dominant-baseline="central">
+    <text x="120" y="70">Logo</text>
+  </g>
+</svg>
