@@ -3460,23 +3460,16 @@ svg.usecase-icon {
 .advent-calendar__sponsors-head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(0.8rem, 2vw, 1.6rem);
 }
 
 .advent-calendar__sponsors-title {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: clamp(1.6rem, 3vw, 2.1rem);
     margin: 0;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.advent-calendar__sponsors-controls {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
+    letter-spacing: 0.06em;
+    text-align: center;
 }
 
 .advent-calendar__sponsors-nav {
@@ -3493,6 +3486,7 @@ svg.usecase-icon {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.26);
+    flex: 0 0 auto;
 }
 
 .advent-calendar__sponsors-nav:hover,
@@ -3571,10 +3565,6 @@ svg.usecase-icon {
 @media (min-width: 960px) {
     .advent-calendar__sponsors {
         margin-top: clamp(3rem, 6vw, 5rem);
-    }
-
-    .advent-calendar__sponsors-controls {
-        gap: 0.8rem;
     }
 
     .advent-calendar__sponsors-viewport {
