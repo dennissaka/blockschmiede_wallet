@@ -3454,20 +3454,22 @@ svg.usecase-icon {
     color: #FBC02D;
 }
 
-.advent-sponsors {
-    margin: 4rem 0;
-    padding: 0 1.5rem;
-}
-
-.advent-sponsors__inner {
-    max-width: 1080px;
-    margin: 0 auto;
+.advent-calendar__sponsors {
+    margin-top: clamp(2.5rem, 6vw, 4rem);
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 1.2rem;
 }
 
-.advent-sponsors__inner > h2 {
+.advent-calendar__sponsors-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.advent-calendar__sponsors-title {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: clamp(1.6rem, 3vw, 2.1rem);
     margin: 0;
@@ -3475,27 +3477,79 @@ svg.usecase-icon {
     text-transform: uppercase;
 }
 
-.advent-sponsors__list {
+.advent-calendar__sponsors-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.advent-calendar__sponsors-nav {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+    color: #fff6da;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.26);
+}
+
+.advent-calendar__sponsors-nav:hover,
+.advent-calendar__sponsors-nav:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(255, 240, 200, 0.6);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+    outline: none;
+}
+
+.advent-calendar__sponsors-nav:active {
+    transform: translateY(0) scale(0.96);
+}
+
+.advent-calendar__sponsors-nav:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.advent-calendar__sponsors-viewport {
+    position: relative;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.5rem;
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.85) 4%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, rgba(0, 0, 0, 0.85) 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.85) 4%, rgba(0, 0, 0, 1) 12%, rgba(0, 0, 0, 1) 88%, rgba(0, 0, 0, 0.85) 96%, transparent 100%);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+    touch-action: pan-x;
+}
+
+.advent-calendar__sponsors-viewport::-webkit-scrollbar {
+    height: 6px;
+}
+
+.advent-calendar__sponsors-viewport::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+}
+
+.advent-calendar__sponsors-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     gap: 1.2rem;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    scroll-snap-type: x mandatory;
 }
 
-.advent-sponsors__list::-webkit-scrollbar {
-    height: 6px;
-}
-
-.advent-sponsors__list::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 999px;
-}
-
-.advent-sponsors__item {
+.advent-calendar__sponsors-item {
     flex: 0 0 220px;
     scroll-snap-align: center;
     border-radius: 20px;
@@ -3508,30 +3562,40 @@ svg.usecase-icon {
     transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
-.advent-sponsors__item:hover {
+.advent-calendar__sponsors-item:hover {
     transform: translateY(-6px);
     box-shadow: 0 26px 46px rgba(0, 0, 0, 0.4), 0 0 30px rgba(251, 192, 45, 0.28);
 }
 
-.advent-sponsors__item img {
+.advent-calendar__sponsors-item img {
     width: min(100%, 180px);
     height: auto;
 }
 
 @media (min-width: 960px) {
-    .advent-sponsors {
-        margin: 5rem auto;
-        padding: 0 2rem;
+    .advent-calendar__sponsors {
+        margin-top: clamp(3rem, 6vw, 5rem);
     }
 
-    .advent-sponsors__list {
+    .advent-calendar__sponsors-controls {
+        display: none;
+    }
+
+    .advent-calendar__sponsors-viewport {
+        overflow: visible;
+        mask-image: none;
+        -webkit-mask-image: none;
+        padding-bottom: 0;
+        scroll-snap-type: none;
+    }
+
+    .advent-calendar__sponsors-list {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.6rem;
-        overflow: visible;
     }
 
-    .advent-sponsors__item {
+    .advent-calendar__sponsors-item {
         flex: initial;
         scroll-snap-align: unset;
     }
