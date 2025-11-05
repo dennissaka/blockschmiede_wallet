@@ -3578,26 +3578,15 @@ svg.usecase-icon {
     }
 
     .advent-calendar__sponsors-controls {
-        display: none;
+        gap: 0.8rem;
     }
 
     .advent-calendar__sponsors-viewport {
-        overflow: visible;
-        mask-image: none;
-        -webkit-mask-image: none;
-        padding-bottom: 0;
-        scroll-snap-type: none;
-    }
-
-    .advent-calendar__sponsors-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.6rem;
+        scroll-padding-inline: 2.5rem;
     }
 
     .advent-calendar__sponsors-item {
-        flex: initial;
-        scroll-snap-align: unset;
+        flex-basis: 240px;
     }
 }
 
