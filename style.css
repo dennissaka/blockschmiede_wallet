@@ -4317,6 +4317,11 @@ body.advent-page .advent-footer {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.advent-section__grid--triple {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: stretch;
+}
+
 .advent-section__grid article {
     position: relative;
     background:
@@ -4373,6 +4378,69 @@ body.advent-page .advent-footer {
     text-align: center;
     color: rgba(255, 247, 230, 0.9);
     overflow: hidden;
+}
+
+.advent-section__figure-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 20% 18%, rgba(255, 227, 160, 0.28), rgba(255, 227, 160, 0) 58%),
+        radial-gradient(circle at 86% 90%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 62%),
+        linear-gradient(155deg, rgba(120, 18, 18, 0.9), rgba(52, 8, 8, 0.92));
+    border-radius: 26px;
+    padding: clamp(1.2rem, 3vw, 1.8rem);
+    border: 1px solid rgba(255, 215, 137, 0.55);
+    box-shadow: 0 28px 50px rgba(0, 0, 0, 0.46), 0 0 32px rgba(255, 210, 120, 0.2);
+    overflow: hidden;
+}
+
+.advent-section__figure-card::before,
+.advent-section__figure-card::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.advent-section__figure-card::before {
+    left: 1.2rem;
+    right: 1.2rem;
+    top: 1rem;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 224, 165, 0), rgba(255, 224, 165, 0.92), rgba(255, 224, 165, 0));
+    border-radius: 999px;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 12px rgba(255, 210, 140, 0.58));
+}
+
+.advent-section__figure-card::after {
+    top: 0.55rem;
+    right: 0.9rem;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, rgba(255, 248, 220, 0.95), rgba(255, 206, 92, 0.65));
+    clip-path: polygon(50% 0%, 63% 35%, 100% 37%, 72% 58%, 84% 100%, 50% 78%, 16% 100%, 28% 58%, 0% 37%, 37% 35%);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 12px rgba(255, 210, 140, 0.55));
+    animation: adventTwinkle 6s ease-in-out infinite;
+}
+
+.advent-section__figure-card img {
+    position: relative;
+    z-index: 1;
+    width: min(260px, 100%);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.42);
+}
+
+.advent-section__cta {
+    display: inline-flex;
+    margin-top: 1.4rem;
 }
 
 .advent-section__card span {
@@ -4442,7 +4510,8 @@ body.advent-page .advent-footer {
     .advent-feature-list article::after,
     .advent-section__grid article::after,
     .advent-steps--numbered > li::after,
-    .advent-section__card::after {
+    .advent-section__card::after,
+    .advent-section__figure-card::after {
         width: 34px;
         height: 34px;
         top: 0.35rem;
@@ -4451,7 +4520,8 @@ body.advent-page .advent-footer {
 
     .advent-feature-list article::before,
     .advent-section__grid article::before,
-    .advent-section__card::before {
+    .advent-section__card::before,
+    .advent-section__figure-card::before {
         left: 0.9rem;
         right: 0.9rem;
         top: 0.85rem;
@@ -4517,39 +4587,71 @@ body.advent-page .advent-footer {
     text-align: center;
 }
 
-.advent-donation blockquote {
+.advent-donation blockquote,
+.advent-section__grid article blockquote {
     margin: 0;
     font-size: clamp(1.3rem, 3vw, 1.7rem);
     font-family: 'Poppins', 'Manrope', sans-serif;
     color: #ffe8a5;
 }
 
+.advent-section__grid article blockquote {
+    margin-top: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
 .advent-partners {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.6rem;
-    align-items: center;
+    align-items: stretch;
     justify-items: center;
 }
 
-.advent-partners span {
+.advent-partners__logo {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 92px;
+    min-height: 120px;
     width: 100%;
     max-width: 220px;
-    padding: 1.2rem 1rem;
+    padding: 1.4rem 1.1rem;
     background:
         radial-gradient(circle at 28% 16%, rgba(255, 230, 170, 0.3), rgba(255, 230, 170, 0) 55%),
         linear-gradient(155deg, rgba(112, 18, 18, 0.92), rgba(44, 8, 8, 0.94));
-    border-radius: 22px;
+    border-radius: 24px;
     border: 1px solid rgba(255, 214, 146, 0.6);
     box-shadow: 0 22px 42px rgba(0, 0, 0, 0.46), 0 0 28px rgba(255, 204, 120, 0.18);
     color: #FFEACC;
     font-weight: 600;
     letter-spacing: 0.01em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.advent-partners__logo:hover,
+.advent-partners__logo:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.5), 0 0 36px rgba(255, 210, 120, 0.26);
+}
+
+.advent-partners__logo--static {
+    cursor: default;
+    transition: none;
+}
+
+.advent-partners__logo--static:hover,
+.advent-partners__logo--static:focus-visible {
+    transform: none;
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.46), 0 0 28px rgba(255, 204, 120, 0.18);
+}
+
+.advent-partners__logo img {
+    border-radius: 18px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .advent-partners__note {

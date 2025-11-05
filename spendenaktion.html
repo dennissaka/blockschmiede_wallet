@@ -95,7 +95,7 @@
         <div class="advent-feature-list">
           <article>
             <h3>Gemeinsam Gutes bewirken</h3>
-            <p>Mit jedem Kauf unterstützt du aktiv die Aktion Kinderkrankenhaus München und die Ronald McDonald Kinderhilfe Stiftung.</p>
+            <p>Mit jedem Kauf unterstützt du aktiv das Ronald McDonald Haus München am Deutschen Herzzentrum.</p>
           </article>
           <article>
             <h3>Gewinne für den guten Zweck</h3>
@@ -144,59 +144,84 @@
     </div>
   </section>
 
+  <section class="advent-section advent-section--spotlight" id="ronald-mcdonald">
+    <div class="advent-section__inner" data-animate>
+      <div class="advent-section__header">
+        <h2 class="advent-section__title">Ronald McDonald Haus München am Deutschen Herzzentrum</h2>
+        <p class="advent-section__lead">Gemeinsam ermöglichen wir Familien in Kliniknähe ein Zuhause auf Zeit, wenn ihr Kind medizinische Hilfe benötigt.</p>
+      </div>
+      <div class="advent-section__grid advent-section__grid--triple">
+        <div class="advent-section__figure-card">
+          <img src="img/kalender/rmcd.png" alt="Ronald McDonald Haus München am Deutschen Herzzentrum" loading="lazy">
+        </div>
+        <article>
+          <h3>Spendenempfänger 2025</h3>
+          <p>Das Ronald McDonald Haus München am Deutschen Herzzentrum bietet Familien ein Zuhause in unmittelbarer Kliniknähe, damit sie während der Behandlung ihres Kindes zusammenbleiben können.</p>
+          <p>Mit deiner Unterstützung finanzieren wir liebevolle Betreuung, gemeinsame Rückzugsorte und wertvolle Augenblicke der Nähe – genau dort, wo sie am dringendsten gebraucht werden.</p>
+        </article>
+        <article id="mitmachen-ehrensache">
+          <h3>Noch mehr bewirken</h3>
+          <p>Zusätzlich kannst du über unser offizielles PayPal-Spendenkonto direkt dazu beitragen, den Spendenbetrag zu erhöhen.</p>
+          <blockquote>„Denn am Ende zählt nicht, was wir haben, sondern die guten Taten.“</blockquote>
+          <a class="advent-cta advent-cta--secondary" href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_ID" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">❤️</span>
+            Jetzt spenden
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="advent-section" id="partner">
     <div class="advent-section__inner" data-animate>
       <div class="advent-section__header">
         <h2 class="advent-section__title">Gemeinsam Gutes bewirken</h2>
         <p class="advent-section__lead">Gemeinsam Gutes bewirken – mehr als 20 großartige Partner aus der Bitcoin‑Community nehmen an dieser Aktion teil. Jeden Tag warten spannende, tolle Preise auf dich!</p>
+        <a class="advent-cta advent-cta--ghost advent-section__cta" href="#ronald-mcdonald">Mehr erfahren</a>
       </div>
       <div class="advent-partners">
         <script>
-          for (let i = 1; i <= 24; i++) {
-        document.write(`<img src="img/kalender/logos/${i}.png" alt="Partner ${i}" loading="lazy" />`);
-          }
+          const adventPartners = [
+            { url: 'https://21statues.de/', name: '21statues' },
+            { url: 'https://aprycot.media/', name: 'Aprycot Media' },
+            { url: 'https://beerofsatoshi.com/', name: 'Beer of Satoshi' },
+            { url: 'https://bitbox.swiss/', name: 'BitBox' },
+            { url: 'https://21bitcoin.app/', name: '21bitcoin' },
+            { url: 'https://bitcoinerleben.com/', name: 'Bitcoiner Erleben' },
+            { url: 'https://bitcoiner-shop.com/', name: 'Bitcoiner Shop' },
+            { url: 'https://bitvestis.de/', name: 'Bitvestis' },
+            { url: 'https://blocktrainer.de/', name: 'Blocktrainer' },
+            { url: 'https://coinfinity.co/', name: 'Coinfinity' },
+            { url: 'https://cryptage-beverages.com/', name: 'Cryptage Beverages' },
+            { url: 'https://shop.crypto-mentor.de/s/cryptomentor/masterclass', name: 'CryptoMentor Masterclass' },
+            { url: 'https://open.spotify.com/show/1afGF7R0jcZhgJKXyAJOV2', name: 'Dein Weg zu Bitcoin Podcast' },
+            { url: 'https://dezentralshop.ch/', name: 'Dezentralshop' },
+            { url: null, name: 'Die Bitcoin Familie' },
+            { url: 'https://www.instagram.com/finanzhacker/', name: 'Finanzhacker' },
+            { url: 'https://nerdminer.de/', name: 'Nerdminer' },
+            { url: 'https://pleb.style/', name: 'Plebstyle' },
+            { url: 'https://www.satoshibricks.com/', name: 'Satoshi Bricks' },
+            { url: 'https://satoshi-silver.com/', name: 'Satoshi Silver' },
+            { url: 'https://terahash.space/', name: 'Terahash.Space' },
+            { url: 'https://www.thegreatprint.net/', name: 'The Great Print' },
+            { url: 'https://seedor.io/', name: 'Seedor' }
+          ];
+
+          const totalPartnerLogos = 24;
+          const partnerLogos = Array.from({ length: totalPartnerLogos }, (_, index) => {
+            const logoIndex = index + 1;
+            const partner = adventPartners[index] || { url: null, name: `Partner ${logoIndex}` };
+            const image = `<img src="img/kalender/logos/${logoIndex}.png" alt="${partner.name}" loading="lazy" />`;
+            if (partner.url) {
+              return `<a class="advent-partners__logo" href="${partner.url}" target="_blank" rel="noopener noreferrer">${image}</a>`;
+            }
+            return `<span class="advent-partners__logo advent-partners__logo--static" aria-label="${partner.name}">${image}</span>`;
+          }).join('');
+
+          document.write(partnerLogos);
         </script>
       </div>
       <p class="advent-partners__note">Vielen Dank an alle Partner für ihre großzügige Unterstützung!</p>
-    </div>
-  </section>
-
-  <section class="advent-section advent-section--spotlight" id="ueber-die-aktion">
-    <div class="advent-section__inner" data-animate>
-      <div class="advent-section__header">
-        <h2 class="advent-section__title">Ein Kalender, viele helfende Hände</h2>
-        <p class="advent-section__lead">Die Blockschmiede hat gemeinsam mit tollen Partnern aus der Bitcoin‑DACH‑Community einen einzigartigen Adventskalender gestaltet. Jeder verkaufte Kalender trägt dazu bei, Gutes zu bewirken – denn alle Einnahmen abzüglich der Produktionskosten werden gespendet.</p>
-      </div>
-      <div class="advent-section__grid">
-        <article>
-          <h3>Einzigartige Community‑Aktion</h3>
-          <p>Möglich ist dies nur durch das wundervolle und selbstlose Mitmachen unserer Partner. Alle Preise wurden für diesen Zweck gespendet – vielen lieben Dank!</p>
-        </article>
-        <article>
-          <h3>Spendenempfänger 2025</h3>
-          <p>Als Spendenempfänger der 1. Auflage wurde die McDonald’s Kinderhilfe (Ronald McDonald Kinderhilfe) ausgewählt. Seit 1987 baut und betreut die gemeinnützige Organisation Ronald McDonald Häuser und Oasen in ganz Deutschland, in denen Familien in Kliniknähe zusammen bleiben können, wenn ein Kind schwer erkrankt.</p>
-        </article>
-        <article>
-          <h3>Weihnachtliche Freude schenken</h3>
-          <p>Denn was gibt es Schöneres, als Kindern zu Weihnachten ein Lächeln ins Gesicht zu zaubern?</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="advent-section advent-section--donation" id="mitmachen-ehrensache">
-    <div class="advent-section__inner" data-animate>
-      <div class="advent-section__header">
-        <h2 class="advent-section__title">Noch mehr bewirken</h2>
-        <p class="advent-section__lead">Zusätzlich kannst du über unser offizielles PayPal‑Spendenkonto direkt dazu beitragen, den Spendenbetrag zu erhöhen.</p>
-      </div>
-      <div class="advent-donation">
-        <blockquote>„Denn am Ende zählt nicht, was wir haben, sondern die guten Taten.“</blockquote>
-        <a class="advent-cta advent-cta--secondary" href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_ID" target="_blank" rel="noopener noreferrer">
-          <span aria-hidden="true">❤️</span>
-          Jetzt spenden
-        </a>
-      </div>
     </div>
   </section>
 
@@ -209,7 +234,7 @@
       <div class="advent-faq">
         <details>
           <summary>Wohin genau wird gespendet?</summary>
-          <p>Alle Einnahmen abzüglich der Produktionskosten gehen an die Aktion Kinderkrankenhaus München sowie die Ronald McDonald Kinderhilfe Stiftung. Nach Abschluss der Aktion veröffentlichen wir die Gesamtsumme und den Spendenbeleg.</p>
+          <p>Alle Einnahmen abzüglich der Produktionskosten gehen an das Ronald McDonald Haus München am Deutschen Herzzentrum. Nach Abschluss der Aktion veröffentlichen wir die Gesamtsumme und den Spendenbeleg.</p>
         </details>
         <details>
           <summary>Wie läuft die Verlosung ab?</summary>
