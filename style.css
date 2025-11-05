@@ -39,9 +39,12 @@ body {
 }
 
 body.advent-page {
-    background: radial-gradient(circle at 18% 22%, rgba(255, 213, 79, 0.2), transparent 44%),
-                radial-gradient(circle at 72% 8%, rgba(183, 28, 28, 0.32), transparent 48%),
-                linear-gradient(155deg, #5c1010 0%, #8e1b1b 52%, #2f0606 100%);
+    background: 
+        url('img/kalender/background.png') bottom right/cover no-repeat,
+        radial-gradient(circle at top left, rgba(var(--accent-rgb), 0.22), transparent 50%),
+        radial-gradient(circle at 80% 0%, rgba(var(--accent-rgb), 0.14), transparent 42%),
+        linear-gradient(160deg, #040404, var(--bg) 55%, #0b0b0b 100%);
+    background-attachment: fixed;
     color: #fff;
 }
 
@@ -3329,6 +3332,9 @@ svg.usecase-icon {
     border-radius: 20px;
     padding: 1.4rem 1.6rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
@@ -3350,11 +3356,14 @@ svg.usecase-icon {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    color: #FBC02D;
+    text-align: center;
 }
 
 .advent-note__text strong {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: 1.1rem;
+    color: #FBC02D;
 }
 
 .advent-steps {
@@ -3662,7 +3671,7 @@ svg.usecase-icon {
 
 .advent-footer {
     padding: 3rem clamp(1.5rem, 6vw, 6rem) 3.5rem;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 1);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -3777,7 +3786,6 @@ svg.usecase-icon {
     width: 100%;
     min-height: 100vh;
     padding: clamp(2rem, 6vw, 3.5rem);
-    background: radial-gradient(circle at top, rgba(255, 214, 146, 0.18), rgba(20, 4, 4, 0.92) 60%);
     align-items: center;
     justify-content: center;
     flex-direction: column;
