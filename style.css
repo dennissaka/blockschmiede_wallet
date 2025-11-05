@@ -3129,45 +3129,47 @@ svg.usecase-icon {
     gap: 0.6rem;
     padding: 0.95rem 2.6rem;
     border-radius: 999px;
-    border: none;
+    border: 1px solid transparent;
     font-weight: 700;
     letter-spacing: 0.02em;
     font-size: 1rem;
     cursor: pointer;
-    background: linear-gradient(135deg, #FBC02D 0%, #E65100 100%);
-    color: #7B1F1F;
-    box-shadow: 0 0 20px rgba(251, 192, 45, 0.55);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #B87333;
+    color: #142819;
+    box-shadow: 0 10px 28px rgba(20, 40, 25, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .advent-cta:hover,
 .advent-cta:focus-visible {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 0 32px rgba(251, 192, 45, 0.75);
+    transform: translateY(-2px) scale(1.02);
+    background: #c1813d;
+    box-shadow: 0 16px 32px rgba(20, 40, 25, 0.32);
 }
 
 .advent-cta--ghost {
-    background: rgba(255, 255, 255, 0.08);
-    color: #FFE082;
-    border: 1px solid rgba(255, 214, 146, 0.65);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), inset 0 0 12px rgba(255, 214, 146, 0.22);
+    background: transparent;
+    color: #B87333;
+    border: 1px solid rgba(184, 115, 51, 0.65);
+    box-shadow: none;
 }
 
 .advent-cta--ghost:hover,
 .advent-cta--ghost:focus-visible {
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4), inset 0 0 16px rgba(255, 214, 146, 0.28);
+    background: rgba(184, 115, 51, 0.08);
+    box-shadow: none;
 }
 
 .advent-cta--secondary {
-    background: rgba(255, 255, 255, 0.14);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    background: #B87333;
+    color: #142819;
+    border-color: #142819;
+    box-shadow: 0 10px 28px rgba(20, 40, 25, 0.28);
 }
 
 .advent-cta--secondary:hover,
 .advent-cta--secondary:focus-visible {
-    box-shadow: 0 0 32px rgba(255, 255, 255, 0.36);
+    background: #c1813d;
 }
 
 .advent-hero__meta {
@@ -3284,7 +3286,7 @@ svg.usecase-icon {
 
 .advent-section {
     position: relative;
-    padding: clamp(4rem, 11vw, 6.5rem) clamp(1.5rem, 7vw, 6rem);
+    padding: clamp(3rem, 8vw, 4.5rem) clamp(1.5rem, 6vw, 5rem);
 }
 
 .advent-section__inner {
@@ -3292,7 +3294,7 @@ svg.usecase-icon {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: clamp(1.8rem, 4vw, 2.5rem);
+    gap: clamp(1.4rem, 3vw, 2rem);
 }
 
 .advent-section__header {
@@ -4324,27 +4326,21 @@ body.advent-page .advent-footer {
 
 .advent-section__grid article {
     position: relative;
-    background:
-        radial-gradient(circle at 14% 18%, rgba(255, 227, 160, 0.22), rgba(255, 227, 160, 0) 58%),
-        radial-gradient(circle at 85% 90%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 62%),
-        linear-gradient(155deg, rgba(125, 18, 18, 0.88), rgba(62, 10, 10, 0.92));
+    background: #142819;
     border-radius: 24px;
     padding: 1.8rem;
-    border: 1px solid rgba(255, 215, 137, 0.55);
-    box-shadow: 0 26px 48px rgba(0, 0, 0, 0.45), 0 0 32px rgba(255, 204, 102, 0.18);
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.35);
     overflow: hidden;
 }
 
 .advent-feature-list article {
     position: relative;
-    background:
-        radial-gradient(circle at 20% 15%, rgba(255, 236, 179, 0.26), rgba(255, 236, 179, 0) 55%),
-        radial-gradient(circle at 90% 105%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 60%),
-        linear-gradient(150deg, rgba(148, 20, 20, 0.9), rgba(54, 8, 8, 0.92));
+    background: #142819;
     border-radius: 22px;
     padding: 1.6rem;
-    border: 1px solid rgba(255, 218, 148, 0.55);
-    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.44), 0 0 30px rgba(255, 210, 122, 0.18);
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.32);
     overflow: hidden;
 }
 
@@ -4363,79 +4359,36 @@ body.advent-page .advent-footer {
 .advent-section__card {
     position: relative;
     max-width: 360px;
-    background:
-        radial-gradient(circle at 24% 12%, rgba(255, 235, 190, 0.28), rgba(255, 235, 190, 0) 60%),
-        radial-gradient(circle at 80% 120%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 62%),
-        linear-gradient(155deg, rgba(150, 18, 18, 0.92), rgba(52, 6, 6, 0.92));
+    background: #142819;
     border-radius: 26px;
     padding: 2.2rem;
-    border: 1px solid rgba(255, 221, 156, 0.6);
-    box-shadow: 0 34px 64px rgba(0, 0, 0, 0.46), 0 0 36px rgba(255, 210, 120, 0.22);
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    box-shadow: 0 28px 44px rgba(0, 0, 0, 0.35);
     font-size: 1.05rem;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
     text-align: center;
-    color: rgba(255, 247, 230, 0.9);
+    color: rgba(255, 255, 255, 0.88);
     overflow: hidden;
 }
 
-.advent-section__figure-card {
-    position: relative;
+.advent-section__figure {
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
-        radial-gradient(circle at 20% 18%, rgba(255, 227, 160, 0.28), rgba(255, 227, 160, 0) 58%),
-        radial-gradient(circle at 86% 90%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 62%),
-        linear-gradient(155deg, rgba(120, 18, 18, 0.9), rgba(52, 8, 8, 0.92));
-    border-radius: 26px;
-    padding: clamp(1.2rem, 3vw, 1.8rem);
-    border: 1px solid rgba(255, 215, 137, 0.55);
-    box-shadow: 0 28px 50px rgba(0, 0, 0, 0.46), 0 0 32px rgba(255, 210, 120, 0.2);
+    max-width: 320px;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.32);
 }
 
-.advent-section__figure-card::before,
-.advent-section__figure-card::after {
-    content: '';
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.advent-section__figure-card::before {
-    left: 1.2rem;
-    right: 1.2rem;
-    top: 1rem;
-    height: 3px;
-    background: linear-gradient(90deg, rgba(255, 224, 165, 0), rgba(255, 224, 165, 0.92), rgba(255, 224, 165, 0));
-    border-radius: 999px;
-    opacity: 0.85;
-    filter: drop-shadow(0 0 12px rgba(255, 210, 140, 0.58));
-}
-
-.advent-section__figure-card::after {
-    top: 0.55rem;
-    right: 0.9rem;
-    width: 42px;
-    height: 42px;
-    background: linear-gradient(135deg, rgba(255, 248, 220, 0.95), rgba(255, 206, 92, 0.65));
-    clip-path: polygon(50% 0%, 63% 35%, 100% 37%, 72% 58%, 84% 100%, 50% 78%, 16% 100%, 28% 58%, 0% 37%, 37% 35%);
-    opacity: 0.7;
-    filter: drop-shadow(0 0 12px rgba(255, 210, 140, 0.55));
-    animation: adventTwinkle 6s ease-in-out infinite;
-}
-
-.advent-section__figure-card img {
-    position: relative;
-    z-index: 1;
-    width: min(260px, 100%);
-    aspect-ratio: 1 / 1;
+.advent-section__figure img {
+    display: block;
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.42);
 }
 
 .advent-section__cta {
@@ -4457,10 +4410,10 @@ body.advent-page .advent-footer {
     right: 1.2rem;
     top: 1.05rem;
     height: 3px;
-    background: linear-gradient(90deg, rgba(255, 224, 165, 0), rgba(255, 224, 165, 0.92), rgba(255, 224, 165, 0));
+    background: linear-gradient(90deg, rgba(184, 115, 51, 0), rgba(184, 115, 51, 0.85), rgba(184, 115, 51, 0));
     border-radius: 999px;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 12px rgba(255, 210, 140, 0.65));
+    opacity: 0.8;
+    filter: drop-shadow(0 0 12px rgba(184, 115, 51, 0.45));
     pointer-events: none;
     z-index: 0;
 }
@@ -4475,10 +4428,10 @@ body.advent-page .advent-footer {
     right: 1.1rem;
     width: 46px;
     height: 46px;
-    background: linear-gradient(135deg, rgba(255, 248, 220, 0.95), rgba(255, 206, 92, 0.65));
+    background: linear-gradient(135deg, rgba(184, 115, 51, 0.25), rgba(184, 115, 51, 0.7));
     clip-path: polygon(50% 0%, 63% 35%, 100% 37%, 72% 58%, 84% 100%, 50% 78%, 16% 100%, 28% 58%, 0% 37%, 37% 35%);
-    opacity: 0.75;
-    filter: drop-shadow(0 0 14px rgba(255, 214, 140, 0.6));
+    opacity: 0.6;
+    filter: drop-shadow(0 0 14px rgba(184, 115, 51, 0.45));
     animation: adventTwinkle 6.2s ease-in-out infinite;
     pointer-events: none;
     mix-blend-mode: screen;
@@ -4510,8 +4463,7 @@ body.advent-page .advent-footer {
     .advent-feature-list article::after,
     .advent-section__grid article::after,
     .advent-steps--numbered > li::after,
-    .advent-section__card::after,
-    .advent-section__figure-card::after {
+    .advent-section__card::after {
         width: 34px;
         height: 34px;
         top: 0.35rem;
@@ -4520,8 +4472,7 @@ body.advent-page .advent-footer {
 
     .advent-feature-list article::before,
     .advent-section__grid article::before,
-    .advent-section__card::before,
-    .advent-section__figure-card::before {
+    .advent-section__card::before {
         left: 0.9rem;
         right: 0.9rem;
         top: 0.85rem;
@@ -4541,13 +4492,10 @@ body.advent-page .advent-footer {
 .advent-steps--numbered > li {
     position: relative;
     padding: 2.2rem 1.8rem 1.8rem;
-    background:
-        radial-gradient(circle at 18% 16%, rgba(255, 229, 166, 0.24), rgba(255, 229, 166, 0) 58%),
-        radial-gradient(circle at 85% 105%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 60%),
-        linear-gradient(160deg, rgba(135, 20, 20, 0.92), rgba(56, 8, 8, 0.94));
+    background: #142819;
     border-radius: 26px;
-    border: 1px solid rgba(255, 214, 145, 0.55);
-    box-shadow: 0 26px 50px rgba(0, 0, 0, 0.46), 0 0 30px rgba(255, 204, 120, 0.2);
+    border: 1px solid rgba(184, 115, 51, 0.35);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.35);
     overflow: hidden;
 }
 
@@ -4560,8 +4508,8 @@ body.advent-page .advent-footer {
     font-size: 0.95rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(255, 224, 171, 0.86);
-    text-shadow: 0 0 16px rgba(255, 210, 138, 0.6);
+    color: rgba(184, 115, 51, 0.85);
+    text-shadow: 0 0 12px rgba(184, 115, 51, 0.45);
 }
 
 .advent-steps--numbered h3 {
@@ -4592,7 +4540,7 @@ body.advent-page .advent-footer {
     margin: 0;
     font-size: clamp(1.3rem, 3vw, 1.7rem);
     font-family: 'Poppins', 'Manrope', sans-serif;
-    color: #ffe8a5;
+    color: #B87333;
 }
 
 .advent-section__grid article blockquote {
@@ -4603,55 +4551,32 @@ body.advent-page .advent-footer {
 .advent-partners {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1.6rem;
-    align-items: stretch;
+    gap: 1.2rem;
+    align-items: center;
     justify-items: center;
 }
 
 .advent-partners__logo {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 120px;
-    width: 100%;
+    display: block;
     max-width: 220px;
-    padding: 1.4rem 1.1rem;
-    background:
-        radial-gradient(circle at 28% 16%, rgba(255, 230, 170, 0.3), rgba(255, 230, 170, 0) 55%),
-        linear-gradient(155deg, rgba(112, 18, 18, 0.92), rgba(44, 8, 8, 0.94));
-    border-radius: 24px;
-    border: 1px solid rgba(255, 214, 146, 0.6);
-    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.46), 0 0 28px rgba(255, 204, 120, 0.18);
-    color: #FFEACC;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
 }
 
 .advent-partners__logo:hover,
 .advent-partners__logo:focus-visible {
-    transform: translateY(-3px);
-    box-shadow: 0 28px 48px rgba(0, 0, 0, 0.5), 0 0 36px rgba(255, 210, 120, 0.26);
+    transform: none;
+}
+
+.advent-partners__logo img {
+    border-radius: 16px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .advent-partners__logo--static {
     cursor: default;
-    transition: none;
-}
-
-.advent-partners__logo--static:hover,
-.advent-partners__logo--static:focus-visible {
-    transform: none;
-    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.46), 0 0 28px rgba(255, 204, 120, 0.18);
-}
-
-.advent-partners__logo img {
-    border-radius: 18px;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
 }
 
 .advent-partners__note {
