@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.2.3">
+    <link rel="stylesheet" href="style.css?v=2.2.4">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#C62828">
@@ -61,15 +61,19 @@
         <section class="advent-calendar-stage" aria-labelledby="advent-calendar-title">
             <div class="advent-calendar">
                 <header class="advent-calendar__header">
-                    <p class="advent-section__kicker">Bitcoin-Community for Charity 2025</p>
-                    <h1 id="advent-calendar-title">Dein Adventskalender auf einen Blick</h1>
-                    <p>Hinter jedem Türchen wartet ein besonderer Gewinn aus dem Bitcoin-Space. Schau täglich vorbei und
+                    <h1>Bitcoin-Community for Charity 2025</h1>
+                    <p id="advent-calendar-title" class="advent-section__kicker">Dein Adventskalender auf einen Blick
+                    </p>
+                    <div class="advent-note">
+                        <a href="spendenaktion.html" class="advent-note__link">
+                            <h2>Alle Info's zum Adventskalender</h2>
+                        </a>
+                    </div>
+                    <p>Hinter jedem Türchen wartet ein besonderer Gewinn aus dem Bitcoin-Space. <br> Schau täglich vorbei und
                         erfahre, welche Überraschungen dich erwarten.</p>
-                                        <p class="advent-calendar__hint">Klick auf die Türchen und lass dich überraschen – der Inhalt wird erst
-                    am jeweiligen Tag gelüftet.</p>
-                <div class="advent-note">
-                    <a href="spendenaktion.html" class="advent-note__link">Weitere Infos zum Adventskalender</a>
-                </div>
+                    <p class="advent-calendar__hint">Klick auf die Türchen und lass dich überraschen. <br> Der Inhalt wird
+                        erst
+                        am jeweiligen Tag gelüftet.</p>
                 </header>
                 <div class="advent-calendar__grid">
                     <button class="advent-calendar__day" type="button" data-calendar-day="1">
@@ -263,7 +267,8 @@
         <span class="sr-only">Zurück zur Adventskalender Landingpage</span>
         <span class="floating-calendar-button__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm2 0v12h12V6H6zm2 2h8v2H8V8zm0 3h8v1H8v-1zm0 2h5v1H8v-1z"/>
+                <path
+                    d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm2 0v12h12V6H6zm2 2h8v2H8V8zm0 3h8v1H8v-1zm0 2h5v1H8v-1z" />
             </svg>
         </span>
     </a>

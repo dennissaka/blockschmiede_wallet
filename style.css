@@ -3088,6 +3088,22 @@ svg.usecase-icon {
     font-weight: 600;
 }
 
+.advent-calendar h1 {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 3.75rem);
+    margin: 0;
+    line-height: 1.05;
+    text-shadow: 0 0 40px rgba(255, 211, 105, 0.25);
+}
+
+.advent-calendar h2 {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    line-height: 1.05;
+    text-shadow: 0 0 40px rgba(255, 211, 105, 0.25);
+}
+
 .advent-hero h1 {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: clamp(2.8rem, 5vw, 3.75rem);
@@ -3328,7 +3344,7 @@ svg.usecase-icon {
 }
 
 .advent-note {
-    background: rgba(255, 255, 255, 0.08);
+    background: #B87333;
     border-radius: 20px;
     padding: 1.4rem 1.6rem;
     display: flex;
@@ -3336,8 +3352,8 @@ svg.usecase-icon {
     align-items: center;
     text-align: center;
     gap: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(251, 192, 45, 0.35);
+    box-shadow: 0 18px 32px rgba(123, 31, 31, 0.35), 0 0 24px rgba(251, 192, 45, 0.18);
 }
 
 .advent-note__icon {
@@ -3794,8 +3810,7 @@ svg.usecase-icon {
 
 .advent-calendar {
     width: min(1040px, 100%);
-    background:
-        linear-gradient(145deg, rgba(112, 18, 18, 0.96), rgba(40, 6, 6, 0.98));
+    background: #142819;
     border-radius: 32px;
     border: 1px solid rgba(255, 214, 146, 0.45);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55), 0 0 60px rgba(255, 214, 146, 0.22);
@@ -3826,8 +3841,8 @@ svg.usecase-icon {
 .advent-calendar__header h2 {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: clamp(2.1rem, 4vw, 2.6rem);
-    color: #FFE082;
-}
+    color: #142819;
+}   
 
 .advent-calendar__header p {
     max-width: 640px;
@@ -3847,9 +3862,7 @@ svg.usecase-icon {
     place-items: center;
     aspect-ratio: 1;
     padding: 0.8rem;
-    background:
-        radial-gradient(circle at 26% 18%, rgba(255, 214, 146, 0.26), rgba(255, 214, 146, 0) 60%),
-        linear-gradient(135deg, rgba(124, 17, 17, 0.95), rgba(56, 6, 6, 0.98));
+    background: #B87333;
     border-radius: 22px;
     border: 1px solid rgba(255, 214, 146, 0.45);
     box-shadow: 0 18px 34px rgba(0, 0, 0, 0.5);
