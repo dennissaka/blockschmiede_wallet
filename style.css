@@ -3333,6 +3333,101 @@ svg.usecase-icon {
     box-shadow: 0 18px 32px rgba(123, 31, 31, 0.35), 0 0 24px rgba(251, 192, 45, 0.18);
 }
 
+.advent-note__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 214, 126, 0.28), transparent 60%),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(255, 220, 141, 0.4);
+    color: #fff6da;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    overflow: hidden;
+    box-shadow: 0 12px 26px rgba(255, 180, 80, 0.25), 0 0 32px rgba(255, 215, 128, 0.32);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.advent-note__link:focus-visible {
+    outline: none;
+    border-color: rgba(255, 240, 180, 0.85);
+    box-shadow: 0 18px 36px rgba(255, 200, 120, 0.3), 0 0 40px rgba(255, 240, 190, 0.5);
+}
+
+.advent-note__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(255, 200, 120, 0.38), 0 0 44px rgba(255, 240, 190, 0.56);
+}
+
+.advent-note__link:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 12px 24px rgba(255, 180, 80, 0.28);
+}
+
+.advent-note__link-content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 1;
+}
+
+.advent-note__link-text {
+    font-size: 0.88rem;
+    letter-spacing: 0.24em;
+}
+
+.advent-note__link-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 198, 109, 0.3), rgba(255, 154, 58, 0.5));
+    border: 1px solid rgba(255, 210, 140, 0.6);
+    display: grid;
+    place-items: center;
+    color: inherit;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.advent-note__link-icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
+}
+
+.advent-note__link-glow {
+    position: absolute;
+    inset: -60%;
+    background: radial-gradient(circle, rgba(255, 248, 220, 0.6) 0%, rgba(255, 203, 107, 0.25) 35%, transparent 60%);
+    filter: blur(18px);
+    opacity: 0.35;
+    transform: scale(0.8);
+    animation: advent-link-glow 2.8s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.advent-note__link:hover .advent-note__link-glow,
+.advent-note__link:focus-visible .advent-note__link-glow {
+    animation-play-state: running;
+}
+
+@keyframes advent-link-glow {
+    0%,
+    100% {
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.32;
+    }
+    50% {
+        transform: scale(1.05) rotate(12deg);
+        opacity: 0.6;
+    }
+}
+
 .advent-note__icon {
     width: 56px;
     height: 56px;
@@ -3357,6 +3452,89 @@ svg.usecase-icon {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: 1.1rem;
     color: #FBC02D;
+}
+
+.advent-sponsors {
+    margin: 4rem 0;
+    padding: 0 1.5rem;
+}
+
+.advent-sponsors__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.advent-sponsors__inner > h2 {
+    font-family: 'Poppins', 'Manrope', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin: 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.advent-sponsors__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+}
+
+.advent-sponsors__list::-webkit-scrollbar {
+    height: 6px;
+}
+
+.advent-sponsors__list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+}
+
+.advent-sponsors__item {
+    flex: 0 0 220px;
+    scroll-snap-align: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.4rem;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.32);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.advent-sponsors__item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 46px rgba(0, 0, 0, 0.4), 0 0 30px rgba(251, 192, 45, 0.28);
+}
+
+.advent-sponsors__item img {
+    width: min(100%, 180px);
+    height: auto;
+}
+
+@media (min-width: 960px) {
+    .advent-sponsors {
+        margin: 5rem auto;
+        padding: 0 2rem;
+    }
+
+    .advent-sponsors__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.6rem;
+        overflow: visible;
+    }
+
+    .advent-sponsors__item {
+        flex: initial;
+        scroll-snap-align: unset;
+    }
 }
 
 .advent-steps {
