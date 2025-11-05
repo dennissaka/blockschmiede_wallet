@@ -39,13 +39,24 @@ body {
 }
 
 body.advent-page {
-    background: 
-        url('img/kalender/background.png') bottom right/cover no-repeat,
+    position: relative;
+    z-index: 0;
+    background:
         radial-gradient(circle at top left, rgba(var(--accent-rgb), 0.22), transparent 50%),
         radial-gradient(circle at 80% 0%, rgba(var(--accent-rgb), 0.14), transparent 42%),
         linear-gradient(160deg, #040404, var(--bg) 55%, #0b0b0b 100%);
     background-attachment: fixed;
     color: #fff;
+}
+
+body.advent-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url('img/kalender/background.png') bottom right/cover no-repeat;
+    pointer-events: none;
+    will-change: transform;
 }
 
 body.nav-open,
