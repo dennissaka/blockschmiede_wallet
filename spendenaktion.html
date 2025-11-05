@@ -29,7 +29,7 @@
     <header class="site-header">
         <div class="top-bar">
             <a class="brand" href="index.html">
-                <img src="img/logo.png" alt="Blockschmiede Logo">
+                <img src="img/logo.png?v=2025" alt="Blockschmiede Logo">
                 <div class="brand-copy">
                     <span class="brand-name">Blockschmiede</span>
                     <span class="brand-subline">Bitcoin. Produkte. Beratung.</span>
@@ -60,7 +60,7 @@
   <section class="advent-hero" id="start">
     <div class="advent-hero__visual" data-animate style="--animate-delay: 0.12s;">
       <figure class="advent-hero__figure">
-        <img src="img/geschenkBtc.png" alt="Illustration eines geöffneten Adventskalenders mit fliegenden Geschenken" />
+        <img src="img/geschenkBtc.png?v=2025" alt="Illustration eines geöffneten Adventskalenders mit fliegenden Geschenken" />
       </figure>
     </div>
     <div class="advent-hero__content" data-animate>
@@ -152,7 +152,7 @@
       </div>
       <div class="advent-section__grid advent-section__grid--triple">
         <figure class="advent-section__figure">
-          <img src="img/kalender/rmcd.png" alt="Ronald McDonald Haus München am Deutschen Herzzentrum" loading="lazy">
+          <img src="img/kalender/rmcd.png?v=2025" alt="Ronald McDonald Haus München am Deutschen Herzzentrum" loading="lazy">
         </figure>
         <article>
           <h3>Spendenempfänger 2025</h3>
@@ -210,7 +210,7 @@
           const partnerLogos = Array.from({ length: totalPartnerLogos }, (_, index) => {
             const logoIndex = index + 1;
             const partner = adventPartners[index] || { url: null, name: `Partner ${logoIndex}` };
-            const image = `<img src="img/kalender/logos/${logoIndex}.png" alt="${partner.name}" loading="lazy" />`;
+            const image = `<img src="img/kalender/logos/${logoIndex}.png?v=2025" alt="${partner.name}" loading="lazy" />`;
             if (partner.url) {
               return `<a class="advent-partners__logo" href="${partner.url}" target="_blank" rel="noopener noreferrer">${image}</a>`;
             }
