@@ -39,13 +39,39 @@ body {
 }
 
 body.advent-page {
-    background: 
-        url('img/kalender/background.png') bottom right/cover no-repeat,
-        radial-gradient(circle at top left, rgba(var(--accent-rgb), 0.22), transparent 50%),
-        radial-gradient(circle at 80% 0%, rgba(var(--accent-rgb), 0.14), transparent 42%),
-        linear-gradient(160deg, #040404, var(--bg) 55%, #0b0b0b 100%);
-    background-attachment: fixed;
+    position: relative;
+    background: linear-gradient(160deg, #040404, var(--bg) 55%, #0b0b0b 100%);
+    background-color: #050505;
     color: #fff;
+    overflow-x: hidden;
+}
+
+/*
+ * iOS Safari renders multiple background layers on the <body> with heavy banding
+ * and compositing artefacts. We split the gradients and image into pseudo elements
+ * that are composited separately, keeping the visual result stable across browsers.
+ */
+body.advent-page::before,
+body.advent-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    will-change: transform;
+}
+
+body.advent-page::before {
+    z-index: -2;
+    background:
+        radial-gradient(circle at top left, rgba(var(--accent-rgb), 0.22), transparent 50%),
+        radial-gradient(circle at 80% 0%, rgba(var(--accent-rgb), 0.14), transparent 42%);
+    background-repeat: no-repeat;
+}
+
+body.advent-page::after {
+    z-index: -1;
+    background: url('img/kalender/background.png') bottom right/cover no-repeat;
+    transform: translateZ(0);
 }
 
 body.nav-open,
@@ -4170,10 +4196,6 @@ svg.usecase-icon {
     }
 }
 
-
-body.advent-page {
-    position: relative;
-}
 
 body.advent-page .site-header,
 body.advent-page main,
