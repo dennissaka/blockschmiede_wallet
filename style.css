@@ -3250,8 +3250,17 @@ svg.usecase-icon {
 .advent-hero__visual {
     position: relative;
     grid-column: span 6;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advent-hero__showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.4rem, 4vw, 2.6rem);
+    width: min(100%, 460px);
 }
 
 .advent-hero__visual img {
@@ -3370,6 +3379,29 @@ svg.usecase-icon {
     font-size: 1.08rem;
     color: rgba(255, 255, 255, 0.78);
     max-width: 760px;
+}
+
+.advent-section__intro {
+    font-size: 1.02rem;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 860px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.advent-section__intro a {
+    color: #ffd480;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.advent-section__intro a:hover,
+.advent-section__intro a:focus-visible {
+    text-decoration: underline;
+}
+
+.advent-section__intro + .advent-steps {
+    margin-top: clamp(1.2rem, 3vw, 1.8rem);
 }
 
 .advent-note {
@@ -4342,6 +4374,10 @@ svg.usecase-icon {
         align-self: center;
     }
 
+    .advent-hero__showcase {
+        width: min(100%, 380px);
+    }
+
     .advent-floating-badge {
         position: relative;
         top: auto;
@@ -4354,6 +4390,26 @@ svg.usecase-icon {
 @media (max-width: 768px) {
     .advent-hero {
         padding-inline: clamp(1.2rem, 5vw, 1.6rem);
+    }
+
+    .advent-hero__showcase {
+        width: min(100%, 320px);
+        gap: 1.8rem;
+    }
+
+    .advent-note__link {
+        width: 100%;
+    }
+
+    .advent-note__link-content {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        text-align: center;
+    }
+
+    .advent-note__link-text {
+        width: 100%;
     }
 
     .advent-calendar-card {
