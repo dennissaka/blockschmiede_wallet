@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2.2.4">
+    <link rel="stylesheet" href="style.css?v=2.2.5">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#C62828">
@@ -58,15 +58,7 @@
 
 <main>
   <section class="advent-hero" id="start">
-    <div class="advent-hero__visual" data-animate style="--animate-delay: 0.12s;">
-      <div class="advent-hero__showcase">
-        <p class="advent-hero__value advent-hero__value--centered"><strong>Gesamtgewinne im Gegenwert von</strong><span>2600 €</span></p>
-        <figure class="advent-hero__figure">
-          <img src="img/geschenkBtc.png?v=2025" alt="Illustration eines geöffneten Adventskalenders mit fliegenden Geschenken" />
-        </figure>
-      </div>
-    </div>
-    <div class="advent-hero__content" data-animate>
+        <div class="advent-hero__content" data-animate>
       <p class="advent-hero__headline">Bitcoin-Community for Charity 2025</p>
       <h1>Gemeinsam Gutes bewirken – Gewinne für den guten Zweck</h1>
       <p class="advent-hero__subtitle">Mit dem 1. Charity-Adventskalender der Bitcoin-Community DACH hast du jeden Tag die Chance auf tolle Gewinne und spendest automatisch für den guten Zweck.</p>
@@ -100,6 +92,14 @@
         </a>
       </div>
     </div>
+    <div class="advent-hero__visual" data-animate style="--animate-delay: 0.12s;">
+      <div class="advent-hero__showcase">
+        <p class="advent-hero__value advent-hero__value--centered"><strong>Gesamtgewinne im Gegenwert von</strong><span>2600 €</span></p>
+        <figure class="advent-hero__figure">
+          <img src="img/geschenkBtc.png?v=2025" alt="Illustration eines geöffneten Adventskalenders mit fliegenden Geschenken" />
+        </figure>
+      </div>
+    </div>
   </section>
 
   <div class="advent-hero__sentinel" data-calendar-sentinel aria-hidden="true"></div>
@@ -123,36 +123,39 @@
           </article>
         </div>
       </div>
-      <aside class="advent-section__visual" aria-hidden="true">
-
-      </aside>
     </div>
   </section>
 
   <section class="advent-section" id="so-funktionierts">
     <div class="advent-section__inner" data-animate>
       <div class="advent-section__header">
-        <h2 class="advent-section__title">Dein Weg zum Tagesgewinn</h2>
+        <h2 class="advent-section__title">So funktioniert's</h2>
       </div>
-      <p class="advent-section__intro" data-animate>Man erwirbt über <a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">shop.blockschmiede.com</a> den Zugang zum Adventskalender-Showroom. Dieser stellt unter anderem die Einsicht zur erworbenen Kalendernummer dar. Jeden Tag wird eine Nummer ausgelost. Die Auslosungsergebnisse können auf allen Social-Media-Kanälen, auf der Website oder im Showroom eingesehen werden. Wenn deine Nummer gelost wurde, kontaktieren wir dich per Mail an die E-Mail-Adresse, die bei der Bestellung angegeben wurde.</p>
       <ol class="advent-steps advent-steps--numbered">
         <li>
-          <h3>Kalender sichern</h3>
-          <p>Nach dem Kauf erhältst du per Mail deinen Adventskalender mit deiner eindeutigen Kalender-Nummer. Bewahre sie gut auf – die Nummer in Kombination mit deiner E‑Mail ist dein Schlüssel zum Gewinn.</p>
-        </li>
-        <li>
-          <h3>Rubbelfeld freilegen & Code prüfen</h3>
-          <p>Auf deinem Kalender befindet sich ein Rubbelfeld. Lege es am jeweiligen Tag frei – darunter findest du einen Prüfcode. Dieser Code validiert zusammen mit deiner Kalender-Nummer und deiner E‑Mail deinen Anspruch.</p>
-        </li>
-        <li>
-          <h3>Gewinn einlösen</h3>
-          <p>Wird deine Nummer gezogen, kannst du den Gewinn einlösen: Folge dem Link in unserer Mail oder besuche die Gewinnseite auf dieser Website und gib Kalender‑Nummer, E‑Mail und Prüfcode ein. Alternativ antworte auf unsere Mail – wir verifizieren dich über die Bestelldaten.</p>
+          <h3>Adventskalender kaufen</h3>
+          <p>Nach dem Kauf erhältst du per Mail den Zugang zum Adventskalender-Showroom. Diese bietet dir die Einsicht deiner Kalendernummer.</p>
         </li>
         <li>
           <h3>Tägliche Ziehungen verfolgen</h3>
-          <p>Wir veröffentlichen jeden Tag die Gewinn‑Nummer mit dem jeweiligen Preis auf unseren Social‑Media‑Kanälen und auf dieser Webseite. Du verpasst garantiert kein Türchen.</p>
+          <p>Jeden Tag wird eine Nummer ausgelost. Die Ergebnisse werden auf unseren Social-Media-Kanälen, auf dieser Website und im Showroom veröffentlicht.</p>
+        </li>
+        <li>
+          <h3>Gewinn einlösen</h3>
+            <p>Wird deine Nummer gezogen, melden wir uns bei dir per E-Mail und freuen uns darauf, dir deinen Gewinn zu übermitteln.</p>
         </li>
       </ol>
+                     <a class="advent-note__link advent-premium-button" href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer" style="width: 100%; flex: none;">
+          <span class="advent-note__link-content">
+            <span class="advent-note__link-text">Adventskalender sichern</span>
+            <span class="advent-note__link-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                <path d="M5 12h11.17l-3.58-3.59L13 7l6 6-6 6-1.41-1.41L16.17 13H5z" />
+              </svg>
+            </span>
+          </span>
+          <span class="advent-note__link-glow" aria-hidden="true"></span>
+        </a>
     </div>
   </section>
 
