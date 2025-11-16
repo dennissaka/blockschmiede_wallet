@@ -31,8 +31,8 @@ body {
     font-family: 'Manrope', 'Segoe UI', sans-serif;
     background-color: #050505;
     background: radial-gradient(circle at top left, rgba(var(--accent-rgb), 0.22), transparent 50%),
-                radial-gradient(circle at 80% 0%, rgba(var(--accent-rgb), 0.14), transparent 42%),
-                linear-gradient(160deg, #040404, var(--bg) 55%, #0b0b0b 100%);
+        radial-gradient(circle at 80% 0%, rgba(var(--accent-rgb), 0.14), transparent 42%),
+        linear-gradient(160deg, #040404, var(--bg) 55%, #0b0b0b 100%);
     color: var(--text);
     line-height: 1.7;
     min-height: 100vh;
@@ -143,7 +143,7 @@ main {
     position: absolute;
     inset: 0;
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-                      linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 120px 120px;
     opacity: 0.4;
     pointer-events: none;
@@ -384,11 +384,11 @@ main {
     padding: 0;
 }
 
-.nav-list > li {
+.nav-list>li {
     position: relative;
 }
 
-.nav-list > li > a {
+.nav-list>li>a {
     display: inline-flex;
     align-items: center;
     font-weight: 500;
@@ -420,11 +420,11 @@ main {
     color: var(--accent);
 }
 
-.has-submenu.is-active > a {
+.has-submenu.is-active>a {
     color: var(--accent);
 }
 
-.has-submenu.is-active > a::after {
+.has-submenu.is-active>a::after {
     transform: scaleX(1);
 }
 
@@ -446,11 +446,11 @@ main {
     box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.25);
 }
 
-.has-submenu > a {
+.has-submenu>a {
     padding-right: 1.4rem;
 }
 
-.has-submenu > a::after {
+.has-submenu>a::after {
     transform-origin: center;
 }
 
@@ -615,7 +615,7 @@ main {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 12% 15%, rgba(var(--accent-rgb), 0.22), transparent 60%),
-                radial-gradient(circle at 88% 8%, rgba(var(--accent-rgb), 0.14), transparent 45%);
+        radial-gradient(circle at 88% 8%, rgba(var(--accent-rgb), 0.14), transparent 45%);
     opacity: 0.8;
     pointer-events: none;
 }
@@ -794,7 +794,7 @@ main {
     transition: grid-template-rows 0.35s ease, padding 0.35s ease;
 }
 
-.intro-card-body > * {
+.intro-card-body>* {
     overflow: hidden;
 }
 
@@ -985,7 +985,7 @@ main {
     padding-bottom: 5rem;
 }
 
-.hero-intro > .collaborations {
+.hero-intro>.collaborations {
     margin-top: 3rem;
     padding-bottom: 3.2rem;
 }
@@ -1283,12 +1283,12 @@ main {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 10% 0%, rgba(var(--accent-rgb), 0.08), transparent 40%),
-                radial-gradient(circle at 90% 100%, rgba(var(--accent-rgb), 0.05), transparent 40%);
+        radial-gradient(circle at 90% 100%, rgba(var(--accent-rgb), 0.05), transparent 40%);
     opacity: 0.7;
     pointer-events: none;
 }
 
-.section > * {
+.section>* {
     position: relative;
     z-index: 1;
 }
@@ -2684,11 +2684,11 @@ svg.usecase-icon {
 }
 
 .social-icon--tiktok {
-   --social-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='%23f7931a'%3E%3Cpath d='M192.67 0H155.6v166.93a26.4 26.4 0 1 1-26.4-26.4 25.8 25.8 0 0 1 5.8.64V104.7a64 64 0 1 0 20.6 124.2 64.1 64.1 0 0 0 20.6-47.8V90.24a73.5 73.5 0 0 0 42.4 13V61.17a43.9 43.9 0 0 1-42.4-43.9Z'/%3E%3C/svg%3E");
+    --social-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='%23f7931a'%3E%3Cpath d='M192.67 0H155.6v166.93a26.4 26.4 0 1 1-26.4-26.4 25.8 25.8 0 0 1 5.8.64V104.7a64 64 0 1 0 20.6 124.2 64.1 64.1 0 0 0 20.6-47.8V90.24a73.5 73.5 0 0 0 42.4 13V61.17a43.9 43.9 0 0 1-42.4-43.9Z'/%3E%3C/svg%3E");
 }
 
 .social-icon--youtube {
-   --social-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f7931a'%3E%3Cpath d='M23.5 6.2a2.94 2.94 0 0 0-2.07-2.08C19.28 3.6 12 3.6 12 3.6s-7.28 0-9.43.52A2.94 2.94 0 0 0 .5 6.2 30.26 30.26 0 0 0 0 12a30.26 30.26 0 0 0 .5 5.8 2.94 2.94 0 0 0 2.07 2.08C4.72 20.4 12 20.4 12 20.4s7.28 0 9.43-.52a2.94 2.94 0 0 0 2.07-2.08A30.26 30.26 0 0 0 24 12a30.26 30.26 0 0 0-.5-5.8ZM9.75 15.02V8.98L15.5 12Z'/%3E%3C/svg%3E");
+    --social-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f7931a'%3E%3Cpath d='M23.5 6.2a2.94 2.94 0 0 0-2.07-2.08C19.28 3.6 12 3.6 12 3.6s-7.28 0-9.43.52A2.94 2.94 0 0 0 .5 6.2 30.26 30.26 0 0 0 0 12a30.26 30.26 0 0 0 .5 5.8 2.94 2.94 0 0 0 2.07 2.08C4.72 20.4 12 20.4 12 20.4s7.28 0 9.43-.52a2.94 2.94 0 0 0 2.07-2.08A30.26 30.26 0 0 0 24 12a30.26 30.26 0 0 0-.5-5.8ZM9.75 15.02V8.98L15.5 12Z'/%3E%3C/svg%3E");
 }
 
 .social-icon--x {
@@ -2815,21 +2815,21 @@ svg.usecase-icon {
         gap: 0;
     }
 
-    .nav-list > li {
+    .nav-list>li {
         width: 100%;
     }
 
-    .nav-list > li > a {
+    .nav-list>li>a {
         padding: 0.9rem 0;
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .nav-list > li:last-child > a {
+    .nav-list>li:last-child>a {
         border-bottom: none;
     }
 
-    .nav-list > li > a.nav-shop {
+    .nav-list>li>a.nav-shop {
         border-bottom: none;
         margin-top: 0.4rem;
         width: auto;
@@ -3051,9 +3051,11 @@ svg.usecase-icon {
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     50% {
         transform: translate3d(-4%, -5%, 0);
     }
+
     100% {
         transform: translate3d(0, 0, 0);
     }
@@ -3230,7 +3232,7 @@ svg.usecase-icon {
     font-size: 0.95rem;
 }
 
-.advent-hero__meta > div {
+.advent-hero__meta>div {
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -3400,7 +3402,7 @@ svg.usecase-icon {
     text-decoration: underline;
 }
 
-.advent-section__intro + .advent-steps {
+.advent-section__intro+.advent-steps {
     margin-top: clamp(1.2rem, 3vw, 1.8rem);
 }
 
@@ -3412,7 +3414,7 @@ svg.usecase-icon {
     margin-block: 1.4rem;
 }
 
-.advent-note__link { 
+.advent-note__link {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -3519,11 +3521,13 @@ svg.usecase-icon {
 }
 
 @keyframes advent-link-glow {
+
     0%,
     100% {
         transform: scale(0.8) rotate(0deg);
         opacity: 0.32;
     }
+
     50% {
         transform: scale(1.05) rotate(12deg);
         opacity: 0.6;
@@ -4069,9 +4073,12 @@ svg.usecase-icon {
 }
 
 @keyframes adventFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-12px);
     }
@@ -4142,7 +4149,7 @@ svg.usecase-icon {
     font-family: 'Poppins', 'Manrope', sans-serif;
     font-size: clamp(2.1rem, 4vw, 2.6rem);
     color: #142819;
-}   
+}
 
 .advent-calendar__header p {
     max-width: 640px;
@@ -4213,19 +4220,25 @@ svg.usecase-icon {
 }
 
 @keyframes calendar-shake {
-    10%, 90% {
+
+    10%,
+    90% {
         transform: translate3d(-2px, 0, 0);
     }
 
-    20%, 80% {
+    20%,
+    80% {
         transform: translate3d(3px, 0, 0);
     }
 
-    30%, 50%, 70% {
+    30%,
+    50%,
+    70% {
         transform: translate3d(-4px, 0, 0);
     }
 
-    40%, 60% {
+    40%,
+    60% {
         transform: translate3d(4px, 0, 0);
     }
 
@@ -4503,6 +4516,7 @@ svg.usecase-icon {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .advent-hero::after,
     .advent-floating-badge,
     .advent-partner-card,
@@ -4531,8 +4545,14 @@ body.advent-page {
 }
 
 body.advent-page .site-header,
-body.advent-page main { z-index: auto; }          /* oder Regel entfernen */
-body.advent-page .site-header { z-index: 100; }    
+body.advent-page main {
+    z-index: auto;
+}
+
+/* oder Regel entfernen */
+body.advent-page .site-header {
+    z-index: 100;
+}
 
 .snow-layer {
     position: fixed;
@@ -4559,6 +4579,7 @@ body.advent-page .site-header { z-index: 100; }
     0% {
         transform: translate3d(0, 0, 0);
     }
+
     100% {
         transform: translate3d(var(--x, 0), 110vh, 0);
     }
@@ -4783,7 +4804,7 @@ body.advent-page .site-header { z-index: 100; }
     content: none;
 }
 
-.advent-steps--numbered > li::after {
+.advent-steps--numbered>li::after {
     content: '';
     position: absolute;
     inset: clamp(0.85rem, 3vw, 1.1rem);
@@ -4794,22 +4815,23 @@ body.advent-page .site-header { z-index: 100; }
     z-index: 0;
 }
 
-.advent-feature-list article > *,
-.advent-section__grid article > *,
-.advent-steps--numbered > li > *,
-.advent-section__card > * {
+.advent-feature-list article>*,
+.advent-section__grid article>*,
+.advent-steps--numbered>li>*,
+.advent-section__card>* {
     position: relative;
     z-index: 1;
 }
 
 @media (max-width: 720px) {
+
     .advent-feature-list article::before,
     .advent-section__grid article::before,
     .advent-section__card::before {
         inset: clamp(0.7rem, 3vw, 0.9rem);
     }
 
-    .advent-steps--numbered > li::after {
+    .advent-steps--numbered>li::after {
         inset: clamp(0.75rem, 3vw, 0.95rem);
     }
 
@@ -4829,7 +4851,7 @@ body.advent-page .site-header { z-index: 100; }
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.advent-steps--numbered > li {
+.advent-steps--numbered>li {
     position: relative;
     --advent-card-radius: 26px;
     padding: 2.2rem 1.8rem 1.8rem;
@@ -4840,7 +4862,7 @@ body.advent-page .site-header { z-index: 100; }
     overflow: hidden;
 }
 
-.advent-steps--numbered > li::before {
+.advent-steps--numbered>li::before {
     counter-increment: advent-step;
     content: counter(advent-step, decimal-leading-zero);
     position: absolute;
@@ -4891,7 +4913,7 @@ body.advent-page .site-header { z-index: 100; }
 
 .advent-partners {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.2rem;
     align-items: center;
     justify-items: center;
@@ -4946,6 +4968,12 @@ body.advent-page .site-header { z-index: 100; }
     text-align: center;
 }
 
+@media (max-width: 1200px) {
+    .advent-partners {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
 @media (max-width: 960px) {
     .advent-hero {
         grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -4967,12 +4995,13 @@ body.advent-page .site-header { z-index: 100; }
 }
 
 @media (max-width: 640px) {
+
     .advent-feature-list article,
-    .advent-steps--numbered > li {
+    .advent-steps--numbered>li {
         padding: 1.6rem 1.4rem;
     }
 
-    .advent-steps--numbered > li::before {
+    .advent-steps--numbered>li::before {
         left: 1.4rem;
     }
 }
