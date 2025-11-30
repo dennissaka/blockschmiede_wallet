@@ -404,14 +404,18 @@
                 <button class="advent-modal__close" type="button" data-advent-modal-close aria-label="Dialog schließen">
                     <span aria-hidden="true">×</span>
                 </button>
-                <div class="advent-modal__media" aria-hidden="true"></div>
-                <p id="advent-modal-description" class="advent-modal__text">
+                <div class="advent-modal__media" data-advent-modal-media aria-hidden="true"></div>
+                <p id="advent-modal-description" class="advent-modal__text" data-advent-modal-winner-text>
                     Der Gewinner des Türchens vom 01.2025 trägt die Kalendernummer
                 </p>
-                <p class="advent-modal__winner-number" aria-label="Kalendernummer 56">56</p>
-                <h3 id="advent-modal-title" class="advent-modal__section-title">Tagesgewinn</h3>
-                <p class="advent-modal__text">Hier steht eine Beschreibung des Tagesgewinns als Platzhalter.</p>
-                <div class="advent-modal__logo" aria-hidden="true"></div>
+                <p class="advent-modal__winner-number" data-advent-modal-winner-number aria-label="Kalendernummer 56">56
+                </p>
+                <h3 id="advent-modal-title" class="advent-modal__section-title" data-advent-modal-prize-title>
+                    Tagesgewinn
+                </h3>
+                <p class="advent-modal__text" data-advent-modal-prize-description>Hier steht eine Beschreibung des
+                    Tagesgewinns als Platzhalter.</p>
+                <div class="advent-modal__logo" data-advent-modal-logo aria-hidden="true"></div>
             </div>
         </div>
     </main>
@@ -500,20 +504,96 @@
 
         (function () {
             const dayButtons = document.querySelectorAll('[data-calendar-day]');
-            const dayOneButton = document.querySelector('[data-calendar-day="1"]');
             const modal = document.querySelector('[data-advent-modal]');
-            if (!dayButtons.length || !modal || !dayOneButton) {
+            if (!dayButtons.length || !modal) {
                 return;
             }
 
             const modalCloseButton = modal.querySelector('[data-advent-modal-close]');
+            const modalMedia = modal.querySelector('[data-advent-modal-media]');
+            const modalWinnerText = modal.querySelector('[data-advent-modal-winner-text]');
+            const modalWinnerNumber = modal.querySelector('[data-advent-modal-winner-number]');
+            const modalPrizeTitle = modal.querySelector('[data-advent-modal-prize-title]');
+            const modalPrizeDescription = modal.querySelector('[data-advent-modal-prize-description]');
+            const modalLogo = modal.querySelector('[data-advent-modal-logo]');
+
+            let lastActiveButton = null;
+
+            const calendarEntries = {
+                default: {
+                    winnerText: '',
+                    winnerNumber: '—',
+                    prizeTitle: 'Tagesgewinn',
+                    prizeDescription: 'Details folgen am entsprechenden Tag.',
+                },
+                '1': {
+                    winnerText: 'Der Gewinner des Türchens vom 01.2025 trägt die Kalendernummer',
+                    winnerNumber: '56',
+                    prizeTitle: 'Tagesgewinn',
+                    prizeDescription: 'Hier steht eine Beschreibung des Tagesgewinns als Platzhalter.',
+                },
+            };
+
+            const formatDay = (dayValue) => String(dayValue).padStart(2, '0');
+
+            const applyBackgroundImage = (element, media) => {
+                if (!element) {
+                    return;
+                }
+
+                if (media && media.src) {
+                    element.style.setProperty('--advent-modal-media', `url(${media.src})`);
+                    element.classList.add('has-image');
+                    if (media.alt) {
+                        element.removeAttribute('aria-hidden');
+                        element.setAttribute('aria-label', media.alt);
+                    } else {
+                        element.setAttribute('aria-hidden', 'true');
+                        element.removeAttribute('aria-label');
+                    }
+                } else {
+                    element.style.removeProperty('--advent-modal-media');
+                    element.classList.remove('has-image');
+                    element.setAttribute('aria-hidden', 'true');
+                    element.removeAttribute('aria-label');
+                }
+            };
+
+            const updateModalContent = (dayValue) => {
+                const entry = calendarEntries[dayValue] || calendarEntries.default;
+                const isNumericDay = /^\d+$/.test(dayValue);
+                const dayText = isNumericDay ? formatDay(dayValue) : '--';
+
+                const winnerText = entry.winnerText || `Der Gewinner des Türchens vom ${dayText}.2025 trägt die Kalendernummer`;
+                if (modalWinnerText) {
+                    modalWinnerText.textContent = winnerText;
+                }
+
+                const winnerNumber = entry.winnerNumber || '—';
+                if (modalWinnerNumber) {
+                    modalWinnerNumber.textContent = winnerNumber;
+                    modalWinnerNumber.setAttribute('aria-label', `Kalendernummer ${winnerNumber}`);
+                }
+
+                if (modalPrizeTitle) {
+                    modalPrizeTitle.textContent = entry.prizeTitle || 'Tagesgewinn';
+                }
+
+                if (modalPrizeDescription) {
+                    modalPrizeDescription.textContent = entry.prizeDescription || 'Details folgen am entsprechenden Tag.';
+                }
+
+                applyBackgroundImage(modalMedia, entry.media);
+                applyBackgroundImage(modalLogo, entry.logo);
+            };
 
             const toggleModal = (shouldOpen) => {
                 modal.classList.toggle('is-open', shouldOpen);
                 modal.setAttribute('aria-hidden', String(!shouldOpen));
                 document.body.classList.toggle('modal-open', shouldOpen);
-                if (!shouldOpen) {
-                    dayOneButton.focus();
+                if (!shouldOpen && lastActiveButton) {
+                    lastActiveButton.focus();
+                    lastActiveButton = null;
                 }
             };
 
@@ -521,7 +601,14 @@
 
             const openModal = () => toggleModal(true);
 
-            dayOneButton.addEventListener('click', openModal);
+            dayButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const dayValue = button.dataset.calendarDay || 'default';
+                    lastActiveButton = button;
+                    updateModalContent(dayValue);
+                    openModal();
+                });
+            });
 
             if (modalCloseButton) {
                 modalCloseButton.addEventListener('click', closeModal);
@@ -537,23 +624,6 @@
                 if (event.key === 'Escape' && modal.classList.contains('is-open')) {
                     closeModal();
                 }
-            });
-
-            dayButtons.forEach((button) => {
-                if (button.dataset.calendarDay === '1') {
-                    return;
-                }
-                button.addEventListener('click', () => {
-                    if (button.classList.contains('is-shaking')) {
-                        return;
-                    }
-                    button.classList.add('is-shaking');
-                    const handleAnimationEnd = () => {
-                        button.classList.remove('is-shaking');
-                        button.removeEventListener('animationend', handleAnimationEnd);
-                    };
-                    button.addEventListener('animationend', handleAnimationEnd);
-                });
             });
         })();
 
