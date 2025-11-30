@@ -415,7 +415,7 @@
                 </h3>
                 <p class="advent-modal__text" data-advent-modal-prize-description>Hier steht eine Beschreibung des
                     Tagesgewinns als Platzhalter.</p>
-                <div class="advent-modal__logo" data-advent-modal-logo aria-hidden="true"></div>
+                <div class="advent-modal__sponsors" data-advent-modal-sponsors aria-label="Sponsorenlogos"></div>
             </div>
         </div>
     </main>
@@ -515,7 +515,7 @@
             const modalWinnerNumber = modal.querySelector('[data-advent-modal-winner-number]');
             const modalPrizeTitle = modal.querySelector('[data-advent-modal-prize-title]');
             const modalPrizeDescription = modal.querySelector('[data-advent-modal-prize-description]');
-            const modalLogo = modal.querySelector('[data-advent-modal-logo]');
+            const modalSponsors = modal.querySelector('[data-advent-modal-sponsors]');
 
             let lastActiveButton = null;
 
@@ -525,12 +525,52 @@
                     winnerNumber: '—',
                     prizeTitle: 'Tagesgewinn',
                     prizeDescription: 'Details folgen am entsprechenden Tag.',
+                    media: {
+                        src: 'img/kalender/Geschenk_offen.png?v=2028',
+                        alt: 'Adventskalender Platzhalterbild',
+                    },
+                    sponsorLogos: [],
                 },
                 '1': {
-                    winnerText: 'Der Gewinner des Türchens vom 01.2025 trägt die Kalendernummer',
+                    winnerText: 'Der Gewinner des Türchens vom 01.12.2025 trägt die Kalendernummer',
                     winnerNumber: '56',
                     prizeTitle: 'Tagesgewinn',
-                    prizeDescription: 'Hier steht eine Beschreibung des Tagesgewinns als Platzhalter.',
+                    prizeDescription: `1 Bitcoin Undercover Hoodie deiner Wahl in deiner Größe (vom Bitcoiner Shop)
+Dein Bitcoin Hoodie dezent und unauffällig.
+Trage ihn im Büro, beim Sport, auf Reisen oder einfach im Alltag. Niemand außerhalb der Bubble wird je checken, was du wirklich signalisierst. Gleichzeitig bist du für jeden Pleb sofort als einer von uns erkennbar. Das ist die perfekte Balance zwischen Sicherheit und Zugehörigkeit.
+
+Das Privacy Handbuch (vom dezentralshop)
+Ein Ratgeber für digitale Sicherheit und Privatsphäre
+
+Dieser Ratgeber zeigt dir, wie du:
+– Deine Privatsphäre mithilfe von Software und Apps schützt.
+– Dein Handy und deinen Computer sicher, privat und anonym hältst.
+– Deine Kommunikation, Finanzen und Passwörter absicherst.
+– Dich online bewegst, ohne Spuren zu hinterlassen.
+– Der ständigen Überwachung durch Apps und Webseiten entkommst.
+
+Mit diesem umfassenden Leitfaden sicherst du deine Privatsphäre, von den Grundlagen bis ins Detail, ganz ohne auf den Komfort moderner Technologien verzichten zu müssen.`,
+                    media: {
+                        src: 'img/kalender/Geschenk_offen.png?v=2028',
+                        alt: 'Platzhalter für das Türchenbild',
+                    },
+                    sponsorLogos: [
+                        {
+                            src: 'img/kalender/logos/1.png?v=2028',
+                            alt: 'Sponsor Logo 1',
+                            href: 'spendenaktion.html#partner',
+                        },
+                        {
+                            src: 'img/kalender/logos/4.png?v=2028',
+                            alt: 'Sponsor Logo 2',
+                            href: 'spendenaktion.html#partner',
+                        },
+                        {
+                            src: 'img/kalender/logos/10.png?v=2028',
+                            alt: 'Sponsor Logo 3',
+                            href: 'spendenaktion.html#partner',
+                        },
+                    ],
                 },
             };
 
@@ -559,12 +599,42 @@
                 }
             };
 
+            const renderSponsorLogos = (logos = []) => {
+                if (!modalSponsors) return;
+                modalSponsors.innerHTML = '';
+
+                logos.forEach((logo) => {
+                    const link = document.createElement('a');
+                    link.className = 'advent-modal__sponsor-logo';
+                    if (logo.href) {
+                        link.href = logo.href;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                    } else {
+                        link.href = '#';
+                        link.removeAttribute('target');
+                        link.removeAttribute('rel');
+                    }
+                    link.setAttribute('aria-label', logo.alt || 'Sponsor Logo');
+
+                    const img = document.createElement('img');
+                    img.src = logo.src;
+                    img.alt = logo.alt || '';
+                    img.loading = 'lazy';
+
+                    link.appendChild(img);
+                    modalSponsors.appendChild(link);
+                });
+
+                modalSponsors.classList.toggle('is-empty', logos.length === 0);
+            };
+
             const updateModalContent = (dayValue) => {
                 const entry = calendarEntries[dayValue] || calendarEntries.default;
                 const isNumericDay = /^\d+$/.test(dayValue);
                 const dayText = isNumericDay ? formatDay(dayValue) : '--';
 
-                const winnerText = entry.winnerText || `Der Gewinner des Türchens vom ${dayText}.2025 trägt die Kalendernummer`;
+                const winnerText = (entry.winnerText || `Der Gewinner des Türchens vom ${dayText}.2025 trägt die Kalendernummer`).trim();
                 if (modalWinnerText) {
                     modalWinnerText.textContent = winnerText;
                 }
@@ -580,11 +650,12 @@
                 }
 
                 if (modalPrizeDescription) {
-                    modalPrizeDescription.textContent = entry.prizeDescription || 'Details folgen am entsprechenden Tag.';
+                    const description = (entry.prizeDescription || 'Details folgen am entsprechenden Tag.').trim();
+                    modalPrizeDescription.textContent = description;
                 }
 
                 applyBackgroundImage(modalMedia, entry.media);
-                applyBackgroundImage(modalLogo, entry.logo);
+                renderSponsorLogos(entry.sponsorLogos);
             };
 
             const toggleModal = (shouldOpen) => {
