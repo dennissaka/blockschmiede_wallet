@@ -3904,7 +3904,7 @@ svg.usecase-icon {
 
 .advent-modal__media {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1080 / 1350;
     border-radius: 18px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
     border: 1px dashed rgba(255, 255, 255, 0.25);
@@ -4245,6 +4245,10 @@ svg.usecase-icon {
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+}
+
+.open {
+    background: #0fae2a;
 }
 
 .advent-calendar__day:hover,
