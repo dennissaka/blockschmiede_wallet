@@ -3896,6 +3896,37 @@ svg.usecase-icon {
     line-height: 1.6;
 }
 
+.advent-modal__media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    margin-bottom: 1.4rem;
+}
+
+.advent-modal__winner-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0.4rem 0 1.2rem;
+    color: #FBC02D;
+}
+
+.advent-modal__section-title {
+    font-size: 1.2rem;
+    margin: 0 0 0.6rem;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+}
+
+.advent-modal__logo {
+    width: 120px;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    margin-top: 1.6rem;
+}
+
 .advent-modal__link {
     display: inline-flex;
     align-items: center;
