@@ -61,7 +61,7 @@ body.advent-page::before {
 
 body.nav-open,
 body.modal-open {
-    overflow: hidden;
+    overflow: auto;
 }
 
 img {
@@ -3860,14 +3860,19 @@ svg.usecase-icon {
 }
 
 .advent-modal__dialog {
-    max-width: 520px;
-    width: min(92vw, 520px);
+    max-width: 720px;
+    width: min(94vw, 720px);
+    max-height: min(90vh, 980px);
     background: rgba(255, 255, 255, 0.08);
     border-radius: 28px;
     padding: clamp(1.6rem, 3vw, 2.4rem);
     border: 1px solid rgba(255, 255, 255, 0.16);
     box-shadow: 0 32px 70px rgba(0, 0, 0, 0.45);
     position: relative;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .advent-modal__close {
@@ -3894,6 +3899,70 @@ svg.usecase-icon {
     color: rgba(255, 255, 255, 0.78);
     font-size: 1rem;
     line-height: 1.6;
+    white-space: pre-line;
+}
+
+.advent-modal__media {
+    width: 100%;
+    aspect-ratio: 1080 / 1350;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    margin-bottom: 0.6rem;
+}
+
+.advent-modal__media.has-image {
+    background: var(--advent-modal-media) center / cover no-repeat;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.advent-modal__winner-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0.4rem 0 1.2rem;
+    color: #FBC02D;
+}
+
+.advent-modal__section-title {
+    font-size: 1.2rem;
+    margin: 0 0 0.6rem;
+    font-family: 'Poppins', 'Manrope', sans-serif;
+}
+
+.advent-modal__sponsors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.4rem;
+}
+
+.advent-modal__sponsors.is-empty {
+    display: none;
+}
+
+.advent-modal__sponsor-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.advent-modal__sponsor-logo:hover,
+.advent-modal__sponsor-logo:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+.advent-modal__sponsor-logo img {
+    width: 100%;
+    max-width: 120px;
+    height: 100%;
+    object-fit: contain;
 }
 
 .advent-modal__link {
@@ -4176,6 +4245,10 @@ svg.usecase-icon {
     overflow: hidden;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+}
+
+.open {
+    background: #0fae2a;
 }
 
 .advent-calendar__day:hover,
@@ -4536,6 +4609,24 @@ svg.usecase-icon {
 
     .advent-modal {
         backdrop-filter: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .advent-modal {
+        padding: 1rem;
+    }
+
+    .advent-modal__dialog {
+        width: 100%;
+        max-height: 92vh;
+        border-radius: 18px;
+        gap: 0.65rem;
+    }
+
+    .advent-modal__close {
+        top: 0.6rem;
+        right: 0.6rem;
     }
 }
 
