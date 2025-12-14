@@ -177,12 +177,12 @@
                         <span class="advent-calendar__day-number">13</span>
                         <span class="sr-only">Türchen 13 – Gewinner anzeigen</span>
                     </button>
-                    <button class="advent-calendar__day" type="button" data-calendar-day="14">
+                    <button class="advent-calendar__day open" type="button" data-calendar-day="14">
                         <span class="advent-calendar__day-visual" aria-hidden="true">
-                            <img src="img/geschenkBtc.png?v=2028" alt="">
+                            <img src="img/kalender/Geschenk_offen.png?v=2028" alt="">
                         </span>
                         <span class="advent-calendar__day-number">14</span>
-                        <span class="sr-only">Türchen 14 – bald verfügbar</span>
+                        <span class="sr-only">Türchen 14 – Gewinner anzeigen</span>
                     </button>
                     <button class="advent-calendar__day" type="button" data-calendar-day="15">
                         <span class="advent-calendar__day-visual" aria-hidden="true">
@@ -862,7 +862,7 @@ Da sagen wir Prost!`,
                 },
                 '14': {
                     winnerText: 'Der Gewinner des Türchens vom 14.12.2025 trägt die Kalendernummer',
-                    winnerNumber: '?',
+                    winnerNumber: '175',
                     prizeTitle: 'Tagesgewinn',
                     prizeDescription: `Hinter dem heutigen Türchen verstecken sich zwei Klassiker von Coinfinity:
 1x Coinfinity Card Wallet
@@ -884,7 +884,27 @@ Außerdem legen wir noch einen DIN A4-Print des großartigen Bitcoin-Artist Bart
                             href: 'https://coinfinity.co/',
                         }
                     ]
-                }
+                },
+                 '15': {
+                    winnerText: 'Der Gewinner des Türchens vom 15.12.2025 trägt die Kalendernummer',
+                    winnerNumber: '?',
+                    prizeTitle: 'Tagesgewinn',
+                    prizeDescription: `Der "Dein Weg zu Bitcoin"-Podcast hat heute einen Einsteiger- & Orangepill-Call sowie eine Legacy21 Card von Blockschmiede mit ein paar Satoshis hinter dem Türchen versteckt. Ihr habt doch bestimmt diese eine Person in der Familie oder im Bekanntenkreis, die ihr schon immer mal orangepillen wolltet. Heute gibt es die Gelegenheit, dieser Person einen Einsteiger-Call zu schenken und für diese Person den Weg zu Bitcoin zu starten. Erfahrungen als Volkshochschul-Dozent sind vorhanden und so braucht die Person auch keine bzw. nur wenige Vorkenntnisse und wird in diesem Call viel lernen können.
+Die Hosts von "Dein Weg zu Bitcoin" sind Saša (leben.mit.bitcoin) und Jürgen (finanz.bewusstsein). Viel Spaß beim Verschenken des Calls.
+
+Außerdem legen wir noch einen DIN A4-Print des großartigen Bitcoin-Artist Bartosz oben drauf. Bartosz setzt mit seiner Bleistift-Kunst einmalige Bitcoin-Motive unfassbar in Szene. Ein Hingucker an jeder Wand!`,
+                    media: {
+                        src: 'img/kalender/tuerchen/15.png?v=2029',
+                        alt: 'Platzhalter für das Türchenbild',
+                    },
+                    sponsorLogos: [
+                        {
+                            src: 'img/kalender/logos/15.png?v=2029',
+                            alt: 'Sponsor Logo 1',
+                            href: '',
+                        }
+                    ]
+                },
             };
 
             const formatDay = (dayValue) => String(dayValue).padStart(2, '0');

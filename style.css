@@ -966,7 +966,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8rem 1.4rem;
-    justify-content: center;
+    justify-content: left;
 }
 
 .legacy-teaser__highlights li {
