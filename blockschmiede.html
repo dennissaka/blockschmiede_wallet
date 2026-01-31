@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- Primary Meta Tags -->
+    <title>Blockschmiede | Über uns - Die Bitcoin-Produktschmiede aus Deutschland</title>
+    <meta name="title" content="Blockschmiede | Über uns - Die Bitcoin-Produktschmiede aus Deutschland">
+    <meta name="description" content="Erfahren Sie mehr über Blockschmiede - Deutschlands innovative Bitcoin-Produktschmiede. Wir entwickeln praktische Bitcoin-Lösungen für den Alltag und fördern die Adoption digitaler Währungen.">
+    <meta name="keywords" content="Blockschmiede, Bitcoin Unternehmen, Bitcoin Deutschland, Kryptowährung Startup, Bitcoin Produktentwicklung, Dennis Sakacilar, Legacy Wallet Entwickler">
+    <meta name="author" content="Blockschmiede">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://blockschmiede.com/blockschmiede.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blockschmiede.com/blockschmiede.html">
+    <meta property="og:title" content="Blockschmiede | Über uns - Die Bitcoin-Produktschmiede aus Deutschland">
+    <meta property="og:description" content="Erfahren Sie mehr über Blockschmiede - Deutschlands innovative Bitcoin-Produktschmiede. Wir entwickeln praktische Bitcoin-Lösungen für den Alltag und fördern die Adoption digitaler Währungen.">
+    <meta property="og:image" content="https://blockschmiede.com/img/logoDark.png">
+    <meta property="og:site_name" content="Blockschmiede">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blockschmiede.com/blockschmiede.html">
+    <meta property="twitter:title" content="Blockschmiede | Über uns - Die Bitcoin-Produktschmiede aus Deutschland">
+    <meta property="twitter:description" content="Erfahren Sie mehr über Blockschmiede - Deutschlands innovative Bitcoin-Produktschmiede. Wir entwickeln praktische Bitcoin-Lösungen für den Alltag und fördern die Adoption digitaler Währungen.">
+    <meta property="twitter:image" content="https://blockschmiede.com/img/logoDark.png">
+    <meta property="twitter:site" content="@blockschmiede21">
+    <meta property="twitter:creator" content="@blockschmiede21">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2.2.9">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.ico">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GTCTTYEX8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6GTCTTYEX8');
+    </script>
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0F0F0F;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --accent: #F7931A;
+            --accent-hover: #FF9F2E;
+            --divider: #1E1E1E;
+            --disabled: #6E6E6E;
+            --success: #3DDC84;
+            --warning: #FFC107;
+            --error: #FF5252;
+            
+            --container-width: 1120px;
+            --section-pad: 72px;
+            --section-pad-mobile: 48px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Manrope', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            padding-block: var(--section-pad);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Fallback for browsers that don't support background-clip */
+            color: var(--text-primary);
+        }
+
+        @supports (background-clip: text) or (-webkit-background-clip: text) {
+            h1 {
+                color: transparent;
+            }
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            line-height: 1.3;
+            background: linear-gradient(135deg, var(--text-primary) 20%, var(--accent) 80%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Fallback for browsers that don't support background-clip */
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        @supports (background-clip: text) or (-webkit-background-clip: text) {
+            h2 {
+                color: transparent;
+            }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .subline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--divider);
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-6 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        /* Use Cases Cards */
+        .use-case-card {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .use-case-card h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin: 32px 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 860px) {
+            :root {
+                --section-pad: var(--section-pad-mobile);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-6 {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="container">
+            <a href="index.html#start" class="logo"><img src="img/logoDark.png" alt="Legacy Wallet" style="height: 40px;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html#fuerwen">Vision</a></li>
+                <li><a href="blockschmiede.html" class="active">Blockschmiede</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="start">
+            <div class="container" style="text-align: center;">
+                <h1>Die Blockschmiede</h1>
+                <p class="subline">Neues Wagen. Erfahrungen sammeln. Horizont erweitern.</p>
+                
+                <div class="grid grid-3" style="margin-top: 48px;">
+                    <div class="card">
+                        <h3>Know-how</h3>
+                        <p>Abgerundet durch unseren technischen und finanzwirtschaftlichen Hintergrund bieten wir Ihnen einen fundierten Einblick in verschiedene Themenbereiche.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Empathie</h3>
+                        <p>Wir hören zu, analysieren sorgfältig und entwickeln Lösungen, die individuell auf Ihre Lebens- oder Unternehmenssituation abgestimmt sind.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Echter Spirit</h3>
+                        <p>Wir bleiben an Ihrer Seite auch über Jahre hinweg und unterstützen Sie mit echter Leidenschaft für Bitcoin-Technologie.</p>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 48px; text-align: center;">
+                    <p><strong>Das ist der Kern unseres Handelns und die Basis unserer Produkte.</strong></p>
+                    <p>Seit 2025 stehen wir mit eigener Produktschmiede für unabhängige Bitcoin-Lösungen. Mit unserer Berufserfahrung in den Bereichen IT, Technik und Finanzwirtschaft komplettieren wir den Kreis für individuelle, souveräne Anwendungen.</p>
+                    <p>Menschen und Unternehmen einen Mehrwert bieten, das ist unser Credo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kooperationen Section -->
+        <section id="kooperationen">
+            <div class="container">
+                <h2>Kooperationen</h2>
+                <p class="subline">Gemeinsam mit ausgewählten Partnern bieten wir ergänzende Produkte rund um Bitcoin an.</p>
+                
+                <div class="grid grid-6">
+                    <div class="card use-case-card">
+                        <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="img/kooperationen/statue.webp" alt="21Statues" style="max-height: 90px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h3>21Statues</h3>
+                        <p>Satoshi Nakamoto Statue mit Legacy21 Karten Erweiterung</p>
+                        <p style="color: var(--accent); font-weight: bold; margin: 8px 0;">5% Rabatt</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Code: <strong>blockschmiede</strong></p>
+                        <a href="https://21statues.de/discount/Blockschmiede" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Zum Shop</a>
+                    </div>
+                    
+                    <div class="card use-case-card">
+                        <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="img/kooperationen/bitvestis.png" alt="Bitvestis" style="max-height: 90px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h3>Bitvestis</h3>
+                        <p>Rabatt auf die gesamte Bestellung</p>
+                        <p style="color: var(--accent); font-weight: bold; margin: 8px 0;">10% Rabatt</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Code: <strong>Blockschmiede10</strong></p>
+                        <a href="https://bitvestis.de/discount/Blockschmiede10" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Zum Shop</a>
+                    </div>
+                    
+                    <div class="card use-case-card">
+                        <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="img/kooperationen/bitcoinershop.png" alt="Bitcoiner Shop" style="max-height: 90px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h3>Bitcoiner Shop</h3>
+                        <p>Rabatt auf alle Produkte im Shop</p>
+                        <p style="color: var(--accent); font-weight: bold; margin: 8px 0;">10% Rabatt</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Code: <strong>Blockschmiede</strong></p>
+                        <a href="https://bitcoiner-shop.com/discount/Blockschmiede10" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Zum Shop</a>
+                    </div>
+                    
+                    <div class="card use-case-card">
+                        <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="img/kooperationen/21bitcoin.png" alt="21bitcoin" style="max-height: 90px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h3>21bitcoin</h3>
+                        <p>Reduzierte Gebühren für Sofortkäufe sowie Sparplankäufe</p>
+                        <p style="color: var(--accent); font-weight: bold; margin: 8px 0;">0.2% Rabatt</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Code: <strong>BLOCKSCHMIEDE</strong></p>
+                        <a href="https://21bitcoin.app.link/invite/?code=BLOCKSCHMIEDE" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Zu 21 Bitcoin</a>
+                    </div>
+                    
+                    <div class="card use-case-card">
+                        <div style="height: 90px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="img/kooperationen/dezentralshop.png" alt="Dezentralshop" style="max-height: 90px; max-width: 90px; object-fit: contain;">
+                        </div>
+                        <h3>Dezentralshop</h3>
+                        <p>Reduzierte Preise bei Zahlungen mit Bitcoin</p>
+                        <p style="color: var(--accent); font-weight: bold; margin: 8px 0;">10% bei BTC</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">Zahlung mit Bitcoin</p>
+                        <a href="https://dezentralshop.ch/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 16px;">Zu Dezentralshop</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventskalender Section -->
+        <section id="adventskalender">
+            <div class="container">
+                <h2>Bitcoin Charity Adventskalender 2025</h2>
+                <p class="subline">Eine besondere Aktion für den guten Zweck mit beeindruckenden Ergebnissen.</p>
+                
+                <div class="grid grid-1">
+                    <div>
+                        <div class="card">
+                            <p>Unser Bitcoin Charity Adventskalender 2025 war ein voller Erfolg! Mit 24 Türchen haben wir gemeinsam mit unserer Community Bitcoin-Spenden für den guten Zweck gesammelt.</p>
+                            
+                            <div style="background: var(--bg-primary); padding: 24px; border-radius: 8px; margin: 24px 0; text-align: center;">
+                                <h4 style="color: var(--accent); font-size: 2rem; margin: 0;">3.775€</h4>
+                                <p style="margin: 8px 0 0; color: var(--text-secondary);">Gesamtspendenvolumen</p>
+                            </div>
+                            
+                            <p>Eine beeindruckende Leistung unserer Bitcoin-Community, die zeigt, wie Technologie und Nächstenliebe Hand in Hand gehen können.</p>
+                            
+                            <div class="cta-group" style="margin-top: 24px; text-align: center;">
+                                <a href="https://www.instagram.com/p/DSphU5MDHaC/?igsh=MXNyenc0NjNneWp4ZA==" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Mehr erfahren bei Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-links" aria-label="Fußnavigation">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <div class="footer-socials">
+            <a class="social-icon social-icon--instagram"
+                href="https://www.instagram.com/blockschmiede21?igsh=M214aTJlaXBraXY0" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a class="social-icon social-icon--x" href="https://x.com/blockschmiede21?s=21&amp;t=8HZP7r2FwAe1airi1KuADA"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">X </span>
+            </a>
+            <a class="social-icon social-icon--tiktok" href="https://www.tiktok.com/@blockschmiede21" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">TikTok</span>
+            </a>
+            <a class="social-icon social-icon--youtube" href="https://youtube.com/@blockschmiede?si=g1WmA7FrKmcFYGmU"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">YouTube</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

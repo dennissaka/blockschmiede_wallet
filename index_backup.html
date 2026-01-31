@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockschmiede | Start</title>
+    <meta name="description" content="Die Wallet, die digitale Werte mit echten Produkten verbindet. Bitcoin für den Alltag - zum Nutzen, Teilen und Verschenken.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2.2.9">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0F0F0F;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --accent: #F7931A;
+            --accent-hover: #FF9F2E;
+            --divider: #1E1E1E;
+            --disabled: #6E6E6E;
+            --success: #3DDC84;
+            --warning: #FFC107;
+            --error: #FF5252;
+            
+            --container-width: 1120px;
+            --section-pad: 72px;
+            --section-pad-mobile: 48px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Manrope', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary);
+            z-index: 100;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* Sections */
+        section {
+            padding-block: var(--section-pad);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .subline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--divider);
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-6 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        /* Hero Section */
+        #start {
+            text-align: center;
+            padding-top: calc(var(--section-pad) + 32px);
+            padding-bottom: calc(var(--section-pad) + 32px);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin: 32px 0;
+        }
+
+        .trust-bullets {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 48px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .trust-bullets span {
+            padding: 8px 16px;
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            border: 1px solid var(--divider);
+        }
+
+        /* Use Cases Cards */
+        .use-case-card {
+            text-align: center;
+            padding: 24px;
+        }
+
+        .use-case-card h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        /* Feature Row */
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Accordion */
+        details {
+            border: 1px solid var(--divider);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            background: var(--bg-secondary);
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--accent);
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            float: right;
+            font-size: 1.2rem;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details p {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--divider);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin: 32px 0;
+        }
+
+        .store-btn {
+            padding: 12px 24px;
+            background: var(--bg-primary);
+            border: 1px solid var(--divider);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: border-color 0.3s;
+        }
+
+        .store-btn:hover {
+            border-color: var(--accent);
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--divider);
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-primary);
+            border: 1px solid var(--divider);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .social-icon::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .social-icon--instagram::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B3B3B3' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/%3E%3C/svg%3E");
+        }
+
+        .social-icon--x::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B3B3B3' viewBox='0 0 24 24'%3E%3Cpath d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E");
+        }
+
+        .social-icon--tiktok::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B3B3B3' viewBox='0 0 24 24'%3E%3Cpath d='M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z'/%3E%3C/svg%3E");
+        }
+
+        .social-icon--youtube::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B3B3B3' viewBox='0 0 24 24'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E");
+        }
+
+        /* Floating Contact Widget */
+        .floating-contact {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+
+        .floating-contact__toggle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(247, 147, 26, 0.3);
+            transition: all 0.3s;
+        }
+
+        .floating-contact__toggle:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+
+        .floating-contact__glyph::before {
+            content: '💬';
+            font-size: 24px;
+        }
+
+        .floating-contact__label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .floating-contact__panel {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 280px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--divider);
+            border-radius: 12px;
+            padding: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-contact.is-open .floating-contact__panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .floating-contact__action {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .floating-contact__action:hover {
+            background: var(--bg-primary);
+        }
+
+        .floating-contact__action--mail .floating-contact__icon::before {
+            content: '📧';
+            font-size: 20px;
+        }
+
+        .floating-contact__action--instagram .floating-contact__icon::before {
+            content: '📸';
+            font-size: 20px;
+        }
+
+        .floating-contact__action--x .floating-contact__icon::before {
+            content: '🐦';
+            font-size: 20px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 860px) {
+            :root {
+                --section-pad: var(--section-pad-mobile);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-6 {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .trust-bullets {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .feature-row {
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .store-buttons {
+                flex-direction: column;
+            }
+
+            .floating-contact__panel {
+                width: 250px;
+                right: -110px;
+            }
+
+            .footer-socials {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#start" class="logo">Legacy Wallet</a>
+            <ul class="nav-links">
+                <li><a href="#fuerwen">Vision</a></li>
+                <li><a href="blockschmiede.html">Blockschmiede</a></li>
+                <li><a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="start">
+            <div class="container">
+                <h1>Die Wallet, die digitale Werte mit echten Produkten verbindet</h1>
+                <p class="subline">Bitcoin für den Alltag. Zum Nutzen, Teilen und Verschenken.</p>
+                
+                <div class="cta-group">
+                    <a href="#download" class="btn btn-primary">App herunterladen</a>
+                    <a href="#warum" class="btn btn-secondary">Mehr erfahren</a>
+                </div>
+                
+                <div class="trust-bullets">
+                    <span>Made in Germany</span>
+                    <span>Self-Custody</span>
+                    <span>Einfach erklärt</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warum Section -->
+        <section id="warum">
+            <div class="container">
+                <h2>Bitcoin darf einfach sein</h2>
+                <p class="subline">Digitale Werte werden greifbar und verständlich. Ohne Vorwissen, ohne komplizierte Technik – einfach nutzbar im Alltag.</p>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Greifbar</h3>
+                        <p>Physische Produkte machen digitale Werte sichtbar und fühlbar. Bitcoin wird zum anfassbaren Gegenstand.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Schnell nutzbar</h3>
+                        <p>Sofort einsetzbar ohne lange Einrichtung. Scannen, senden, empfangen – so einfach wie eine Nachricht.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Einfach erklärt</h3>
+                        <p>Keine technischen Hürden. Die App führt Sie durch jeden Schritt und erklärt, was passiert.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision">
+            <div class="container">
+                <h2>Wenn digitale Werte greifbar werden</h2>
+                <div class="grid grid-2">
+                    <div>
+                        <p class="subline">Physische Produkte machen Bitcoin sichtbar und verständlich. Die App verwaltet Ihre Werte einfach und sicher – ohne komplizierte Technik, ohne Fachwissen.</p>
+                        <p>Ob als Geschenk, für den täglichen Gebrauch oder zum Kennenlernen: Legacy Wallet verbindet die digitale Welt mit greifbaren Produkten und macht Bitcoin zu einem natürlichen Teil des Alltags.</p>
+                    </div>
+                    <div class="card">
+                        <div style="height: 200px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary);">
+                            [Visual Placeholder - Produktfoto/Illustration]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section id="usecases">
+            <div class="container">
+                <h2>Für die Momente, in denen Bitcoin genutzt wird</h2>
+                
+                <div class="grid grid-6">
+                    <div class="card use-case-card">
+                        <h3>Bezahlen</h3>
+                        <p>Schnelle Zahlungen mit Bitcoin – einfach scannen und senden.</p>
+                    </div>
+                    <div class="card use-case-card">
+                        <h3>Weitergeben</h3>
+                        <p>Bitcoin an Freunde und Familie weiterleiten – unkompliziert und direkt.</p>
+                    </div>
+                    <div class="card use-case-card">
+                        <h3>Verschenken</h3>
+                        <p>Bitcoin-Geschenke mit greifbaren Produkten – persönlich und besonders.</p>
+                    </div>
+                    <div class="card use-case-card">
+                        <h3>Aufteilen</h3>
+                        <p>Beträge fair aufteilen – Restaurant, Geschenke oder gemeinsame Ausgaben.</p>
+                    </div>
+                    <div class="card use-case-card">
+                        <h3>Guthaben prüfen</h3>
+                        <p>Immer im Blick behalten, was Sie haben – übersichtlich und aktuell.</p>
+                    </div>
+                    <div class="card use-case-card">
+                        <h3>Produkte verwalten</h3>
+                        <p>Ihre physischen Bitcoin-Produkte digital organisiert und abrufbar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Section -->
+        <section id="app">
+            <div class="container">
+                <h2>Alles im Blick. Alles unter Kontrolle.</h2>
+                
+                <div class="feature-row">
+                    <div class="feature-icon">📲</div>
+                    <div>
+                        <h3>Senden & Empfangen</h3>
+                        <p>Bitcoin versenden und empfangen mit wenigen Klicks. QR-Codes scannen oder Links teilen – so einfach wie eine Textnachricht.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-row">
+                    <div class="feature-icon">📊</div>
+                    <div>
+                        <h3>Übersicht & Historie</h3>
+                        <p>Alle Ihre Transaktionen im Überblick. Sehen Sie auf einen Blick, was passiert ist und behalten Sie die Kontrolle.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-row">
+                    <div class="feature-icon">📦</div>
+                    <div>
+                        <h3>Produktverwaltung</h3>
+                        <p>Verwalten Sie Ihre physischen Bitcoin-Produkte digital. Aktivieren, übertragen und den Überblick behalten.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sicherheit Section -->
+        <section id="sicherheit">
+            <div class="container">
+                <h2>Verantwortung, die sich richtig anfühlt</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Deine Entscheidung</h3>
+                        <p>Sie bestimmen, was mit Ihren Bitcoin passiert. Keine Zwischenhändler, keine versteckten Gebühren – nur Ihre Entscheidungen zählen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Deine Kontrolle</h3>
+                        <p>Ihre Schlüssel bleiben bei Ihnen. Sie haben die volle Kontrolle über Ihre Werte – niemand anderes kann darüber verfügen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Deine Transparenz</h3>
+                        <p>Alles ist nachvollziehbar und transparent. Sie sehen jede Transaktion und verstehen, was in Ihrer Wallet passiert.</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 32px; text-align: center; color: var(--text-secondary);">
+                    Die App führt Sie durch die Einrichtung von PIN und Backup. Schritt für Schritt, verständlich und sicher.
+                </p>
+            </div>
+        </section>
+
+        <!-- Für Wen Section -->
+        <section id="fuerwen">
+            <div class="container">
+                <h2>Für wen ist das?</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Neugierige</h3>
+                        <p>Sie möchten Bitcoin kennenlernen, ohne technische Hürden? Legacy Wallet macht den Einstieg einfach und verständlich.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Nutzer</h3>
+                        <p>Sie verwenden Bitcoin bereits und suchen nach mehr Flexibilität im Alltag? Unsere Produkte machen Bitcoin greifbar und praktisch.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Unternehmen</h3>
+                        <p>Sie möchten Bitcoin-Geschenke oder Boni anbieten? Unsere Lösungen machen Bitcoin zu einem besonderen Geschenk für Kunden und Mitarbeiter.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Haltung Section -->
+        <section id="haltung">
+            <div class="container" style="text-align: center;">
+                <h2>Bitcoin gehört ins Leben</h2>
+                <p class="subline">Nutzung schafft Verständnis. Einfachheit schafft Vertrauen. Greifbarkeit schafft Nähe zu einer Technologie, die unser Geld revolutioniert.</p>
+                <p style="margin-top: 32px; color: var(--text-secondary);">
+                    <strong>Die Blockschmiede – Bitcoin-Technologie Made in Germany</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Technik Section -->
+        <section id="tech">
+            <div class="container">
+                <h2>Technik (optional)</h2>
+                
+                <details>
+                    <summary>Lightning Network</summary>
+                    <p>Schnelle und kostengünstige Bitcoin-Transaktionen über das Lightning Network. Perfekt für kleine Beträge und den täglichen Gebrauch. Ihre Lightning-Kanäle werden automatisch verwaltet.</p>
+                </details>
+                
+                <details>
+                    <summary>On-Chain Bitcoin</summary>
+                    <p>Klassische Bitcoin-Transaktionen direkt auf der Blockchain für größere Beträge und langfristige Aufbewahrung. Höchste Sicherheit und finale Abwicklung.</p>
+                </details>
+                
+                <details>
+                    <summary>Liquid Network</summary>
+                    <p>Schnelle und vertrauliche Bitcoin-Transaktionen über das Liquid-Sidechain. Ideal für größere Beträge mit mehr Privatsphäre und schnellerer Abwicklung.</p>
+                </details>
+                
+                <details>
+                    <summary>NFC & Physische Produkte</summary>
+                    <p>Unsere physischen Produkte nutzen NFC-Technologie, um Bitcoin-Adressen und -Beträge einfach zu übertragen. Ein Scan genügt, um Bitcoin zu aktivieren oder zu versenden.</p>
+                </details>
+                
+                <details>
+                    <summary>Self-Custody</summary>
+                    <p>Sie behalten die Kontrolle über Ihre privaten Schlüssel. Ihre Bitcoin werden nur auf Ihrem Gerät gespeichert und verwaltet – niemand sonst hat Zugriff darauf.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download">
+            <div class="container" style="text-align: center;">
+                <h2>Einfach anfangen</h2>
+                <p class="subline">Laden Sie die Legacy Wallet herunter und entdecken Sie Bitcoin auf eine neue Art.</p>
+                
+                <a href="#" class="btn btn-primary" style="margin-bottom: 32px;">Jetzt herunterladen</a>
+                
+                <div class="store-buttons">
+                    <a href="#" class="store-btn">📱 App Store</a>
+                    <a href="#" class="store-btn">🤖 Google Play</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-links" aria-label="Fußnavigation">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <div class="footer-socials">
+            <a class="social-icon social-icon--instagram"
+                href="https://www.instagram.com/blockschmiede21?igsh=M214aTJlaXBraXY0" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a class="social-icon social-icon--x" href="https://x.com/blockschmiede21?s=21&amp;t=8HZP7r2FwAe1airi1KuADA"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">X </span>
+            </a>
+            <a class="social-icon social-icon--tiktok" href="https://www.tiktok.com/@blockschmiede21" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">TikTok</span>
+            </a>
+            <a class="social-icon social-icon--youtube" href="https://youtube.com/@blockschmiede?si=g1WmA7FrKmcFYGmU"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">YouTube</span>
+            </a>
+        </div>
+    </footer>
+
+    <div class="floating-contact" data-contact-widget>
+        <div class="floating-contact__panel" id="floating-contact-panel" data-contact-panel role="group"
+            aria-label="Kontaktwege">
+            <a class="floating-contact__action floating-contact__action--mail" href="mailto:info@blockschmiede.com">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>E-Mail</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--instagram"
+                href="https://www.instagram.com/blockschmiede21" target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>Instagram @blockschmiede21</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--x" href="https://x.com/blockschmiede21"
+                target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>X @blockschmiede21</span>
+            </a>
+        </div>
+        <button class="floating-contact__toggle" type="button"
+            aria-label="Kontaktoptionen öffnen – wir unterstützen Sie bei jeder Anfrage" aria-expanded="false"
+            aria-controls="floating-contact-panel" aria-haspopup="true" data-contact-toggle>
+            <span class="floating-contact__glyph" aria-hidden="true"></span>
+            <span class="floating-contact__label">Kontaktoptionen öffnen – wir unterstützen Sie bei jeder Anfrage</span>
+        </button>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Floating contact widget
+        (function () {
+            const widget = document.querySelector('[data-contact-widget]');
+            if (!widget) {
+                return;
+            }
+
+            const toggle = widget.querySelector('[data-contact-toggle]');
+            const panel = widget.querySelector('[data-contact-panel]');
+            if (!toggle || !panel) {
+                return;
+            }
+
+            const closePanel = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                widget.classList.remove('is-open');
+            };
+
+            const openPanel = () => {
+                toggle.setAttribute('aria-expanded', 'true');
+                widget.classList.add('is-open');
+            };
+
+            toggle.addEventListener('click', () => {
+                const isOpen = widget.classList.contains('is-open');
+                if (isOpen) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!widget.contains(event.target)) {
+                    closePanel();
+                }
+            });
+
+            document.addEventListener('keyup', (event) => {
+                if (event.key === 'Escape') {
+                    closePanel();
+                }
+            });
+
+            panel.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.closest('a')) {
+                    closePanel();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

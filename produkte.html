@@ -22,38 +22,15 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="top-bar">
-            <a class="brand" href="index.html">
-                <img src="img/logo.png" alt="Blockschmiede Logo">
-                <div class="brand-copy">
-                    <span class="brand-name">Blockschmiede</span>
-                    <span class="brand-subline">Bitcoin. Produkte. Kreativität.</span>
-                </div>
-            </a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-                <span class="sr-only">Menü öffnen</span>
-                <span class="nav-toggle-bar" aria-hidden="true"></span>
-            </button>
-            <nav class="main-nav" id="primary-navigation" aria-label="Hauptnavigation">
-                <ul class="nav-list">
-                    <li><a href="index.html">Start</a></li>
-                    <li class="has-submenu is-active">
-                        <a href="produkte.html" aria-current="page">Produkte</a>
-                        <ul class="submenu">
-                                                        <li><a href="legacy21.html">Legacy 21 Karte</a></li>
-                            <li><a href="adventskalender.html">Adventskalender</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="unternehmen.html">Unternehmen</a></li>
-                    <li><a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header-visual header-visual--fullimage" data-animate >
-            <div class="header-image-frame" data-animate>
-                <img src="img/Produkte.png" alt="Abstraktes Headerbild der Legacy 21 Karte" class="header-image" style="object-position: bottom;">
-            </div>
-        </div>
+        <nav class="container">
+            <a href="index.html#start" class="logo"><img src="img/logoDark.png" alt="Legacy Wallet" style="height: 40px;"></a>
+            <ul class="nav-links">
+                <li><a href="index.html#fuerwen">Vision</a></li>
+                <li><a href="blockschmiede.html">Blockschmiede</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -130,152 +107,5 @@
         </div>
     </footer>
 
-    <div class="floating-contact" data-contact-widget>
-        <div class="floating-contact__panel" id="floating-contact-panel" data-contact-panel role="group" aria-label="Kontaktwege">
-
-            <a class="floating-contact__action floating-contact__action--mail" href="mailto:info@blockschmiede.com">
-                <span class="floating-contact__icon" aria-hidden="true"></span>
-                <span>E-Mail</span>
-            </a>
-        </div>
-        <button class="floating-contact__toggle" type="button" aria-label="Kontaktoptionen öffnen – wir unterstützen Sie bei jeder Anfrage" aria-expanded="false" aria-controls="floating-contact-panel" aria-haspopup="true" data-contact-toggle>
-            <span class="floating-contact__glyph" aria-hidden="true"></span>
-            <span class="floating-contact__label">Kontaktoptionen öffnen – wir unterstützen Sie bei jeder Anfrage</span>
-        </button>
-    </div>
-
-    <script>
-        (function () {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navigation = document.getElementById('primary-navigation');
-            if (!navToggle || !navigation) {
-                return;
-            }
-
-            const body = document.body;
-            const toggleLabel = navToggle.querySelector('.sr-only');
-
-            const closeMenu = () => {
-                navToggle.setAttribute('aria-expanded', 'false');
-                navigation.classList.remove('is-open');
-                body.classList.remove('nav-open');
-                if (toggleLabel) {
-                    toggleLabel.textContent = 'Menü öffnen';
-                }
-            };
-
-            navToggle.addEventListener('click', () => {
-                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-                const nextExpanded = !isExpanded;
-                navToggle.setAttribute('aria-expanded', String(nextExpanded));
-                navigation.classList.toggle('is-open', nextExpanded);
-                body.classList.toggle('nav-open', nextExpanded);
-                if (toggleLabel) {
-                    toggleLabel.textContent = nextExpanded ? 'Menü schließen' : 'Menü öffnen';
-                }
-            });
-
-            navigation.addEventListener('click', (event) => {
-                const target = event.target;
-                if (target instanceof Element) {
-                    const link = target.closest('a');
-                    if (link && navigation.contains(link)) {
-                        closeMenu();
-                    }
-                }
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    closeMenu();
-                }
-            });
-
-            window.addEventListener('keyup', (event) => {
-                if (event.key === 'Escape') {
-                    closeMenu();
-                }
-            });
-        })();
-
-        (function () {
-            const animatedElements = document.querySelectorAll('[data-animate]');
-            if (!animatedElements.length) {
-                return;
-            }
-
-            if (!('IntersectionObserver' in window)) {
-                animatedElements.forEach((element) => {
-                    element.classList.add('is-visible');
-                });
-                return;
-            }
-
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -40px 0px'
-            });
-
-            animatedElements.forEach((element) => observer.observe(element));
-        })();
-
-        (function () {
-            const widget = document.querySelector('[data-contact-widget]');
-            if (!widget) {
-                return;
-            }
-
-            const toggle = widget.querySelector('[data-contact-toggle]');
-            const panel = widget.querySelector('[data-contact-panel]');
-            if (!toggle || !panel) {
-                return;
-            }
-
-            const closePanel = () => {
-                toggle.setAttribute('aria-expanded', 'false');
-                widget.classList.remove('is-open');
-            };
-
-            const openPanel = () => {
-                toggle.setAttribute('aria-expanded', 'true');
-                widget.classList.add('is-open');
-            };
-
-            toggle.addEventListener('click', () => {
-                const isOpen = widget.classList.contains('is-open');
-                if (isOpen) {
-                    closePanel();
-                } else {
-                    openPanel();
-                }
-            });
-
-            document.addEventListener('click', (event) => {
-                if (!widget.contains(event.target)) {
-                    closePanel();
-                }
-            });
-
-            document.addEventListener('keyup', (event) => {
-                if (event.key === 'Escape') {
-                    closePanel();
-                }
-            });
-
-            panel.addEventListener('click', (event) => {
-                const target = event.target;
-                if (target instanceof HTMLElement && target.closest('a')) {
-                    closePanel();
-                }
-            });
-        })();
-    </script>
 </body>
 </html>
