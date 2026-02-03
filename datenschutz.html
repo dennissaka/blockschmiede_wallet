@@ -62,7 +62,12 @@
     <header class="site-header">
         <nav class="container">
             <a href="index.html#start" class="logo"><img src="img/logoDark.png" alt="Legacy Wallet" style="height: 40px;"></a>
-            <ul class="nav-links">
+            
+            <button class="nav-toggle" type="button" aria-label="Navigation ein-/ausblenden" aria-expanded="false" aria-controls="main-nav">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+            
+            <ul class="nav-links main-nav" id="main-nav">
                 <li><a href="index.html#fuerwen">Vision</a></li>
                 <li><a href="blockschmiede.html">Blockschmiede</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
@@ -278,6 +283,39 @@
             </a>
         </div>
     </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        (function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+                    
+                    navToggle.setAttribute('aria-expanded', !isOpen);
+                    mainNav.classList.toggle('is-open', !isOpen);
+                });
+                
+                // Close menu when clicking on nav links
+                mainNav.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                    }
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navToggle.contains(e.target) && !mainNav.contains(e.target)) {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                    }
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>

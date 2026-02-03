@@ -641,19 +641,17 @@ main {
     justify-content: center;
     width: 44px;
     height: 44px;
-    border-radius: 999px;
-    border: 1px solid rgba(var(--accent-rgb), 0.45);
-    background: rgba(18, 18, 18, 0.85);
+    border-radius: 8px;
+    border: none;
+    background: transparent;
     color: var(--text);
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
     font: inherit;
     line-height: 1;
 }
 
 .nav-toggle:hover {
-    background: rgba(var(--accent-rgb), 0.2);
-    border-color: rgba(var(--accent-rgb), 0.75);
     transform: translateY(-1px);
 }
 
@@ -2915,23 +2913,55 @@ svg.usecase-icon {
         display: inline-flex;
     }
 
-    .main-nav {
+    .nav-links {
+        display: none !important;
+    }
+
+    .nav-links.main-nav {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        display: none;
+        display: none !important;
+        flex-direction: column;
         background: rgba(8, 8, 8, 0.96);
-        padding: 1.1rem calc(6% + var(--safe-right)) 1.4rem calc(6% + var(--safe-left));
+        padding: 1.1rem calc(6% + var(--safe-right)) 2rem calc(6% + var(--safe-left));
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow: 0 28px 44px rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(18px);
         z-index: 9999;
+        list-style: none;
+        margin: 0;
     }
 
-    .main-nav.is-open {
-        display: block;
+    .nav-links.main-nav.is-open {
+        display: flex !important;
         animation: navReveal 0.3s ease forwards;
+    }
+
+    .nav-links.main-nav li {
+        margin: 0 0 8px 0;
+        padding: 0;
+    }
+
+    .nav-links.main-nav a {
+        display: block;
+        padding: 16px 0;
+        color: var(--text);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: color 0.2s ease;
+    }
+
+    .nav-links.main-nav li:last-child {
+    }
+
+    .nav-links.main-nav a:hover {
+        color: var(--accent);
+    }
+
+    .nav-links.main-nav li:last-child a {
+        border-bottom: none;
     }
 
     .header-promo-link {
@@ -5906,11 +5936,7 @@ body {
 }
 
 /* Legacy Mobile Responsive */
-@media (max-width: 860px) {
-    .site-header .nav-links {
-        display: none;
-    }
-
+@media (max-width: 768px) {
     .footer-links {
         flex-direction: column;
         gap: 16px;
