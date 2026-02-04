@@ -75,7 +75,7 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-image">
-                        <img src="img/legacywallet.png" alt="Legacy Wallet App" class="wallet-image">
+                        <img src="img/legacyWallet/1.png" alt="Legacy Wallet App" class="wallet-image">
                     </div>
                     
                     <div class="hero-text">
@@ -125,15 +125,59 @@
         <section id="vision">
             <div class="container">
                 <h2>Wenn digitale Werte spürbar werden</h2>
-                <div class="grid grid-2">
-                    <div>
-                        <p class="subline">Physische Produkte machen Bitcoin sichtbar und verständlich. Die App verwaltet Ihre Werte einfach und sicher – ohne komplizierte Technik, ohne Fachwissen.</p>
-                        <p>Ob als Geschenk, für den täglichen Gebrauch oder zum Kennenlernen: Die Legacy Wallet verbindet die digitale Welt mit physischen Produkten und macht Bitcoin zu einem natürlichen Teil des Alltags.</p>
-                    </div>
-                    <div class="card">
-                        <div class="vision-image">
-                            <img src="img/legacywallet.png" alt="Legacy Wallet App" class="wallet-image">
+                <p class="subline">Drei Wege, Bitcoin in Ihrem Alltag zu nutzen</p>
+                
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Carousel Item 1: Smartphone Wallet -->
+                        <div class="carousel-item active" data-index="0">
+                            <div class="carousel-content">
+                                <div class="carousel-image">
+                                    <img src="img/legacyWallet/1.png" alt="Smartphone Wallet" class="wallet-image">
+                                </div>
+                                <div class="carousel-text">
+                                    <h3>Smartphone Wallet</h3>
+                                    <p>Bitcoin versenden und empfangen mit wenigen Klicks. QR-Codes scannen oder Links teilen – so einfach wie eine Textnachricht.</p>
+                                </div>
+                            </div>
                         </div>
+                        
+                        <!-- Carousel Item 2: NFC Wallets -->
+                        <div class="carousel-item" data-index="1">
+                            <div class="carousel-content">
+                                <div class="carousel-image">
+                                    <img src="img/legacyWallet/2.png" alt="NFC Wallets" class="wallet-image">
+                                </div>
+                                <div class="carousel-text">
+                                    <h3>NFC Wallets</h3>
+                                    <p>Physische Produkte machen Bitcoin sichtbar und spürbar. Bitcoin wird zum anfassbaren Gegenstand – einfach berühren und nutzen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Item 3: Gift Cards -->
+                        <div class="carousel-item" data-index="2">
+                            <div class="carousel-content">
+                                <div class="carousel-image">
+                                    <img src="img/legacyWallet/3.png" alt="Gift Cards" class="wallet-image">
+                                </div>
+                                <div class="carousel-text">
+                                    <h3>Gift Cards</h3>
+                                    <p>Geschenkkarten komplett individuell designen – persönlich und besonders. Für jeden, der nach einer kostenlosen Möglichkeit sucht, Bitcoin zu verschenken.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-nav">
+                        <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Vorheriger Bereich">‹</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                            <span class="indicator" data-index="2"></span>
+                        </div>
+                        <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Nächster Bereich">›</button>
                     </div>
                 </div>
             </div>
@@ -447,6 +491,124 @@
                         mainNav.classList.remove('is-open');
                     }
                 });
+            }
+        })();
+
+        // Vision Carousel Functionality
+        (function() {
+            // Wait for DOM and styles to be fully loaded
+            function initCarousel() {
+                const track = document.getElementById('carousel-track');
+                const items = document.querySelectorAll('.carousel-item');
+                const indicators = document.querySelectorAll('.indicator');
+                const prevBtn = document.getElementById('carousel-prev');
+                const nextBtn = document.getElementById('carousel-next');
+                
+                if (!track || !items.length || !indicators.length || !prevBtn || !nextBtn) {
+                    return;
+                }
+                
+                let currentIndex = 0;
+                const totalItems = items.length;
+                
+                // Ensure the first item is active on load
+                items.forEach((item, index) => {
+                    item.classList.toggle('active', index === 0);
+                });
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === 0);
+                });
+                
+                function updateCarousel() {
+                    // Update track position
+                    const translateX = -currentIndex * (100 / totalItems);
+                    track.style.transform = `translateX(${translateX}%)`;
+                    
+                    // Update active states
+                    items.forEach((item, index) => {
+                        item.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === currentIndex);
+                    });
+                    
+                    // Update button states
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === totalItems - 1;
+                }
+                
+                function goToSlide(index) {
+                    if (index >= 0 && index < totalItems) {
+                        currentIndex = index;
+                        updateCarousel();
+                    }
+                }
+                
+                function nextSlide() {
+                    goToSlide(currentIndex + 1);
+                }
+                
+                function prevSlide() {
+                    goToSlide(currentIndex - 1);
+                }
+                
+                // Event listeners
+                nextBtn.addEventListener('click', nextSlide);
+                prevBtn.addEventListener('click', prevSlide);
+                
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => goToSlide(index));
+                });
+                
+                // Auto-play carousel every 5 seconds
+                let autoPlayInterval = setInterval(() => {
+                    if (currentIndex < totalItems - 1) {
+                        nextSlide();
+                    } else {
+                        goToSlide(0);
+                    }
+                }, 5000);
+                
+                // Pause auto-play on hover
+                const container = document.querySelector('.carousel-container');
+                if (container) {
+                    container.addEventListener('mouseenter', () => {
+                        clearInterval(autoPlayInterval);
+                    });
+                    
+                    container.addEventListener('mouseleave', () => {
+                        autoPlayInterval = setInterval(() => {
+                            if (currentIndex < totalItems - 1) {
+                                nextSlide();
+                            } else {
+                                goToSlide(0);
+                            }
+                        }, 5000);
+                    });
+                }
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        prevSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        nextSlide();
+                    }
+                });
+                
+                // Initialize carousel with a slight delay to ensure CSS is loaded
+                requestAnimationFrame(() => {
+                    updateCarousel();
+                });
+            }
+            
+            // Initialize when everything is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initCarousel);
+            } else {
+                // DOM already loaded, wait a bit for CSS
+                setTimeout(initCarousel, 100);
             }
         })();
     </script>
