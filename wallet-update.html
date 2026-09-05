@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Wallet-Update: Von Liquid zu Spark | Blockschmiede News</title>
+    <meta name="title" content="Wallet-Update: Von Liquid zu Spark | Blockschmiede News">
+    <meta name="description" content="Wichtige Information für alle Blockschmiede App Nutzer: Boltz hat seinen Betrieb eingestellt. So swappst du dein Liquid-Guthaben sicher in die neue Spark-Wallet.">
+    <meta name="keywords" content="Blockschmiede, Wallet Update, Liquid, Spark, Boltz, Bitcoin, Swap, Breez">
+    <meta name="author" content="Blockschmiede">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://blockschmiede.com/wallet-update.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blockschmiede.com/wallet-update.html">
+    <meta property="og:title" content="Wallet-Update: Von Liquid zu Spark | Blockschmiede News">
+    <meta property="og:description" content="Wichtige Information für alle Blockschmiede App Nutzer: Boltz hat seinen Betrieb eingestellt. So swappst du dein Liquid-Guthaben sicher in die neue Spark-Wallet.">
+    <meta property="og:image" content="https://blockschmiede.com/img/logoDark.png">
+    <meta property="og:site_name" content="Blockschmiede">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blockschmiede.com/wallet-update.html">
+    <meta property="twitter:title" content="Wallet-Update: Von Liquid zu Spark | Blockschmiede News">
+    <meta property="twitter:description" content="Wichtige Information für alle Blockschmiede App Nutzer: Boltz hat seinen Betrieb eingestellt. So swappst du dein Liquid-Guthaben sicher in die neue Spark-Wallet.">
+    <meta property="twitter:image" content="https://blockschmiede.com/img/logoDark.png">
+    <meta property="twitter:site" content="@blockschmiede21">
+    <meta property="twitter:creator" content="@blockschmiede21">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2.2.9">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.ico">
+
+    <style>
+        .update-page ol,
+        .update-page ul {
+            text-align: left;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            padding-left: 1.3em;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .update-page ol li,
+        .update-page ul li {
+            margin-bottom: 10px;
+        }
+        .update-page ol strong,
+        .update-page ul strong,
+        .update-page p strong {
+            color: #fff;
+        }
+        .summary-list {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: left;
+            display: grid;
+            gap: 16px;
+        }
+        .summary-item {
+            display: block;
+            padding: 20px 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .summary-item:hover {
+            border-color: rgba(var(--accent-rgb), 0.4);
+            background: rgba(var(--accent-rgb), 0.06);
+        }
+        .summary-item strong {
+            color: #fff;
+        }
+        .summary-item .fa-arrow-right {
+            color: var(--accent);
+            margin-left: 6px;
+        }
+        .notice-box {
+            max-width: 720px;
+            margin: 0 auto 24px;
+            padding: 18px 22px;
+            border-left: 3px solid var(--accent);
+            background: rgba(var(--accent-rgb), 0.08);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+        .notice-box strong {
+            color: #fff;
+        }
+        .back-to-summary {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--accent);
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        .back-to-summary:hover {
+            text-decoration: underline;
+        }
+        .update-page section {
+            scroll-margin-top: 90px;
+        }
+    </style>
+</head>
+<body class="update-page">
+    <header class="site-header">
+        <nav class="container">
+            <a href="index.html" class="logo"><img src="img/logoDark.png" alt="Blockschmiede" style="height: 40px;"></a>
+
+            <button class="nav-toggle" type="button" aria-label="Navigation ein-/ausblenden" aria-expanded="false" aria-controls="main-nav">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+
+            <ul class="nav-links main-nav" id="main-nav">
+                <li><a href="index.html#fuerwen">Vision</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="return false;">Produkte</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Legacy Wallet</a></li>
+                        <li><a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">NFC Produkte</a></li>
+                        <li><a href="cryptage.html">Moon Bottle - Genesis Edition</a></li>
+                    </ul>
+                </li>
+                <li><a href="blockschmiede.html">Über uns</a></li>
+                <li><a href="wallet-update.html" class="active">News</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="start">
+            <div class="container" style="text-align: center;">
+                <h1>Blockschmiede Wallet-Update: Von Liquid zu Spark</h1>
+                <p class="subline">Wichtige Information für alle Nutzerinnen und Nutzer der Blockschmiede App</p>
+            </div>
+        </section>
+
+        <!-- Zusammenfassung Section -->
+        <section id="zusammenfassung-die-wichtigsten-punkte-auf-einen-blick">
+            <div class="container">
+                <h2 style="text-align: center;">Zusammenfassung – die wichtigsten Punkte auf einen Blick</h2>
+                <div class="summary-list">
+                    <a class="summary-item" href="#was-ist-passiert">
+                        <strong>Was ist passiert?</strong> Unser bisheriger Swap-Dienstleister Boltz hat seinen Betrieb eingestellt. Deine Gelder waren nie in Gefahr, aber du musst dein Liquid-Guthaben einmalig manuell in die neue Spark-Wallet umtauschen.
+                        <span class="fa-arrow-right"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="summary-item" href="#anleitung">
+                        <strong>Was musst du tun?</strong> Folge unserer Schritt-für-Schritt-Anleitung, um dein LBTC über einen externen Anbieter wie SideShift.ai in deine Spark-Wallet zu bringen.
+                        <span class="fa-arrow-right"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="summary-item" href="#restguthaben">
+                        <strong>Nicht genug Guthaben für die Transferierung – was tun?</strong> Dein Guthaben ist nicht verloren und bleibt sicher in der Liquid-Wallet. Für sehr kleine Beträge gibt es aktuell noch keinen für alle empfehlenswerten Weg – wir zeigen dir Alternativen und bleiben dran.
+                        <span class="fa-arrow-right"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a class="summary-item" href="#kontakt">
+                        <strong>Fragen?</strong> Melde dich jederzeit über den Support in den App-Einstellungen.
+                        <span class="fa-arrow-right"><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Was ist passiert -->
+        <section id="was-ist-passiert">
+            <div class="container" style="text-align: center;">
+                <h2>Was ist passiert?</h2>
+                <p class="subline">Bis August 2026 wurde der Zahlungsverkehr über unseren Partner Breez und die Liquid-Sidechain abgewickelt – konkret über den Swap-Dienstleister Boltz. Anfang August 2026 hat Boltz seine Bitcoin-, Lightning- und Liquid-Swap-Dienste vollständig eingestellt. Grund waren monatelange, KI-gestützte Angriffe, gegen die das Boltz-Team nicht mehr ankam.</p>
+                <div class="notice-box">
+                    <strong>Wichtig:</strong> Deine Kundengelder waren zu keinem Zeitpunkt in Gefahr. Es handelte sich um einen Ausfall der Dienstleistung, nicht um einen Sicherheitsvorfall bei deinen Guthaben.
+                </div>
+                <a class="back-to-summary" href="#zusammenfassung-die-wichtigsten-punkte-auf-einen-blick">↑ Zurück zur Zusammenfassung</a>
+            </div>
+        </section>
+
+        <!-- Unsere Lösung -->
+        <section id="unsere-loesung">
+            <div class="container" style="text-align: center;">
+                <h2>Unsere Lösung</h2>
+                <p class="subline">Auf Empfehlung von Breez haben wir die Spark Wallet in die Blockschmiede App integriert. Die App unterscheidet ab sofort zwischen zwei Wallet-Typen:</p>
+                <div class="grid grid-2" style="max-width: 760px; margin: 0 auto;">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-water"></i></div>
+                        <h3>Liquid-Wallet</h3>
+                        <p>Jede Wallet, die vor dem Update auf Version 3.0.4 erstellt wurde. Sie dient nur noch dazu, dein LBTC-Guthaben in die neue Spark-Wallet umzuwandeln.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Spark-Wallet</h3>
+                        <p>Die neue, aktive Wallet für deine zukünftigen Zahlungen.</p>
+                    </div>
+                </div>
+                <a class="back-to-summary" href="#zusammenfassung-die-wichtigsten-punkte-auf-einen-blick">↑ Zurück zur Zusammenfassung</a>
+            </div>
+        </section>
+
+        <!-- Anleitung -->
+        <section id="anleitung">
+            <div class="container" style="text-align: center;">
+                <h2>Anleitung: So swappst du dein Guthaben zur Spark-Wallet</h2>
+                <p class="subline">Falls du eine Liquid-Wallet mit Guthaben besitzt, führe bitte einmalig einen Swap zur neuen Spark-Wallet durch. So geht's:</p>
+                <ol>
+                    <li>Öffne die Blockschmiede App und prüfe in den Einstellungen, welcher Wallet-Typ aktiv ist.</li>
+                    <li>Tippe auf das Info-Icon in der Liquid-Wallet – dort findest du die vollständige Schritt-für-Schritt-Anleitung direkt in der App.</li>
+                    <li>Wähle einen Anbieter wie SideShift.ai.</li>
+                    <li>Wechsle in den Spark-Modus, öffne „Empfangen" → „Börse / Hardware Wallet" und lass dir eine Bitcoin-Adresse oder Lightning-Rechnung anzeigen. <strong>Wichtig:</strong> Nutze dafür nicht die Option „Blockschmiede / Breez Wallet" – diese Adresse erkennen externe Anbieter nicht.</li>
+                    <li>Trage diese Adresse beim gewählten Anbieter als Empfänger ein, mit Liquid Bitcoin als Quelle.</li>
+                    <li>Kopiere die Liquid-Einzahlungsadresse, die dir der Anbieter daraufhin anzeigt.</li>
+                    <li>Wechsle in den Liquid-Modus, öffne „Senden", füge die Liquid-Adresse ein und sende dein Guthaben.</li>
+                </ol>
+                <a class="back-to-summary" href="#zusammenfassung-die-wichtigsten-punkte-auf-einen-blick">↑ Zurück zur Zusammenfassung</a>
+            </div>
+        </section>
+
+        <!-- Gut zu wissen -->
+        <section id="gut-zu-wissen">
+            <div class="container" style="text-align: center;">
+                <h2>Gut zu wissen: Einzahlungsbereich</h2>
+                <p class="subline">Es kann vorkommen, dass dein Guthaben nach dem Swap nicht sofort in der Spark-Wallet selbst sichtbar ist, sondern zunächst im Einzahlungsbereich landet. Das ist völlig normal – schau dort einfach kurz nach, falls der Betrag nicht direkt angezeigt wird.</p>
+                <a class="back-to-summary" href="#zusammenfassung-die-wichtigsten-punkte-auf-einen-blick">↑ Zurück zur Zusammenfassung</a>
+            </div>
+        </section>
+
+        <!-- Restguthaben -->
+        <section id="restguthaben">
+            <div class="container" style="text-align: center;">
+                <h2>Nicht genug Guthaben für die Transferierung – was tun?</h2>
+                <p class="subline">Dein Guthaben ist nicht verloren – es liegt weiterhin sicher und vollständig in deiner Liquid-Wallet und gehört dir. Für sehr kleine Beträge können wir aktuell aber keinen zuverlässigen Weg empfehlen, um sie in BTC bzw. in deine neue Spark-Wallet umzuwandeln. Das hat drei Gründe:</p>
+                <ol>
+                    <li><strong>Es ist eine strukturelle Bitcoin-Eigenschaft, kein Problem unserer App.</strong> Jeder Umtausch zwischen Netzwerken benötigt eine Bitcoin-Transaktion mit Netzwerkgebühr. Diese Gebühr ist unabhängig von der Höhe deines Guthabens – bei sehr kleinen Beträgen würde sie den Betrag teilweise oder sogar komplett aufzehren. Das betrifft nicht nur unsere App, sondern jede Wallet und jeden Anbieter am Markt gleichermaßen.</li>
+                    <li><strong>Der bisherige Standard-Anbieter ist ausgefallen.</strong> Boltz, der zentrale Dienstleister, über den die meisten Wallets (auch unsere) solche Umtausch-Vorgänge abgewickelt haben, musste seinen Dienst im August 2026 wegen anhaltender Cyberangriffe einstellen. Kundengelder waren dabei nie in Gefahr, aber die Infrastruktur fehlt seitdem.</li>
+                    <li><strong>Ersatzlösungen sind entweder zu neu oder noch nicht öffentlich verfügbar.</strong> Es gibt bereits erste Alternativen – teils von etablierten Unternehmen wie Blockstream (dem Betreiber des Liquid-Netzwerks selbst), teils von unabhängigen Entwicklern. Diese befinden sich aber entweder noch in einer geschlossenen Testphase oder haben noch keinen ausreichenden Track Record, um sie guten Gewissens für die Wallets unserer gesamten Kundschaft zu empfehlen.</li>
+                </ol>
+
+                <p class="subline" style="margin-top: 32px;"><strong>Was das für dich bedeutet:</strong></p>
+                <ul>
+                    <li>Dein Guthaben bleibt sicher und für dich einsehbar in der Liquid-Wallet.</li>
+                    <li>Für größere Beträge (ab ca. 5.000 Sats, teils auch erst ab 25.000–100.000 Sats je nach Weg) funktioniert der Umtausch über die von uns empfohlenen Anbieter bereits zuverlässig.</li>
+                    <li>Sobald sich am Markt eine stabile, vertrauenswürdige Lösung für kleinere Beträge etabliert hat, informieren wir dich aktiv darüber.</li>
+                </ul>
+
+                <p class="subline" style="margin-top: 32px;"><strong>Zwei optionale Wege für dich:</strong></p>
+                <ul>
+                    <li><strong>Guthaben sammeln:</strong> Du kannst dein LBTC-Guthaben optional auch in einer anderen, ebenfalls Liquid-fähigen Wallet-App wie z. B. Aqua Wallet zentral sammeln, die selbst Swaps durchführen kann. So lässt sich dein Restguthaben mit weiteren kleinen Beträgen zusammenführen, bis der jeweilige Mindestbetrag für einen Umtausch erreicht ist – und dann in einem Schritt versenden.</li>
+                    <li><strong>Persönliche Unterstützung:</strong> Du kannst uns außerdem jederzeit über den Support in den App-Einstellungen kontaktieren. Wir schauen uns Einzelfälle gerne individuell an und unterstützen dich dabei, so gut es geht.</li>
+                </ul>
+
+                <p class="subline">Wir beobachten die Entwicklung aktiv und aktualisieren diese Information, sobald sich etwas ändert.</p>
+                <a class="back-to-summary" href="#zusammenfassung-die-wichtigsten-punkte-auf-einen-blick">↑ Zurück zur Zusammenfassung</a>
+            </div>
+        </section>
+
+        <!-- Kontakt -->
+        <section id="kontakt" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); color: white;">
+            <div class="container" style="text-align: center;">
+                <h2>Hast du Fragen?</h2>
+                <p class="subline" style="color: rgba(255, 255, 255, 0.8);">Wir sind für dich da: Bei Fragen oder Unsicherheiten erreichst du uns wie gewohnt über den Support in den App-Einstellungen oder direkt per E-Mail.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="mailto:info@blockschmiede.com" class="btn btn-primary">Support kontaktieren</a>
+                </div>
+                <p style="margin-top: 32px; color: rgba(255, 255, 255, 0.6);">Vielen Dank für dein Vertrauen in Blockschmiede.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-links" aria-label="Fußnavigation">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <div class="footer-socials">
+            <a class="social-icon social-icon--instagram"
+                href="https://www.instagram.com/blockschmiede21?igsh=M214aTJlaXBraXY0" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a class="social-icon social-icon--x" href="https://x.com/blockschmiede21?s=21&amp;t=8HZP7r2FwAe1airi1KuADA"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">X </span>
+            </a>
+            <a class="social-icon social-icon--tiktok" href="https://www.tiktok.com/@blockschmiede21" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">TikTok</span>
+            </a>
+            <a class="social-icon social-icon--youtube" href="https://youtube.com/@blockschmiede?si=g1WmA7FrKmcFYGmU"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">YouTube</span>
+            </a>
+        </div>
+    </footer>
+
+    <div class="floating-contact" data-contact-widget>
+        <div class="floating-contact__panel" id="floating-contact-panel" data-contact-panel role="group"
+            aria-label="Kontaktwege">
+            <a class="floating-contact__action floating-contact__action--mail" href="mailto:info@blockschmiede.com">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>E-Mail</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--instagram"
+                href="https://www.instagram.com/blockschmiede21" target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>Instagram @blockschmiede21</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--x" href="https://x.com/blockschmiede21"
+                target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>X @blockschmiede21</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Floating contact widget
+        (function () {
+            const widget = document.querySelector('[data-contact-widget]');
+            if (!widget) {
+                return;
+            }
+
+            const toggle = widget.querySelector('[data-contact-toggle]');
+            const panel = widget.querySelector('[data-contact-panel]');
+            if (!toggle || !panel) {
+                return;
+            }
+
+            const closePanel = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                widget.classList.remove('is-open');
+            };
+
+            const openPanel = () => {
+                toggle.setAttribute('aria-expanded', 'true');
+                widget.classList.add('is-open');
+            };
+
+            toggle.addEventListener('click', () => {
+                const isOpen = widget.classList.contains('is-open');
+                if (isOpen) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!widget.contains(event.target)) {
+                    closePanel();
+                }
+            });
+
+            document.addEventListener('keyup', (event) => {
+                if (event.key === 'Escape') {
+                    closePanel();
+                }
+            });
+
+            panel.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.closest('a')) {
+                    closePanel();
+                }
+            });
+        })();
+
+        // Mobile Navigation Toggle
+        (function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+
+                    navToggle.setAttribute('aria-expanded', !isOpen);
+                    mainNav.classList.toggle('is-open', !isOpen);
+                });
+
+                mainNav.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!navToggle.contains(e.target) && !mainNav.contains(e.target)) {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
