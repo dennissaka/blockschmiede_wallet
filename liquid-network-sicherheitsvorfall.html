@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Statement: Sicherheitsvorfall im Liquid Network | Blockschmiede News</title>
+    <meta name="title" content="Statement: Sicherheitsvorfall im Liquid Network | Blockschmiede News">
+    <meta name="description" content="Am 6. September wurde das Liquid Network Ziel eines größeren Sicherheitsvorfalls. Wir ordnen ein, was passiert ist, wie es weitergeht und was das für dich als Blockschmiede-Nutzer bedeutet.">
+    <meta name="keywords" content="Blockschmiede, Liquid Network, Sicherheitsvorfall, Elements, SideSwap, Blockstream, Bitcoin, Spark">
+    <meta name="author" content="Blockschmiede">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://blockschmiede.com/liquid-network-sicherheitsvorfall.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blockschmiede.com/liquid-network-sicherheitsvorfall.html">
+    <meta property="og:title" content="Statement: Sicherheitsvorfall im Liquid Network | Blockschmiede News">
+    <meta property="og:description" content="Am 6. September wurde das Liquid Network Ziel eines größeren Sicherheitsvorfalls. Wir ordnen ein, was passiert ist, wie es weitergeht und was das für dich als Blockschmiede-Nutzer bedeutet.">
+    <meta property="og:image" content="https://blockschmiede.com/img/logoDark.png">
+    <meta property="og:site_name" content="Blockschmiede">
+    <meta property="og:locale" content="de_DE">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blockschmiede.com/liquid-network-sicherheitsvorfall.html">
+    <meta property="twitter:title" content="Statement: Sicherheitsvorfall im Liquid Network | Blockschmiede News">
+    <meta property="twitter:description" content="Am 6. September wurde das Liquid Network Ziel eines größeren Sicherheitsvorfalls. Wir ordnen ein, was passiert ist, wie es weitergeht und was das für dich als Blockschmiede-Nutzer bedeutet.">
+    <meta property="twitter:image" content="https://blockschmiede.com/img/logoDark.png">
+    <meta property="twitter:site" content="@blockschmiede21">
+    <meta property="twitter:creator" content="@blockschmiede21">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2.2.9">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon.ico">
+
+    <style>
+        .update-page ol,
+        .update-page ul {
+            text-align: left;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            padding-left: 1.3em;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .update-page ol li,
+        .update-page ul li {
+            margin-bottom: 10px;
+        }
+        .update-page ol strong,
+        .update-page ul strong,
+        .update-page p strong {
+            color: #fff;
+        }
+        .summary-list {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: left;
+            display: grid;
+            gap: 16px;
+        }
+        .summary-item {
+            display: block;
+            padding: 20px 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .summary-item:hover {
+            border-color: rgba(var(--accent-rgb), 0.4);
+            background: rgba(var(--accent-rgb), 0.06);
+        }
+        .summary-item strong {
+            color: #fff;
+        }
+        .summary-item .fa-arrow-right {
+            color: var(--accent);
+            margin-left: 6px;
+        }
+        .notice-box {
+            max-width: 720px;
+            margin: 0 auto 24px;
+            padding: 18px 22px;
+            border-left: 3px solid var(--accent);
+            background: rgba(var(--accent-rgb), 0.08);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+        .notice-box strong {
+            color: #fff;
+        }
+        .back-to-summary {
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--accent);
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        .back-to-summary:hover {
+            text-decoration: underline;
+        }
+        .back-to-news {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-to-news:hover {
+            text-decoration: underline;
+        }
+        .update-page section {
+            scroll-margin-top: 90px;
+        }
+    </style>
+</head>
+<body class="update-page">
+    <header class="site-header">
+        <nav class="container">
+            <a href="index.html" class="logo"><img src="img/logoDark.png" alt="Blockschmiede" style="height: 40px;"></a>
+
+            <button class="nav-toggle" type="button" aria-label="Navigation ein-/ausblenden" aria-expanded="false" aria-controls="main-nav">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+
+            <ul class="nav-links main-nav" id="main-nav">
+                <li><a href="index.html#fuerwen">Vision</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="return false;">Produkte</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Legacy Wallet</a></li>
+                        <li><a href="https://shop.blockschmiede.com" target="_blank" rel="noopener noreferrer">NFC Produkte</a></li>
+                        <li><a href="cryptage.html">Moon Bottle - Genesis Edition</a></li>
+                    </ul>
+                </li>
+                <li><a href="blockschmiede.html">Über uns</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="start">
+            <div class="container" style="text-align: center;">
+                <a class="back-to-news" href="news.html"><i class="fas fa-arrow-left"></i> Zurück zur News-Übersicht</a>
+                <h1>Statement: Sicherheitsvorfall im Liquid Network</h1>
+                <p class="subline">Was passiert ist, wie es weitergeht und was das für dich als Blockschmiede-Nutzer bedeutet</p>
+            </div>
+        </section>
+
+        <!-- Einleitung -->
+        <section id="einleitung">
+            <div class="container" style="text-align: center;">
+                <p class="subline">Du hast vielleicht schon davon gehört: Am 6. September wurde das Liquid Network – die Bitcoin-Sidechain, auf der auch unsere Liquid-Wallet basiert – Ziel eines größeren Sicherheitsvorfalls. Wir wollen dir hier kurz und ehrlich einordnen, was passiert ist, wie es weitergeht und was das konkret für dich als Blockschmiede-Nutzer bedeutet.</p>
+            </div>
+        </section>
+
+        <!-- Was ist passiert -->
+        <section id="was-ist-passiert">
+            <div class="container" style="text-align: center;">
+                <h2>Was ist passiert?</h2>
+                <p class="subline">Am 6. September 2026 haben Angreifer, die sich selbst als „White Hats" bezeichnen, einen Fehler in der Konsens-Software von Liquid (Elements) ausgenutzt. Dadurch konnten sie rund 4.000 unbesicherte L-BTC erzeugen und über den Peg-out-Mechanismus von SideSwap – einem Partner im Liquid-Netzwerk – aus der Federation-Reserve abziehen. Der Gegenwert lag zum Zeitpunkt des Vorfalls bei etwa 320 Millionen US-Dollar.</p>
+                <div class="notice-box">
+                    <strong>Wichtig:</strong> Es wurde kein privater Schlüssel gestohlen oder kompromittiert, weder der von SideSwap noch andere. Die Angreifer haben eine Schwachstelle in der Software selbst genutzt, keine Nutzerdaten oder -guthaben waren direkt betroffen. Als Reaktion haben Börsen und Anbieter LBTC-Ein- und Auszahlungen vorübergehend pausiert, um weiteren Schaden zu vermeiden.
+                </div>
+            </div>
+        </section>
+
+        <!-- Wie geht es weiter -->
+        <section id="wie-geht-es-weiter">
+            <div class="container" style="text-align: center;">
+                <h2>Wie geht es weiter?</h2>
+                <p class="subline">Die Angreifer haben sich direkt nach dem Vorfall über eine On-Chain-Nachricht gemeldet und erklärt, sie seien White Hats. Blockstream, das Unternehmen hinter Liquid, hat daraufhin über Bitcoin-Transaktionen mit den Angreifern kommuniziert. Ein Großteil der Gelder – etwa 3.400 BTC – wurde inzwischen zurücküberwiesen. Ein Teil, aktuell mit einem Wert von rund 47 Millionen Dollar, befindet sich weiterhin bei den Angreifern; Verhandlungen zur vollständigen Rückgabe laufen.</p>
+                <p class="subline">Wir beobachten die Entwicklung eng und halten dich auf dem Laufenden, sobald es einen finalen Stand gibt – insbesondere, was die vollständige Rückabwicklung und mögliche Konsequenzen für die Liquid-Sidechain selbst angeht.</p>
+            </div>
+        </section>
+
+        <!-- Bedeutung für Nutzer -->
+        <section id="bedeutung-fuer-dich">
+            <div class="container" style="text-align: center;">
+                <h2>Was bedeutet das für dich als Blockschmiede-Nutzer?</h2>
+                <p class="subline">Falls du noch eine aktive Liquid-Wallet in der Blockschmiede App nutzt: Dein Guthaben ist von diesem Vorfall nicht direkt betroffen, da keine privaten Schlüssel oder Nutzer-Wallets kompromittiert wurden.</p>
+                <p class="subline">Beim Umstieg auf die Spark-Wallet (bzw. grundsätzlich beim Umtausch der L-BTC) müssen wir aber aktuell um etwas Geduld bitten. Der Grund: Das Liquid-Netzwerk unterscheidet zwischen zwei Vorgängen – dem Einzahlen von LBTC in einen Swap-Dienst (Swap-in) und dem eigentlichen Peg-out, also der Umwandlung von LBTC zurück in echtes Bitcoin auf der Bitcoin-Mainchain, die du für den Weg zur Spark-Wallet brauchst (Swap-out). Der erste Schritt funktioniert bei den meisten Anbietern inzwischen wieder, da einige Liquid-Dienste ihre Märkte bereits wieder geöffnet haben. Der zweite Schritt – der eigentliche Swap-out in echtes Bitcoin – ist jedoch weiterhin gesperrt: Das Liquid-Team hat Peg-in- und Peg-out-Vorgänge netzwerkweit pausiert, bis die vollständige 1:1-Deckung von LBTC durch echtes Bitcoin wiederhergestellt ist.</p>
+                <p class="subline">Das Liquid-Team hat öffentlich erklärt, dass genau das ihr nächster Schritt ist: Erst die Deckung vollständig wiederherstellen, dann die Peg-Vorgänge (und damit den Swap-out) wieder freigeben. Sobald das passiert ist, kannst du deinen Umstieg auf die Spark-Wallet (bzw. den Umtausch der L-BTC) wie gewohnt abschließen. Bis dahin bleibt dein LBTC-Guthaben unverändert und sicher in deiner Liquid-Wallet – es besteht kein Handlungsdruck.</p>
+                <p class="subline">Wir beobachten die Entwicklung laufend und melden uns, sobald der Swap-out wieder möglich ist.</p>
+            </div>
+        </section>
+
+        <!-- Kontakt -->
+        <section id="kontakt" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); color: white;">
+            <div class="container" style="text-align: center;">
+                <h2>Hast du Fragen?</h2>
+                <p class="subline" style="color: rgba(255, 255, 255, 0.8);">Bei Fragen erreichst du uns wie gewohnt über den Support in den App-Einstellungen oder direkt per E-Mail.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="mailto:info@blockschmiede.com" class="btn btn-primary">Support kontaktieren</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="footer-links" aria-label="Fußnavigation">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <div class="footer-socials">
+            <a class="social-icon social-icon--instagram"
+                href="https://www.instagram.com/blockschmiede21?igsh=M214aTJlaXBraXY0" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a class="social-icon social-icon--x" href="https://x.com/blockschmiede21?s=21&amp;t=8HZP7r2FwAe1airi1KuADA"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">X </span>
+            </a>
+            <a class="social-icon social-icon--tiktok" href="https://www.tiktok.com/@blockschmiede21" target="_blank"
+                rel="noopener noreferrer">
+                <span class="sr-only">TikTok</span>
+            </a>
+            <a class="social-icon social-icon--youtube" href="https://youtube.com/@blockschmiede?si=g1WmA7FrKmcFYGmU"
+                target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">YouTube</span>
+            </a>
+        </div>
+    </footer>
+
+    <div class="floating-contact" data-contact-widget>
+        <div class="floating-contact__panel" id="floating-contact-panel" data-contact-panel role="group"
+            aria-label="Kontaktwege">
+            <a class="floating-contact__action floating-contact__action--mail" href="mailto:info@blockschmiede.com">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>E-Mail</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--instagram"
+                href="https://www.instagram.com/blockschmiede21" target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>Instagram @blockschmiede21</span>
+            </a>
+            <a class="floating-contact__action floating-contact__action--x" href="https://x.com/blockschmiede21"
+                target="_blank" rel="noopener noreferrer">
+                <span class="floating-contact__icon" aria-hidden="true"></span>
+                <span>X @blockschmiede21</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Floating contact widget
+        (function () {
+            const widget = document.querySelector('[data-contact-widget]');
+            if (!widget) {
+                return;
+            }
+
+            const toggle = widget.querySelector('[data-contact-toggle]');
+            const panel = widget.querySelector('[data-contact-panel]');
+            if (!toggle || !panel) {
+                return;
+            }
+
+            const closePanel = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                widget.classList.remove('is-open');
+            };
+
+            const openPanel = () => {
+                toggle.setAttribute('aria-expanded', 'true');
+                widget.classList.add('is-open');
+            };
+
+            toggle.addEventListener('click', () => {
+                const isOpen = widget.classList.contains('is-open');
+                if (isOpen) {
+                    closePanel();
+                } else {
+                    openPanel();
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!widget.contains(event.target)) {
+                    closePanel();
+                }
+            });
+
+            document.addEventListener('keyup', (event) => {
+                if (event.key === 'Escape') {
+                    closePanel();
+                }
+            });
+
+            panel.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target instanceof HTMLElement && target.closest('a')) {
+                    closePanel();
+                }
+            });
+        })();
+
+        // Mobile Navigation Toggle
+        (function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+
+                    navToggle.setAttribute('aria-expanded', !isOpen);
+                    mainNav.classList.toggle('is-open', !isOpen);
+                });
+
+                mainNav.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                    }
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!navToggle.contains(e.target) && !mainNav.contains(e.target)) {
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        mainNav.classList.remove('is-open');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
